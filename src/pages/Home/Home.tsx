@@ -3,6 +3,8 @@ import Hero from "@/components/home/Hero";
 import WhyNetworkEngineering from "@/components/home/WhyNetworkEngineering";
 import Stats from "@/components/home/Stats";
 import Carousel from "@/components/home/Carousel";
+import Initiatives from "@/components/home/Initiatives";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <VisionMissionSection />
       <Stats />
       <Carousel />
+      <Initiatives />
+      <Testimonials />
     </div>
   );
 }
