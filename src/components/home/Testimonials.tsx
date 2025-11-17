@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import testimonial from "../../assets/images/testimonial.png"
+import testimonial1 from "../../assets/images/testimonial1.png"
+import testimonial2 from "../../assets/images/testimonial2.png"
+import testimonial3 from "../../assets/images/testimonial3.png"
 
 interface TestimonialCardProps {
   name: string;
@@ -6,6 +10,7 @@ interface TestimonialCardProps {
   location: string;
   image: string;
   testimonial: string;
+  border: string;
 }
 
 const TestimonialCard = ({
@@ -14,6 +19,7 @@ const TestimonialCard = ({
   location,
   image,
   testimonial,
+  border,
 }: TestimonialCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -47,7 +53,7 @@ const TestimonialCard = ({
 
           {/* Back Side */}
           <div
-            className="absolute w-full h-full backface-hidden rounded-2xl bg-white border-4 border-blue-500 shadow-lg flex items-center justify-center p-8"
+            className={`absolute w-full h-full backface-hidden rounded-2xl bg-white border-2 ${border} shadow-lg flex items-center justify-center p-8`}
             style={{
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
@@ -79,36 +85,40 @@ const Testimonials = () => {
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
+        testimonial,
       testimonial:
         "The LiNE program transformed my career path completely. The mentorship and hands-on experience I gained were invaluable in helping me secure my dream job in tech.",
+      border: "border-blue-500"
     },
     {
       name: "Evalyne Njoroge",
       cohort: "LiNE Cohort 2",
       location: "Nairobi, Kenya",
       image:
-        "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&h=500&fit=crop",
+        testimonial1,
       testimonial:
         "I joined the LiNE program with only passion, but after going through their rigorous and hands-on training, I came out as a fully certified Network Engineer. The instructors are absolutely amazing, and they make networking feel so easy to understand and enjoyable to learn. The founders are also incredibly invested in our success, always pushing us to grow and be the best version of ourselves.",
+      border: "border-blue-500",
     },
     {
       name: "Ifunanya Odoh",
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
       image:
-        "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=500&fit=crop",
+        testimonial2,
       testimonial:
         "Being part of LiNE has been a life-changing experience. The program not only equipped me with technical skills but also built my confidence to pursue opportunities I never thought possible.",
+      border: "border-[#DFBBFF4D]",
     },
     {
       name: "Moyinoluwa Adegbolu",
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
+        testimonial3,
       testimonial:
         "The supportive community and expert instructors at LiNE made all the difference in my learning journey. I'm now confidently working in the field I'm passionate about.",
+      border: "border-blue-500",
     },
     {
       name: "Chioma Eze",
@@ -118,6 +128,7 @@ const Testimonials = () => {
         "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
       testimonial:
         "Joining LiNE was the best decision I made for my career. The practical approach to learning and the networking opportunities opened doors I never imagined.",
+      border: "border-blue-500",
     },
     {
       name: "Amara Okafor",
@@ -127,6 +138,7 @@ const Testimonials = () => {
         "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=500&fit=crop",
       testimonial:
         "The program exceeded all my expectations. The hands-on training and mentorship helped me transition into tech seamlessly and confidently.",
+      border: "border-blue-500",
     },
   ];
 

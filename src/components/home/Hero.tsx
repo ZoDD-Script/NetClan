@@ -20,7 +20,7 @@ const Hero = () => {
           Empowering future technical leaders with core skills to build the
           foundation for <br /> innovation and a connected world.
         </p>
-        <button className="bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 transition px-6 py-3 rounded-lg font-medium">
+        <button className="bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 transition px-6 py-3 rounded-sm max-w-[212px] font-medium">
           Join Our Community
         </button>
       </div>
