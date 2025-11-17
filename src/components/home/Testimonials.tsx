@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import testimonial from "../../assets/images/testimonial.png"
-import testimonial1 from "../../assets/images/testimonial1.png"
-import testimonial2 from "../../assets/images/testimonial2.png"
-import testimonial3 from "../../assets/images/testimonial3.png"
+import testimonial from "../../assets/images/testimonial.png";
+import testimonial1 from "../../assets/images/testimonial1.png";
+import testimonial2 from "../../assets/images/testimonial2.png";
+import testimonial3 from "../../assets/images/testimonial3.png";
 
 interface TestimonialCardProps {
   name: string;
@@ -84,18 +84,16 @@ const Testimonials = () => {
       name: "Martha Alao",
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
-      image:
-        testimonial,
+      image: testimonial,
       testimonial:
         "The LiNE program transformed my career path completely. The mentorship and hands-on experience I gained were invaluable in helping me secure my dream job in tech.",
-      border: "border-blue-500"
+      border: "border-blue-500",
     },
     {
       name: "Evalyne Njoroge",
       cohort: "LiNE Cohort 2",
       location: "Nairobi, Kenya",
-      image:
-        testimonial1,
+      image: testimonial1,
       testimonial:
         "I joined the LiNE program with only passion, but after going through their rigorous and hands-on training, I came out as a fully certified Network Engineer. The instructors are absolutely amazing, and they make networking feel so easy to understand and enjoyable to learn. The founders are also incredibly invested in our success, always pushing us to grow and be the best version of ourselves.",
       border: "border-blue-500",
@@ -104,8 +102,7 @@ const Testimonials = () => {
       name: "Ifunanya Odoh",
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
-      image:
-        testimonial2,
+      image: testimonial2,
       testimonial:
         "Being part of LiNE has been a life-changing experience. The program not only equipped me with technical skills but also built my confidence to pursue opportunities I never thought possible.",
       border: "border-[#DFBBFF4D]",
@@ -114,8 +111,7 @@ const Testimonials = () => {
       name: "Moyinoluwa Adegbolu",
       cohort: "LiNE Cohort 2",
       location: "Lagos, Nigeria",
-      image:
-        testimonial3,
+      image: testimonial3,
       testimonial:
         "The supportive community and expert instructors at LiNE made all the difference in my learning journey. I'm now confidently working in the field I'm passionate about.",
       border: "border-blue-500",
@@ -177,8 +173,9 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-light mb-6">
-            Success <span className="text-pink-400">Stories</span>
+          <h1 className="text-5xl font-semibold text-gray-800 mb-6">
+            <span className="text-[#39364F]">Success</span>
+            <span className="text-[#E588A4]"> Stories</span>
           </h1>
           <p className="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">
             Discover the inspiring stories of our students and sponsors as they

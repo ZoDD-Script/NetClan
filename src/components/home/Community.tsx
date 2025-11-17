@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import community from "../../assets/images/community.png"
+import community from "../../assets/images/community1.png";
 
 const CommunitySection: React.FC = () => {
   return (
@@ -31,7 +31,9 @@ const CommunitySection: React.FC = () => {
                 Join our webex community
               </h3>
               <p className="text-white/90 text-base md:text-lg leading-relaxed">
-                Join our exclusive community for network engineering enthusiasts to gain knowledge, sharpen skills, and explore the latest technologies.
+                Join our exclusive community for network engineering enthusiasts
+                to gain knowledge, sharpen skills, and explore the latest
+                technologies.
               </p>
               <a
                 href="#"
@@ -58,7 +60,7 @@ const CommunitySection: React.FC = () => {
 
             {/* Button */}
             <div className="pt-15">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 transition px-6 py-3 rounded-sm max-w-[212px] font-medium"
               >

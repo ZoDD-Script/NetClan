@@ -9,16 +9,12 @@ import {
   MapPin,
 } from "lucide-react";
 import logo from "../assets/logo/netclan.svg";
-import footervector from "../assets/images/footervector.png"
+import footervector from "../assets/images/footervector.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-gradient-to-r from-[#2d1f6e] via-[#3d2a7f] to-[#5a3d8f] text-[#E6DADA]  overflow-hidden min-h-[549px] mt-10">
-      <img 
-        src={footervector} 
-        alt=""
-        className="absolute right-0 bottom-0"
-      />
+    <footer className="relative bg-linear-to-r from-[#2d1f6e] via-[#3d2a7f] to-[#5a3d8f] text-[#E6DADA]  overflow-hidden min-h-[549px] mt-10">
+      <img src={footervector} alt="" className="absolute right-0 bottom-0" />
       <div className="max-w-7xl mx-20 py-24">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -81,7 +77,9 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="text-[#E6DADA]">
-            <h3 className="text-lg font-semibold mb-6 text-[#E6DADA]">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-6 text-[#E6DADA]">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a

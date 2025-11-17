@@ -7,6 +7,7 @@ const Initiatives = () => {
       program: "NetClan Institute",
       bgColor: "bg-[#5880D1]",
       textColor: "text-white",
+      programColor: "text-[#DFBBFF]",
       hasArrow: true,
     },
     {
@@ -14,13 +15,15 @@ const Initiatives = () => {
       program: "LiNE Development Initiative",
       bgColor: "bg-[#E588A4]",
       textColor: "text-white",
+      programColor: "text-[#2A2376]",
       hasArrow: false,
     },
     {
       title: "Training Talent, Empowering Business",
       program: "NetClan Elevate",
       bgColor: "bg-[#DFBBFF]",
-      textColor: "text-blue-900",
+      programColor: "text-[#5880D1]",
+      textColor: "text-[#2A2376]",
       hasArrow: false,
     },
   ];
@@ -47,26 +50,31 @@ const Initiatives = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 ">
           {initiatives.map((initiative, index) => (
             <div
               key={index}
               className={`${initiative.bgColor} ${initiative.textColor} rounded-xl p-10 min-h-[450px] flex flex-col justify-between relative overflow-hidden transition-all duration-300 cursor-pointer group`}
             >
               {/* Background decorative elements */}
-              <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white/10 rounded-3xl transform -rotate-12"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-white/10 rounded-2xl transform rotate-12"></div>
+              <div className="absolute bottom-17 left-1/4 w-32 h-32 bg-white/10 rounded-md"></div>
+              <div className="absolute bottom-15 right-8 w-[62px] h-[63px] bg-white/10 rounded-md"></div>
+              <div className="absolute top-28 right-10 w-[77px] h-[78px] bg-white/10 rounded-md"></div>
+              <div className="absolute top-8 right-27 w-[52px] h-[53px] bg-white/10 rounded-md"></div>
+              <div className="absolute top-8 left-7 w-[71px] h-[74px] bg-white/10 rounded-md"></div>
 
               {/* Content */}
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-light leading-tight mb-4">
+                <h2 className="text-3xl font-light leading-tight mb-4">
                   {initiative.title}
                 </h2>
               </div>
 
               <div className="relative z-10 flex items-end justify-between">
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-light leading-tight">
+                  <h3
+                    className={`text-3xl max-w-[214px] font-light leading-tight ${initiative.programColor}`}
+                  >
                     {initiative.program}
                   </h3>
                 </div>
