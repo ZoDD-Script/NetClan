@@ -5,15 +5,17 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-[#E6DADA]">
+    <div className="bg-[#E6DADA] min-h-screen flex flex-col">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about"></Route>
-        <Route path="/contact"></Route>
-        <Route path="/application"></Route>
-        <Route path="/application"></Route>
-      </Routes>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about"></Route>
+          <Route path="/contact"></Route>
+          <Route path="/application"></Route>
+          <Route path="/application"></Route>
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

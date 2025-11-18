@@ -31,7 +31,7 @@ const Carousel = () => {
     scrollContainer.scrollLeft = slideWidth * totalSlides;
 
     let scrollAmount = scrollContainer.scrollLeft;
-    const scrollSpeed = 5; // Increase this number for faster scrolling (try 2, 3, 4, etc.)
+    const scrollSpeed = 3; // Increase this number for faster scrolling (try 2, 3, 4, etc.)
     let animationId: number;
 
     const scroll = () => {
