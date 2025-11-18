@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import logo from "../assets/logo/netclan.svg";
-import logocolored from "../assets/logo/logocolored.png";
+import logocolored from "../assets/logo/netclancolored.svg";
 import collapse from "../assets/icons/collaspe.png";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -107,17 +107,19 @@ export default function Navbar() {
 
         {/* BUTTONS (DESKTOP) */}
         <div className="hidden md:flex space-x-4">
-          <Button
-            className={`px-8 py-5 rounded-sm transition-all ${
-              isScrolled
-                ? "border border-[#39364F] text-[#39364F] bg-transparent hover:bg-gray-100"
-                : "border-white text-white bg-[#FFFFFF33] hover:bg-[#FFFFFF33]"
-            }`}
-          >
-            Contact Us
-          </Button>
+          <RouterLink to="/contact">
+            <Button
+              className={`px-8 py-5 rounded-sm transition-all cursor-pointer ${
+                isScrolled
+                  ? "border border-[#39364F] text-[#39364F] bg-transparent hover:bg-gray-100"
+                  : "border-white text-white bg-[#FFFFFF33] hover:bg-[#FFFFFF33]"
+              }`}
+            >
+              Contact Us
+            </Button>
+          </RouterLink>
 
-          <Button className="bg-[#DFBBFF] hover:bg-[#DFBBFF] text-black px-8 py-5 rounded-sm">
+          <Button className="bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
             Make A Donation
           </Button>
         </div>
