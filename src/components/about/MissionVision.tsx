@@ -1,73 +1,61 @@
-import React from "react";
-import missionImage from "../../assets/images/missionImage.jpg";
-// import missionframe from "../../assets/images/missionframe.svg";
+import mission from "../../assets/images/mission.png";
+import vision from "../../assets/images/vision.png";
 
-interface MissionVisionProps {
-  missionImage?: string;
-  visionImage?: string;
-}
-
-const MissionVision: React.FC<MissionVisionProps> = ({
-  visionImage = "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop",
-}) => {
+const MissionVision = () => {
   return (
-    <section className="bg-[#E6DADA] py-20 px-6">
-      <div className="max-w-7xl mx-auto space-y-32">
-        {/* Our Mission Section */}
+    <div className="min-h-screen p-8 md:p-16 lg:p-24">
+      {/* Mission Section */}
+      <div className="max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#39364F]">
+          <div className="order-2 md:order-1">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8">
               Our Mission
             </h2>
-            <p className="text-[#39364F] text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               To empower future technical leaders with core skills to{" "}
-              <span className="font-semibold">
+              <span className="font-semibold text-gray-800">
                 build the foundation for innovation
               </span>{" "}
               and a connected world.
             </p>
           </div>
 
-          {/* Image with Custom Shape */}
-          <div className="relative">
-            <div className="relative w-full h-[450px] overflow-hidden max-w-[459px] max-h-[449px]">
+          {/* Image with Torn Paper Effect */}
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            <div className="relative w-full max-w-md">
               <img
-                src={missionImage}
-                alt="Mission"
-                className="w-full h-full object-cover"
+                src={mission}
+                alt="Team members"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Our Vision Section */}
+      {/* Vision Section */}
+      <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image with Custom Shape - Left Side */}
-          <div className="relative order-2 md:order-1">
-            <div
-              className="relative w-full h-[450px] overflow-hidden"
-              style={{
-                clipPath:
-                  "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 15% 100%, 0% 85%)",
-              }}
-            >
+          {/* Image with Torn Paper Effect */}
+          <div className="flex justify-center md:justify-start">
+            <div className="relative w-full max-w-md">
               <img
-                src={visionImage}
-                alt="Vision"
-                className="w-full h-full object-cover"
+                src={vision}
+                alt="Team group"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
 
-          {/* Text Content - Right Side */}
-          <div className="space-y-6 order-1 md:order-2">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#39364F]">
+          {/* Text Content */}
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8">
               Our Vision
             </h2>
-            <p className="text-[#39364F] text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               To create a safer, more connected world by{" "}
-              <span className="font-semibold">
+              <span className="font-semibold text-gray-800">
                 empowering individuals with the foundational skills to build and
                 secure the networks that drive innovation
               </span>
@@ -76,7 +64,7 @@ const MissionVision: React.FC<MissionVisionProps> = ({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,31 +1,46 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+
 import logo from "../assets/logo/netclan.svg";
 import logocolored from "../assets/logo/netclancolored.svg";
 import collapse from "../assets/icons/collaspe.png";
-import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Add scroll listener
+  const location = useLocation();
+  const dropdownRef = useRef<HTMLLIElement>(null);
+
+  // Active route helper
+  const isActive = (path: string) => location.pathname === path;
+
+  // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
     };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -43,69 +58,101 @@ export default function Navbar() {
       >
         {/* LOGO */}
         <RouterLink to="/">
-          {isScrolled ? (
-            <img src={logocolored} alt="logo" />
-          ) : (
-            <img src={logo} alt="logo" />
-          )}
+          <img src={isScrolled ? logocolored : logo} alt="logo" />
         </RouterLink>
 
         {/* ========= DESKTOP MENU ========= */}
         <ul className="hidden md:flex space-x-10 font-medium relative">
+          {/* ABOUT */}
           <RouterLink to="/about">
             <li
-              className={`cursor-pointer ${
-                isScrolled ? "hover:text-[#E588A4]" : "hover:text-[#DFBBFF]"
+              className={`cursor-pointer transition-colors ${
+                isActive("/about")
+                  ? isScrolled
+                    ? "text-[#E588A4]"
+                    : "text-[#DFBBFF]"
+                  : isScrolled
+                  ? "hover:text-[#E588A4]"
+                  : "hover:text-[#DFBBFF]"
               }`}
             >
               About Us
             </li>
           </RouterLink>
 
-          {/* PROGRAMMES DROPDOWN */}
+          {/* PROGRAMMES DROPDOWN (CLICK) */}
           <li
-            className="relative cursor-pointer group"
-            onMouseEnter={() => setOpenDropdown(true)}
-            onMouseLeave={() => setOpenDropdown(false)}
+            ref={dropdownRef}
+            className="relative cursor-pointer select-none"
+            onClick={() => setDropdownOpen((prev) => !prev)}
           >
-            <span className="flex items-center gap-1">
+            <span
+              className={`flex items-center gap-1 transition-colors ${
+                [
+                  "/programmes/institute",
+                  "/programmes/elevate",
+                  "/programmes/line",
+                ].includes(location.pathname)
+                  ? isScrolled
+                    ? "text-[#E588A4]"
+                    : "text-[#DFBBFF]"
+                  : isScrolled
+                  ? "hover:text-[#E588A4]"
+                  : "hover:text-[#DFBBFF]"
+              }`}
+            >
               Programmes
               <img
                 src={collapse}
                 alt="collapse icon"
-                className={`w-5 h-5 inline-block transition-all duration-300 group-hover:-rotate-180 ${
-                  isScrolled ? "filter-none" : ""
+                className={`w-5 h-5 inline-block transition-all duration-300 ${
+                  dropdownOpen ? "-rotate-180" : "rotate-0"
                 }`}
               />
             </span>
-            {openDropdown && (
-              <div className="absolute bg-white text-black py-3 mt-2 rounded-lg w-90 space-y-2 shadow-lg">
-                {[
-                  "Netclan Institute",
-                  "Netclan Elevate",
-                  "Ladies in Network Engineering (LiNE)",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer transition-colors"
-                  >
-                    {item}
+
+            {dropdownOpen && (
+              <div className="absolute bg-white text-black py-3 mt-2 rounded-lg w-[278px] space-y-2 shadow-lg">
+                <RouterLink to="/programmes/institute">
+                  <div className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer transition-colors">
+                    Netclan Institute
                   </div>
-                ))}
+                </RouterLink>
+
+                <RouterLink to="/programmes/elevate">
+                  <div className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer transition-colors">
+                    Netclan Elevate
+                  </div>
+                </RouterLink>
+
+                <RouterLink to="/programmes/line">
+                  <div className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer transition-colors">
+                    Ladies in Network Engineering (LiNE)
+                  </div>
+                </RouterLink>
               </div>
             )}
           </li>
 
-          <li
-            className={`cursor-pointer ${
-              isScrolled ? "hover:text-[#E588A4]" : "hover:text-[#DFBBFF]"
-            }`}
-          >
-            Get Involved
-          </li>
+          {/* GET INVOLVED */}
+          <RouterLink to="/get-involved">
+            <li
+              className={`cursor-pointer transition-colors ${
+                isActive("/get-involved")
+                  ? isScrolled
+                    ? "text-[#E588A4]"
+                    : "text-[#DFBBFF]"
+                  : isScrolled
+                  ? "hover:text-[#E588A4]"
+                  : "hover:text-[#DFBBFF]"
+              }`}
+            >
+              Get Involved
+            </li>
+          </RouterLink>
         </ul>
 
-        {/* BUTTONS (DESKTOP) */}
+        {/* ========= DESKTOP BUTTONS ========= */}
         <div className="hidden md:flex space-x-4">
           <RouterLink to="/contact">
             <Button
@@ -132,34 +179,47 @@ export default function Navbar() {
 
           <SheetContent className="bg-[#E6DADA] text-[#39364F]">
             <div className="space-y-6 mt-10 text-lg font-medium">
-              <div className="hover:text-[#DFBBFF]">About Us</div>
+              <RouterLink to="/about">
+                <div className="hover:text-[#DFBBFF]">About Us</div>
+              </RouterLink>
 
-              {/* MOBILE DROPDOWN TITLE */}
               <details className="space-y-2">
                 <summary className="cursor-pointer hover:text-[#DFBBFF]">
                   Programmes
                 </summary>
 
                 <div className="pl-4 space-y-2 mt-3">
-                  <p className="hover:text-[#DFBBFF] cursor-pointer">
-                    Netclan Institute
-                  </p>
-                  <p className="hover:text-[#DFBBFF] cursor-pointer">
-                    Netclan Elevate
-                  </p>
-                  <p className="hover:text-[#DFBBFF] cursor-pointer">
-                    Ladies in Network Engineering
-                  </p>
+                  <RouterLink to="/programmes/institute">
+                    <p className="hover:text-[#DFBBFF] cursor-pointer">
+                      Netclan Institute
+                    </p>
+                  </RouterLink>
+
+                  <RouterLink to="/programmes/elevate">
+                    <p className="hover:text-[#DFBBFF] cursor-pointer">
+                      Netclan Elevate
+                    </p>
+                  </RouterLink>
+
+                  <RouterLink to="/programmes/line">
+                    <p className="hover:text-[#DFBBFF] cursor-pointer">
+                      Ladies in Network Engineering
+                    </p>
+                  </RouterLink>
                 </div>
               </details>
 
-              <div className="hover:text-[#DFBBFF]">Get Involved</div>
+              <RouterLink to="/get-involved">
+                <div className="hover:text-[#DFBBFF]">Get Involved</div>
+              </RouterLink>
 
-              <Button className="w-full border-white text-white">
-                Contact Us
-              </Button>
+              <RouterLink to="/contact">
+                <Button className="w-full border-white text-white">
+                  Contact Us
+                </Button>
+              </RouterLink>
 
-              <Button className="w-full bg-linear-to-r from-[#1D439E] to-[#D36E93] ">
+              <Button className="w-full bg-linear-to-r from-[#1D439E] to-[#D36E93]">
                 Make A Donation
               </Button>
             </div>

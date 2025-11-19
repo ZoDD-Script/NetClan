@@ -1,5 +1,6 @@
 import purpleSquares from "../../assets/images/purpleSquares.png";
 import vector from "../../assets/images/vector5.png";
+import CommunityButton from "../buttons/CommunityButton";
 
 const CommunityCard = () => {
   return (
@@ -33,9 +34,7 @@ const CommunityCard = () => {
           </p>
         </div>
 
-        <button className="bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 transition px-6 py-3 text-white rounded-sm max-w-[212px] font-medium">
-          Join Our Community
-        </button>
+        <CommunityButton text="text-white">Join Our Community</CommunityButton>
       </div>
     </div>
   );

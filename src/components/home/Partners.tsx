@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "../ui/button";
 import partners from "../../assets/images/partners.png";
 import vector4 from "../../assets/images/vector4.png";
 import purpleSquares from "../../assets/images/purpleSquares.png";
+import CommunityButtonFill from "../buttons/CommunityButtonFill";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -66,16 +66,7 @@ const PartnersSection: React.FC = () => {
             <br /> becoming a tech leader today!
           </p>
 
-          <div className="inline-block p-0.5 rounded-sm bg-linear-to-r from-[#1D439E] to-[#D36E93]">
-            <Button
-              variant="outline"
-              className="px-8 py-6 border-none rounded-sm text-lg bg-[#E6DADA] hover:bg-[#E6DADA] cursor-pointer"
-            >
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-[#1D439E] to-[#D36E93]">
-                Join The Community
-              </span>
-            </Button>
-          </div>
+          <CommunityButtonFill>Join the Community</CommunityButtonFill>
         </div>
       </div>
     </div>

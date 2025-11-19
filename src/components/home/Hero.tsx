@@ -1,5 +1,6 @@
 import homebg from "../../assets/images/homebg.jpg";
 import collapse from "../../assets/icons/collaspe.png";
+import CommunityButton from "../buttons/CommunityButton";
 
 const Hero = () => {
   return (
@@ -20,9 +21,8 @@ const Hero = () => {
           Empowering future technical leaders with core skills to build the
           foundation for <br /> innovation and a connected world.
         </p>
-        <button className="bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 transition px-6 py-3 rounded-sm max-w-[212px] font-medium">
-          Join Our Community
-        </button>
+
+        <CommunityButton>Join Our Community</CommunityButton>
       </div>
       <div className="mt-16 flex justify-center">
         <img
