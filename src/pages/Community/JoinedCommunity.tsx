@@ -5,42 +5,33 @@ export default function WelcomeComponent() {
     <div className="min-h-screen flex items-center justify-center p-5 pt-25 md:p-25">
       <div className="bg-white rounded-2xl shadow-xl w-full p-5 md:p-12 max-w-[831px]">
         {/* Success Icon */}
+        {/* Success Icon */}
         <div className="flex justify-center mb-6">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center animate-[scale-in_0.5s_ease-out]">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center animate-[pop-in_0.5s_ease-out] relative">
             <CheckCircle2
-              className="w-8 h-8 text-green-600 animate-[checkmark_0.6s_ease-out_0.2s_both]"
+              className="w-8 h-8 text-green-600 animate-[tick-draw_0.6s_ease-out_0.3s_both]"
               strokeWidth={2.5}
             />
+            <div className="absolute inset-0 rounded-full animate-[pulse-glow_2s_ease-in-out_infinite]"></div>
           </div>
         </div>
 
         <style>{`
-          @keyframes scale-in {
-            0% {
-              transform: scale(0);
-              opacity: 0;
-            }
-            50% {
-              transform: scale(1.1);
-            }
-            100% {
-              transform: scale(1);
-              opacity: 1;
-            }
+          @keyframes pop-in {
+            0% { transform: scale(0.3); opacity: 0; }
+            70% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
           }
-          
-          @keyframes checkmark {
-            0% {
-              transform: scale(0) rotate(-45deg);
-              opacity: 0;
-            }
-            50% {
-              transform: scale(1.2) rotate(0deg);
-            }
-            100% {
-              transform: scale(1) rotate(0deg);
-              opacity: 1;
-            }
+
+          @keyframes tick-draw {
+            0% { transform: scale(0.2) rotate(-45deg); opacity: 0; }
+            50% { transform: scale(1.3) rotate(0deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+          }
+
+          @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            100% { box-shadow: 0 0 0 25px rgba(34,197,94,0); }
           }
         `}</style>
 
