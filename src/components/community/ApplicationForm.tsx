@@ -293,7 +293,7 @@ const ApplicationForm = () => {
             <RouterLink to="/joined">
               <button
                 onClick={handleSubmit}
-                className="w-full py-3.5 bg-linear-to-r from-[#1D439E] to-[#D36E93] hover:opacity-90 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-pink-500 transition-all duration-200 shadow-sm text-sm"
+                className="w-full py-3.5 bg-linear-to-r from-[#1D439E] cursor-pointer to-[#D36E93] hover:opacity-90 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-pink-500 transition-all duration-200 shadow-sm text-sm"
               >
                 Submit Application
               </button>

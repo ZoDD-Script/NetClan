@@ -12,7 +12,7 @@ const CommunityButtonFill = ({
   return (
     <div>
       <RouterLink to="/communityApplication">
-        <div className="inline-block p-0.5 rounded-sm bg-linear-to-r from-[#1D439E] to-[#D36E93]">
+        <div className="inline-block p-0.5 rounded-sm cursor-pointer bg-linear-to-r from-[#1D439E] to-[#D36E93]">
           <Button
             variant="outline"
             className="px-8 py-6 border-none rounded-sm text-lg bg-[#E6DADA] hover:bg-[#E6DADA] cursor-pointer"

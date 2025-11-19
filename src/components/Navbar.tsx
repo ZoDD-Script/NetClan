@@ -107,7 +107,7 @@ export default function Navbar() {
                 alt="collapse icon"
                 className={`w-5 h-5 inline-block transition-all duration-300 ${
                   dropdownOpen ? "-rotate-180" : "rotate-0"
-                }`}
+                } ${isScrolled ? "filter invert" : ""}`}
               />
             </span>
 
