@@ -8,7 +8,7 @@ const CommunityButton = ({
 }: {
   children?: ReactNode;
   text?: string;
-  link: string;
+  link?: string;
 }) => {
   return (
     <div>
