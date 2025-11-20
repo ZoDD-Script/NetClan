@@ -165,10 +165,11 @@ export default function Navbar() {
               Contact Us
             </Button>
           </RouterLink>
-
-          <Button className="bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
-            Make A Donation
-          </Button>
+          <RouterLink to="/donate">
+            <Button className="bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
+              Make A Donation
+            </Button>
+          </RouterLink>
         </div>
 
         {/* ========= MOBILE MENU BUTTON ========= */}

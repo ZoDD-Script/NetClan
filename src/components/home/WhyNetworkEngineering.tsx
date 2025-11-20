@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import CommunityButtonFill from "../buttons/CommunityButtonFill";
 
 const WhyNetworkEngineering = () => {
   return (
@@ -20,16 +20,9 @@ const WhyNetworkEngineering = () => {
         </p>
 
         {/* Gradient Button */}
-        <div className="inline-block p-0.5 rounded-sm bg-linear-to-r from-[#1D439E] to-[#D36E93]">
-          <Button
-            variant="outline"
-            className="px-8 py-6 border-none rounded-sm text-lg bg-[#E6DADA] hover:bg-[#E6DADA] cursor-pointer"
-          >
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-[#1D439E] to-[#D36E93]">
-              Donate To Our Cause
-            </span>
-          </Button>
-        </div>
+        <CommunityButtonFill link="/donate">
+          Donate to Our Cause
+        </CommunityButtonFill>
       </div>
     </section>
   );

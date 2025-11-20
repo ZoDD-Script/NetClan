@@ -14,8 +14,8 @@ const Donate = () => {
     <div>
       <Hero />
 
-      <div className="min-h-screen flex flex-col items-center py-16">
-        <div className="w-full px-4">
+      <div className="min-h-screen flex flex-col items-center">
+        <div className="w-full ">
           {/* ========= HEADER SECTION ========= */}
           <div className="mb-16 space-y-12 py-29">
             {headerLines.map((line, idx) => (
