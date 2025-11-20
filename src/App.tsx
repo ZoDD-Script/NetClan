@@ -8,6 +8,7 @@ import Community from "./pages/Community/Community";
 import Donate from "./pages/Donate/Donate";
 import ScrollToTop from "./constant/ScrollToTop";
 import JoinedCommunity from "./pages/Community/JoinedCommunity";
+import GetInvolved from "./pages/GetInvolved/GetInvolved";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/communityApplication" element={<Community />}></Route>
           <Route path="/donate" element={<Donate />}></Route>
           <Route path="/joined" element={<JoinedCommunity />}></Route>
+          <Route path="/get-involved" element={<GetInvolved />}></Route>
         </Routes>
       </main>
       <Footer />

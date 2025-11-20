@@ -5,17 +5,25 @@ import { Link as RouterLink } from "react-router-dom";
 const CommunityButtonFill = ({
   children,
   text,
+  link,
+  bg,
 }: {
   children?: ReactNode;
   text?: string;
+  link?: string;
+  bg?: string;
 }) => {
   return (
     <div>
-      <RouterLink to="/communityApplication">
+      <RouterLink to={link ?? "/communityApplication"}>
         <div className="inline-block p-0.5 rounded-sm cursor-pointer bg-linear-to-r from-[#1D439E] to-[#D36E93]">
           <Button
             variant="outline"
-            className="px-8 py-6 border-none rounded-sm text-lg bg-[#E6DADA] hover:bg-[#E6DADA] cursor-pointer"
+            className={`px-8 py-6 border-none rounded-sm text-lg ${
+              bg ?? "bg-[#E6DADA]"
+            } ${
+              bg ? "hover:bg-[#DFBBFF]/90" : "hover:bg-[#E6DADA]"
+            } cursor-pointer`}
           >
             <span
               className={`bg-clip-text text-transparent bg-linear-to-r from-[#1D439E] to-[#D36E93] ${text}`}
