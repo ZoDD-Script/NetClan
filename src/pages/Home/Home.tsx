@@ -17,6 +17,21 @@ export default function Home() {
       <Stats />
       <Carousel />
       <Initiatives />
+      <div className="text-center mt-16">
+        <h1 className="text-5xl font-semibold text-gray-800 mb-6">
+          <span className="text-[#39364F]">Success</span>
+          <span className="text-[#E588A4]"> Stories</span>
+        </h1>
+        <p className="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">
+          Discover the inspiring stories of our students and sponsors as they
+          share their experiences and the impact our program has had on their
+          lives.{" "}
+          <span className="font-semibold">
+            From personal growth to professional development,
+          </span>{" "}
+          hear firsthand how our community is making a difference.
+        </p>
+      </div>
       <Testimonials />
       <CommunitySection />
       <PartnersSection />

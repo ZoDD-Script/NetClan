@@ -16,7 +16,7 @@ const CommunityButtonFill = ({
   return (
     <div>
       <RouterLink to={link ?? "/communityApplication"}>
-        <div className="inline-block p-0.5 rounded-sm cursor-pointer bg-linear-to-r from-[#1D439E] to-[#D36E93]">
+        <div className="inline-block p-px rounded-sm cursor-pointer bg-linear-to-r from-[#1D439E] to-[#D36E93]">
           <Button
             variant="outline"
             className={`px-8 py-6 border-none rounded-sm text-lg ${
@@ -26,7 +26,7 @@ const CommunityButtonFill = ({
             } cursor-pointer`}
           >
             <span
-              className={`bg-clip-text text-transparent bg-linear-to-r from-[#1D439E] to-[#D36E93] ${text}`}
+              className={`bg-clip-text tracking-widest text-transparent bg-linear-to-r from-[#1D439E] to-[#D36E93] ${text}`}
             >
               {children}
             </span>

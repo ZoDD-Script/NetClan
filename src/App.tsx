@@ -9,6 +9,8 @@ import Donate from "./pages/Donate/Donate";
 import ScrollToTop from "./constant/ScrollToTop";
 import JoinedCommunity from "./pages/Community/JoinedCommunity";
 import GetInvolved from "./pages/GetInvolved/GetInvolved";
+import Institute from "./pages/Institute/Institute";
+import ProgrammePage from "./components/institute/ProgrammePage";
 
 function App() {
   return (
@@ -19,11 +21,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/programmes/:type" element={<ProgrammePage />} />
           <Route path="/contact" element={<ContactUs />}></Route>
           <Route path="/communityApplication" element={<Community />}></Route>
           <Route path="/donate" element={<Donate />}></Route>
           <Route path="/joined" element={<JoinedCommunity />}></Route>
           <Route path="/get-involved" element={<GetInvolved />}></Route>
+          <Route path="/institute" element={<Institute />}></Route>
         </Routes>
       </main>
       <Footer />
