@@ -40,7 +40,7 @@ const Teams = () => {
 
   return (
     <div className="min-h-screen bg-[#FFFFFF50] py-16 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
@@ -56,7 +56,7 @@ const Teams = () => {
         </div>
 
         {/* Co-founders Row */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 mb-20 max-w-4xl items-center">
           {teamMembers.slice(0, 2).map((member, index) => (
             <div
               key={index}
@@ -66,7 +66,7 @@ const Teams = () => {
                 {/* Background Shape */}
                 <div className={`absolute inset-0 opacity-60`} />
                 {/* Profile Image */}
-                <div className="relative w-64 h-64">
+                <div className="relative">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -83,14 +83,14 @@ const Teams = () => {
         </div>
 
         {/* Other Team Members Row */}
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12">
           {teamMembers.slice(2).map((member, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative mb-6">
                 {/* Background Shape */}
                 <div className={`absolute inset-0 opacity-60`} />
                 {/* Profile Image */}
-                <div className="relative w-56 h-56">
+                <div className="relative">
                   <img
                     src={member.image}
                     alt={member.name}

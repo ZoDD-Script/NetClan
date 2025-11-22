@@ -5,14 +5,14 @@ const MissionVision = () => {
   return (
     <div className="min-h-screen p-8 md:p-16 lg:p-24">
       {/* Mission Section */}
-      <div className="max-w-7xl mx-auto mb-32">
+      <div className="max-w-7xl mx-auto mb-32 px-29">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="order-2 md:order-1">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
               Our Mission
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed max-w-[450px]">
               To empower future technical leaders with core skills to{" "}
               <span className="font-semibold text-gray-800">
                 build the foundation for innovation
@@ -38,7 +38,7 @@ const MissionVision = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image with Torn Paper Effect */}
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-middle">
             <div className="relative w-full max-w-md">
               <img
                 src={vision}
@@ -50,10 +50,10 @@ const MissionVision = () => {
 
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
               Our Vision
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed max-w-[450px]">
               To create a safer, more connected world by{" "}
               <span className="font-semibold text-gray-800">
                 empowering individuals with the foundational skills to build and
