@@ -34,7 +34,7 @@ const MissionVision = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image with Torn Paper Effect */}
-          <div className="flex justify-center md:justify-middle order-2 md:order-2  ">
+          <div className="flex justify-center md:justify-middle order-2 md:order-1  ">
             <div className="relative w-full max-w-md">
               <img
                 src={vision}
@@ -45,7 +45,7 @@ const MissionVision = () => {
           </div>
 
           {/* Text Content */}
-          <div>
+          <div className="order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
               Our Vision
             </h2>

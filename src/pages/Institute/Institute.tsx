@@ -16,7 +16,7 @@ const Institute = () => {
           network engineer
         </p>
         <CommunityButton text="text-[#FFFFFF]">
-          Join the Community
+          Join The Community
         </CommunityButton>
       </div>
     </div>

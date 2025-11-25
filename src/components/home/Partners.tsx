@@ -66,7 +66,7 @@ const PartnersSection: React.FC = () => {
             <br /> becoming a tech leader today!
           </p>
 
-          <CommunityButtonFill>Join the Community</CommunityButtonFill>
+          <CommunityButtonFill>Join The Community</CommunityButtonFill>
         </div>
       </div>
     </div>

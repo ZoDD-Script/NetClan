@@ -12,7 +12,7 @@ interface TeamMember {
 const Teams = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: "Abigail Jefta",
+      name: "Abigail Jefia",
       role: "Co-founder",
       image: team,
     },
@@ -27,7 +27,7 @@ const Teams = () => {
       image: team2,
     },
     {
-      name: "Olumayowa Akinkuehimni",
+      name: "Olumayowa Akinkuehinmi",
       role: "Operations Manager",
       image: team3,
     },
@@ -39,7 +39,7 @@ const Teams = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF50] py-16 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-[#FFFFFF50] py-16 px-10 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         {/* Header */}
         <div className="text-center mb-16">
@@ -56,7 +56,7 @@ const Teams = () => {
         </div>
 
         {/* Co-founders Row */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20 max-w-4xl items-center">
+        <div className="grid md:grid-cols-2 gap-30 mb-20 items-center">
           {teamMembers.slice(0, 2).map((member, index) => (
             <div
               key={index}

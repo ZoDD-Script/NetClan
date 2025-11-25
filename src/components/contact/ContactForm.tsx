@@ -197,7 +197,7 @@ export default function ContactFAQ(): JSX.Element {
             </div>
 
             {/* Need Immediate Help Card */}
-            <div className="rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[170px] bg-[#BEDBFF]">
+            <div className="rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[170px] bg-[#EFF6FF] border border-[#BEDBFF]">
               <h3 className="text-2xl font-bold mb-3 text-[#101828]">
                 Need Immediate Help?
               </h3>
