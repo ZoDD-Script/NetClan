@@ -5,10 +5,10 @@ const MissionVision = () => {
   return (
     <div className="min-h-screen p-8 md:p-16 lg:p-24">
       {/* Mission Section */}
-      <div className="max-w-7xl mx-auto mb-32 px-29">
+      <div className="max-w-7xl mx-auto pb-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="order-2 md:order-1">
+          <div className="order-1 md:order-1">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
               Our Mission
             </h2>
@@ -22,13 +22,9 @@ const MissionVision = () => {
           </div>
 
           {/* Image with Torn Paper Effect */}
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
-            <div className="relative w-full max-w-md">
-              <img
-                src={mission}
-                alt="Team members"
-                className="w-full h-auto object-cover"
-              />
+          <div className="order-2 md:order-2 flex justify-center md:justify-end">
+            <div className="relative w-full">
+              <img src={mission} alt="Team members" />
             </div>
           </div>
         </div>
@@ -38,7 +34,7 @@ const MissionVision = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image with Torn Paper Effect */}
-          <div className="flex justify-center md:justify-middle">
+          <div className="flex justify-center md:justify-middle order-2 md:order-2  ">
             <div className="relative w-full max-w-md">
               <img
                 src={vision}

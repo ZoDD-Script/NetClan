@@ -62,7 +62,7 @@ const ValuesComponent = () => {
   return (
     <div className="min-h-screen py-16 px-6 md:px-12 lg:px-24">
       {/* Values Section */}
-      <div className="mx-auto mb-24 max-w-[1296px]">
+      <div className="mx-auto mb-24 max-w-[1296px] flex flex-col items-center">
         {/* Header */}
         <div className="text-center mb-12 space-y-9">
           <h1 className="text-xl md:text-3xl lg:text-5xl font-extralight text-[#39364F] mb-6">
