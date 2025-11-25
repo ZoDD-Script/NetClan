@@ -116,26 +116,6 @@ const Testimonials = () => {
         "The supportive community and expert instructors at LiNE made all the difference in my learning journey. I'm now confidently working in the field I'm passionate about.",
       border: "border-blue-500",
     },
-    {
-      name: "Chioma Eze",
-      cohort: "LiNE Cohort 2",
-      location: "Lagos, Nigeria",
-      image:
-        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
-      testimonial:
-        "Joining LiNE was the best decision I made for my career. The practical approach to learning and the networking opportunities opened doors I never imagined.",
-      border: "border-blue-500",
-    },
-    {
-      name: "Amara Okafor",
-      cohort: "LiNE Cohort 2",
-      location: "Lagos, Nigeria",
-      image:
-        "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=500&fit=crop",
-      testimonial:
-        "The program exceeded all my expectations. The hands-on training and mentorship helped me transition into tech seamlessly and confidently.",
-      border: "border-blue-500",
-    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,17 +1,33 @@
 import { useEffect, useRef } from "react";
+import car1 from "../../assets/images/carousel1.jpg";
+import car2 from "../../assets/images/carousel2.jpg";
+import car3 from "../../assets/images/carousel3.jpg";
+import car4 from "../../assets/images/carousel4.jpg";
+import car5 from "../../assets/images/carousel5.jpg";
+import car6 from "../../assets/images/carousel6.jpg";
+import car7 from "../../assets/images/carousel7.jpg";
+import car8 from "../../assets/images/carousel8.jpg";
+import car9 from "../../assets/images/carousel9.jpg";
+import car10 from "../../assets/images/carousel10.jpg";
+import car11 from "../../assets/images/carousel11.jpg";
+import car12 from "../../assets/images/carousel12.jpg";
 
 const Carousel = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const images = [
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop",
+    car1,
+    car2,
+    car3,
+    car4,
+    car5,
+    car6,
+    car7,
+    car8,
+    car9,
+    car10,
+    car11,
+    car12,
   ];
 
   // Triple the images: [...images, ...images, ...images]
