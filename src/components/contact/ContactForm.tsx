@@ -213,7 +213,7 @@ export default function ContactFAQ(): JSX.Element {
                   href="mailto:support@netempowerment.org"
                   className="text-[#155DFC] hover:underline"
                 >
-                  support@netempowerment.org
+                  info@thenetclan.org
                 </a>
               </p>
             </div>

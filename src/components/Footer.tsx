@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Facebook,
+  // Facebook,
   Linkedin,
   Instagram,
   Youtube,
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                   href="mailto:info@netempowerment.org"
                   className="text-white/80 hover:text-white transition-colors text-sm break-all"
                 >
-                  info@netempowerment.org
+                  info@thenetclan.org
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -151,13 +151,13 @@ const Footer: React.FC = () => {
 
         {/* Social Media Icons - Mobile Only */}
         <div className="flex gap-3 mb-8 md:hidden justify-start">
-          <a
+          {/* <a
             href="#"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" />
-          </a>
+          </a> */}
           <a
             href="#"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
