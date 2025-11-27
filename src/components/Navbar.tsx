@@ -255,7 +255,7 @@ export default function Navbar() {
                 </Button>
               </RouterLink>
 
-              <RouterLink to="/community">
+              <RouterLink to="/communityApplication">
                 <Button className="w-full bg-transparent border-2 border-[#6B5E9E] text-[#6B5E9E] hover:bg-[#6B5E9E]/10 py-6 rounded-lg text-base font-medium">
                   Join Our Community
                 </Button>
