@@ -32,7 +32,7 @@ export default function ContactFAQ(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center p-4">
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Contact Form */}
