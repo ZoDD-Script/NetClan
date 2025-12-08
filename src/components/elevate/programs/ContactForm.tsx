@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { CheckCircle, X } from "lucide-react";
+// import { CheckCircle, X } from "lucide-react";
+import toast from "react-hot-toast";
+import { submitForm } from "@/utils/submitForm";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,48 +12,124 @@ export default function ContactForm() {
     interest: "",
     message: "",
   });
-  const [showSuccess, setShowSuccess] = useState(false);
 
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    interest: "",
+    message: "",
+  });
+
+  // const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Update field values
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    // Clear error while typing
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  // Validate form fields
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.firstName.trim())
+      newErrors.firstName = "First name is required.";
+    if (!formData.lastName.trim())
+      newErrors.lastName = "Last name is required.";
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    if (!formData.interest.trim())
+      newErrors.interest = "Please select an interest.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
+
+    // Normalize into the full errors shape (empty string = no error)
+    setErrors({
+      firstName: newErrors.firstName || "",
+      lastName: newErrors.lastName || "",
+      email: newErrors.email || "",
+      interest: newErrors.interest || "",
+      message: newErrors.message || "",
+    });
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Submit form
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (loading) return;
 
-    // Basic validation
-    if (formData.firstName && formData.lastName && formData.email) {
-      // Show success message
-      setShowSuccess(true);
+    if (!validate()) {
+      toast.error("Please correct the errors before submitting.");
+      return;
+    }
 
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        interest: "",
-        message: "",
-      });
+    setLoading(true);
 
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
+    try {
+      const payload = {
+        ...formData,
+        formName: "NetClan Elevate", // label in your email
+      };
+      const result = await submitForm(payload);
+
+      if (result && result.success) {
+        toast.success("Message sent successfully!");
+        // setShowSuccess(true);
+
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          interest: "",
+          message: "",
+        });
+
+        setErrors({
+          firstName: "",
+          lastName: "",
+          email: "",
+          interest: "",
+          message: "",
+        });
+
+        // setTimeout(() => {
+        //   setShowSuccess(false);
+        // }, 5000);
+      } else {
+        toast.error(result?.message || "Something went wrong.");
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again later.");
+      console.error("ContactForm submit error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const closeSuccessMessage = () => {
-    setShowSuccess(false);
-  };
+  // const closeSuccessMessage = () => {
+  //   setShowSuccess(false);
+  // };
 
   return (
     <div className="min-h-screen bg-[#FFFFFFE5] py-16 px-4 relative flex justify-center items-center">
@@ -70,7 +148,7 @@ export default function ContactForm() {
 
         {/* Form */}
         <div className="space-y-6">
-          {/* First Name and Last Name */}
+          {/* First Name & Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label
@@ -86,9 +164,13 @@ export default function ContactForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="John"
-                className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
               />
+              {errors.firstName && (
+                <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+              )}
             </div>
+
             <div>
               <label
                 htmlFor="lastName"
@@ -103,12 +185,15 @@ export default function ContactForm() {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Doe"
-                className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
               />
+              {errors.lastName && (
+                <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+              )}
             </div>
           </div>
 
-          {/* Email and Phone */}
+          {/* Email & Phone */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label
@@ -124,9 +209,13 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="john.doe@example.com"
-                className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
+
             <div>
               <label
                 htmlFor="phone"
@@ -141,12 +230,12 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+1 (555) 123-4567"
-                className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
               />
             </div>
           </div>
 
-          {/* Interest Dropdown */}
+          {/* Interest */}
           <div>
             <label
               htmlFor="interest"
@@ -159,13 +248,7 @@ export default function ContactForm() {
               name="interest"
               value={formData.interest}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-600 appearance-none cursor-pointer"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "right 1rem center",
-                backgroundSize: "1.5rem",
-              }}
+              className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-600 cursor-pointer"
             >
               <option value="">Select an option</option>
               <option value="organizational-training">
@@ -176,6 +259,10 @@ export default function ContactForm() {
               <option value="ccnp-certification">CCNP Certification</option>
               <option value="custom-training">Custom Training Solutions</option>
             </select>
+
+            {errors.interest && (
+              <p className="text-red-500 text-sm mt-1">{errors.interest}</p>
+            )}
           </div>
 
           {/* Message */}
@@ -193,22 +280,27 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Type your message here"
               rows={3}
-              className="w-full px-4 py-3 bg-[#F0EFEF] border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 resize-none"
+              className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 resize-none"
             ></textarea>
+
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+            )}
           </div>
 
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="w-full py-4 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white font-semibold rounded-lg hover:opacity-90"
+            disabled={loading}
+            className="w-full py-4 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white font-semibold rounded-lg hover:opacity-90 disabled:opacity-50"
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </div>
       </div>
 
-      {/* Success Message */}
-      {showSuccess && (
+      {/* Success Toast Bubble */}
+      {/* {showSuccess && (
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-slide-up">
           <div className="bg-green-50 border-2 border-green-500 rounded-full px-6 py-3 flex items-center gap-3 shadow-lg">
             <CheckCircle className="w-6 h-6 text-green-600" />
@@ -223,7 +315,7 @@ export default function ContactForm() {
             </button>
           </div>
         </div>
-      )}
+      )} */}
 
       <style>{`
         @keyframes slide-up {

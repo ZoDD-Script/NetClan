@@ -11,6 +11,7 @@ import JoinedCommunity from "./pages/Community/JoinedCommunity";
 import GetInvolved from "./pages/GetInvolved/GetInvolved";
 import Institute from "./pages/Institute/Institute";
 import ProgrammePage from "./components/institute/ProgrammePage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Toaster position="top-right" />
     </div>
   );
 }

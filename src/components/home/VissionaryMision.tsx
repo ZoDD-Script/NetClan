@@ -17,7 +17,7 @@ export default function VisionMissionSection() {
       {/* ================= TOP GRID ================= */}
       <div className="grid md:grid-cols-3 gap-6">
         {/* ================= VISION (Left, 2 columns) ================= */}
-        <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 min-h-[423px]">
+        <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 h-[544px] md:min-h-[423px]">
           {/* Text */}
           <h2 className="text-5xl font-medium mb-4 pt-12">Our Vision</h2>
           <p className="max-w-md text-lg leading-relaxed font-extralight">
@@ -42,7 +42,7 @@ export default function VisionMissionSection() {
         </div>
 
         {/* ================= RIGHT BLOCK ================= */}
-        <div className="relative bg-[#2A2376] rounded-xl p-8 text-white overflow-hidden flex flex-col justify-between">
+        <div className="relative bg-[#2A2376] rounded-xl p-8 text-white overflow-hidden flex flex-col justify-between min-h-[423px]">
           {/* Top-left branding */}
           <div className="text-xl font-bold mb-4 flex items-center gap-1">
             <img src={logo} alt="logo" className="pt-5" />
@@ -132,7 +132,7 @@ export default function VisionMissionSection() {
         <img
           src={thumbsUp}
           alt=""
-          className="absolute right-70 bottom-43 w-[71px]"
+          className="absolute right-70 bottom-43 w-[71px] hidden md:block"
         />
       </div>
     </section>

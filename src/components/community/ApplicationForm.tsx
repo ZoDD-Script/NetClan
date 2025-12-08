@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import thumbs from "../../assets/images/thumbs1.png";
 import plant from "../../assets/images/plant.png";
 import group from "../../assets/images/Group.png";
-import { Link as RouterLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { submitForm } from "../../utils/submitForm";
 
 interface FormData {
   firstName: string;
@@ -19,6 +20,8 @@ interface FormData {
 }
 
 const ApplicationForm = () => {
+  const navigate = useNavigate();
+
   const benefitCards = [
     {
       icon: thumbs,
@@ -62,19 +65,39 @@ const ApplicationForm = () => {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value, type } = e.target as
-      | HTMLInputElement
-      | HTMLTextAreaElement
-      | HTMLSelectElement;
+    const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = () => {
-    alert("Application submitted successfully!");
+  // ------------------------------
+  // SUBMIT FORM TO WEB3FORMS
+  // ------------------------------
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const email = formData.email || "";
+
+    if (!formData.agreeToTerms) {
+      alert("Please agree to the terms and conditions.");
+      return;
+    }
+
+    const payload = {
+      ...formData,
+      formName: "Join Community Form", // label in your email
+    };
+
+    const result = await submitForm(payload);
+
+    if (result.success) {
+      navigate(`/joined?email=${encodeURIComponent(email)}`);
+    } else {
+      alert("Submission failed. Please try again.");
+    }
   };
 
   return (
@@ -86,35 +109,32 @@ const ApplicationForm = () => {
             <div
               key={index}
               className={`
-        bg-white 
-        rounded-[20px]
-        border 
-        ${card.borderColor}
-        shadow-[0_2px_6px_rgba(0,0,0,0.06)]
-        px-5 py-6 
-        w-full
-      `}
+                bg-white 
+                rounded-[20px]
+                border 
+                ${card.borderColor}
+                shadow-[0_2px_6px_rgba(0,0,0,0.06)]
+                px-5 py-6 
+                w-full
+              `}
             >
-              {/* ICON CONTAINER */}
               <div
                 className={`
-          w-14 h-14 
-          ${card.bgColor}
-          rounded-full 
-          flex items-center justify-center 
-          mx-auto 
-          mb-4
-        `}
+                  w-14 h-14 
+                  ${card.bgColor}
+                  rounded-full 
+                  flex items-center justify-center 
+                  mx-auto 
+                  mb-4
+                `}
               >
                 <img src={card.icon} className="w-7 h-7" />
               </div>
 
-              {/* TITLE */}
               <h3 className="font-semibold text-gray-900 text-center text-base mb-2">
                 {card.title}
               </h3>
 
-              {/* DESCRIPTION */}
               <p className="text-sm text-gray-600 leading-relaxed text-center">
                 {card.description}
               </p>
@@ -123,7 +143,10 @@ const ApplicationForm = () => {
         </div>
 
         {/* Application Form */}
-        <div className="bg-white rounded-xl shadow p-6 md:p-10">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white rounded-xl shadow p-6 md:p-10"
+        >
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Application Form
           </h2>
@@ -138,7 +161,6 @@ const ApplicationForm = () => {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* First Name */}
               <div>
                 <label className="text-sm text-gray-900 mb-1 block font-medium">
                   First Name
@@ -153,7 +175,6 @@ const ApplicationForm = () => {
                 />
               </div>
 
-              {/* Last Name */}
               <div>
                 <label className="text-sm text-gray-900 mb-1 block font-medium">
                   Last Name
@@ -168,7 +189,6 @@ const ApplicationForm = () => {
                 />
               </div>
 
-              {/* Email */}
               <div>
                 <label className="text-sm text-gray-900 mb-1 block font-medium">
                   Email Address
@@ -183,7 +203,6 @@ const ApplicationForm = () => {
                 />
               </div>
 
-              {/* Phone */}
               <div>
                 <label className="text-sm text-gray-900 mb-1 block font-medium">
                   Phone Number (Optional)
@@ -191,7 +210,7 @@ const ApplicationForm = () => {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+234 810 000 0000"
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -206,7 +225,6 @@ const ApplicationForm = () => {
               Background
             </h3>
 
-            {/* Experience Level */}
             <div className="mb-4">
               <label className="text-sm text-gray-900 mb-1 block font-medium">
                 Experience Level
@@ -225,7 +243,6 @@ const ApplicationForm = () => {
               </select>
             </div>
 
-            {/* Learning Goals */}
             <div className="mb-4">
               <label className="text-sm text-gray-900 mb-1 block font-medium">
                 What are your learning goals?
@@ -240,7 +257,6 @@ const ApplicationForm = () => {
               />
             </div>
 
-            {/* Areas of Interest */}
             <div>
               <label className="text-sm text-gray-900 mb-1 block font-medium">
                 Areas of Interest
@@ -301,16 +317,14 @@ const ApplicationForm = () => {
             </div>
           </div>
 
-          {/* SUBMIT */}
-          <RouterLink to="/joined">
-            <button
-              onClick={handleSubmit}
-              className="w-full py-3.5 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white text-sm font-medium rounded-lg shadow hover:opacity-90 transition"
-            >
-              Submit Application
-            </button>
-          </RouterLink>
-        </div>
+          {/* SUBMIT BUTTON */}
+          <button
+            type="submit"
+            className="w-full py-3.5 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white text-sm font-medium rounded-lg shadow hover:opacity-90 transition"
+          >
+            Submit Application
+          </button>
+        </form>
 
         {/* Footer */}
         <div className="mt-6 text-center">

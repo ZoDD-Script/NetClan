@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { type ChangeEvent, type JSX } from "react";
 import { ChevronDown } from "lucide-react";
+import toast from "react-hot-toast";
+import { submitForm } from "@/utils/submitForm";
 
 interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface FormErrors {
   name: string;
   email: string;
   subject: string;
@@ -17,18 +26,80 @@ export default function ContactFAQ(): JSX.Element {
     message: "",
   });
 
-  const handleSubmit = (): void => {
-    console.log("Form submitted:", formData);
-    // Handle form submission
-  };
+  const [errors, setErrors] = useState<FormErrors>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+
+  // Update field values and clear error while typing
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ): void => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  // Validate fields
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    };
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+    if (!formData.subject.trim())
+      newErrors.subject = "Please select a subject.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
+
+    setErrors(newErrors);
+
+    return Object.values(newErrors).every((err) => !err);
+  };
+
+  // Submit form
+  const handleSubmit = async (): Promise<void> => {
+    if (loading) return;
+
+    if (!validate()) {
+      toast.error("Please correct the errors before submitting.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const payload = {
+        ...formData,
+        formName: "Contact Form", // label in your email
+      };
+
+      const result = await submitForm(payload);
+
+      if (result.success) {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setErrors({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast.error(result.message || "Something went wrong.");
+      }
+    } catch (err) {
+      console.log("error", err);
+      toast.error("Submission failed. Try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,7 +107,7 @@ export default function ContactFAQ(): JSX.Element {
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[602px]">
+          <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[587px]">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               Send us a Message
             </h2>
@@ -46,7 +117,7 @@ export default function ContactFAQ(): JSX.Element {
             </p>
 
             <div className="space-y-3">
-              {/* Name Field */}
+              {/* Name */}
               <div>
                 <label
                   htmlFor="name"
@@ -61,11 +132,14 @@ export default function ContactFAQ(): JSX.Element {
                   placeholder="John"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 focus:ring-2 focus:ring-purple-500 focus:bg-white transition-colors text-gray-900 placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 focus:ring-2 focus:ring-purple-500 focus:bg-white text-gray-900 placeholder-gray-400"
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
               </div>
 
-              {/* Email Field */}
+              {/* Email */}
               <div>
                 <label
                   htmlFor="email"
@@ -77,14 +151,17 @@ export default function ContactFAQ(): JSX.Element {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Doe"
+                  placeholder="john.doe@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 focus:ring-2 focus:ring-purple-500 focus:bg-white transition-colors text-gray-900 placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 focus:ring-2 focus:ring-purple-500 focus:bg-white text-gray-900 placeholder-gray-400"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
-              {/* Subject Field */}
+              {/* Subject */}
               <div>
                 <label
                   htmlFor="subject"
@@ -98,7 +175,7 @@ export default function ContactFAQ(): JSX.Element {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 appearance-none focus:ring-2 focus:ring-purple-500 focus:bg-white transition-colors text-gray-500"
+                    className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 appearance-none focus:ring-2 focus:ring-purple-500 focus:bg-white text-gray-500"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -108,9 +185,12 @@ export default function ContactFAQ(): JSX.Element {
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                 </div>
+                {errors.subject && (
+                  <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                )}
               </div>
 
-              {/* Message Field */}
+              {/* Message */}
               <div>
                 <label
                   htmlFor="message"
@@ -125,30 +205,32 @@ export default function ContactFAQ(): JSX.Element {
                   placeholder="Tell us what you hope to achieve by joining our community..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 resize-none focus:ring-2 focus:ring-purple-500 focus:bg-white transition-colors text-gray-900 placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 resize-none focus:ring-2 focus:ring-purple-500 focus:bg-white text-gray-900 placeholder-gray-400"
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
-              {/* Submit Button */}
+              {/* Submit */}
               <button
                 onClick={handleSubmit}
-                className="w-full py-4 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white font-semibold rounded-sm hover:opacity-90 transition-opacity shadow-md"
+                disabled={loading}
+                className="w-full py-4 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white font-semibold rounded-sm hover:opacity-90 transition-opacity shadow-md disabled:opacity-50"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
           </div>
 
-          {/* FAQ Section - Right Column Grid */}
+          {/* FAQ and Help Section */}
           <div className="grid grid-rows-[auto_auto] gap-6 content-start max-w-[587px] max-h-[535px]">
             {/* Main FAQ Card */}
             <div className="bg-white rounded-2xl p-6 shadow-sm z-10">
               <h2 className="text-3xl font-bold text-[#060429] mb-6">
                 Frequently Asked Questions
               </h2>
-
-              <div className="space-y-3 text-[#39374F">
-                {/* FAQ Item 1 */}
+              <div className="space-y-3 text-[#39374F]">
                 <div>
                   <h3 className="text-base font-semibold mb-1">
                     How do I join the community?
@@ -158,19 +240,15 @@ export default function ContactFAQ(): JSX.Element {
                     free and takes just a few minutes!
                   </p>
                 </div>
-
-                {/* FAQ Item 2 */}
                 <div>
                   <h3 className="text-base font-semibold mb-1">
                     Are the programs really free?
                   </h3>
-                  <p className=" text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     Most of the programs are free. However, some of them are
-                    paid but covered by scholarships offered by institutions
+                    paid but covered by scholarships offered by institutions.
                   </p>
                 </div>
-
-                {/* FAQ Item 3 */}
                 <div>
                   <h3 className="text-base font-semibold mb-1">
                     Can I volunteer as a mentor?
@@ -180,8 +258,6 @@ export default function ContactFAQ(): JSX.Element {
                     quick, easy, and totally free!
                   </p>
                 </div>
-
-                {/* FAQ Item 4 */}
                 <div>
                   <h3 className="text-base font-semibold mb-1">
                     How do I connect with other participants?
@@ -196,7 +272,7 @@ export default function ContactFAQ(): JSX.Element {
               </div>
             </div>
 
-            {/* Need Immediate Help Card */}
+            {/* Immediate Help Card */}
             <div className="rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[170px] bg-[#EFF6FF] border border-[#BEDBFF]">
               <h3 className="text-2xl font-bold mb-3 text-[#101828]">
                 Need Immediate Help?
