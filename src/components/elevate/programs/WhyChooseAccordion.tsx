@@ -42,7 +42,7 @@ export default function WhyChooseAccordion() {
   };
 
   return (
-    <div className="min-h-screen bg-[#E8E5FF] p-16">
+    <div className="min-h-screen bg-[#E8E5FF] p-16 px-4">
       <div className="">
         {/* Header */}
         <div className="mb-12">

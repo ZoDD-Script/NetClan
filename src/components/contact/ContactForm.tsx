@@ -177,10 +177,14 @@ export default function ContactFAQ(): JSX.Element {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-100 rounded-lg border-0 appearance-none focus:ring-2 focus:ring-purple-500 focus:bg-white text-gray-500"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="partnership">Partnership</option>
+                    <option value="General_Inquiry">General Inquiry</option>
+                    <option value="Programs_Information">
+                      Programs Information
+                    </option>
+                    <option value="Mentorship">Mentorship</option>
+                    <option value="Partnership_Opportunities">
+                      Partnership Opportunities
+                    </option>
                     <option value="other">Other</option>
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />

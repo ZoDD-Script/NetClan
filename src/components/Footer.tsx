@@ -5,8 +5,8 @@ import {
   Instagram,
   Youtube,
   Mail,
-  Phone,
-  MapPin,
+  // Phone,
+  // MapPin,
 } from "lucide-react";
 import logo from "../assets/logo/netclan.svg";
 import footervector from "../assets/images/footervector.png";
@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
                   info@thenetclan.org
                 </a>
               </li>
-              <li className="flex items-start gap-3">
+              {/* <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
                 <a
                   href="tel:+15551234567"
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
                 <span className="text-white/80 text-sm">
                   123 Tech Avenue, Innovation District
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

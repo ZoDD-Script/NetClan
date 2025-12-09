@@ -6,7 +6,7 @@ const Elevate = () => {
   return (
     <div>
       <Hero />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center py-23">
           {/* Text Content */}
           <div className="order-2 md:order-1">

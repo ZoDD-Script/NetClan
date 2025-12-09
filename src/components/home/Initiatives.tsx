@@ -10,7 +10,7 @@ const Initiatives = () => {
       textColor: "text-white",
       programColor: "text-[#DFBBFF]",
       hasArrow: true,
-      link: "/institute",
+      link: "/programmes/institute",
     },
     {
       title: "Bridging the Gap in Network Engineering",
@@ -19,7 +19,7 @@ const Initiatives = () => {
       textColor: "text-white",
       programColor: "text-[#2A2376]",
       hasArrow: false,
-      link: "/line",
+      link: "/programmes/line",
     },
     {
       title: "Training Talent, Empowering Business",
@@ -28,7 +28,7 @@ const Initiatives = () => {
       programColor: "text-[#5880D1]",
       textColor: "text-[#2A2376]",
       hasArrow: false,
-      link: "/elevate2",
+      link: "/programmes/elevate",
     },
   ];
 

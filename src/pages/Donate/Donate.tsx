@@ -17,7 +17,7 @@ const Donate = () => {
       <div className="min-h-screen flex flex-col items-center">
         <div className="w-full ">
           {/* ========= HEADER SECTION ========= */}
-          <div className="mb-16 space-y-12 py-29">
+          <div className="md:mb-16 space-y-12 py-29">
             {headerLines.map((line, idx) => (
               <h1
                 key={idx}
@@ -31,7 +31,7 @@ const Donate = () => {
 
           <div className="mx-auto mb-20 flex items-center justify-center min-h-[400px]">
             <div className="grid md:grid-cols-2 gap-8 items-center max-w-[1246px]">
-              <div>
+              <div className="px-4">
                 <h1 className="text-3xl md:text-5xl font-light text-[#39364F] mb-6 leading-tight">
                   Become A Part Of Those Fueling The Future
                 </h1>
@@ -47,7 +47,7 @@ const Donate = () => {
                   Start Making Impact
                 </CommunityButton>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center px-4">
                 <div className="relative">
                   <img src={donate} alt="Network engineers" />
                 </div>
@@ -56,7 +56,7 @@ const Donate = () => {
           </div>
 
           {/* Ways to Donate Section */}
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-light text-center text-[#39364F] mb-12">
               Ways to donate
             </h2>

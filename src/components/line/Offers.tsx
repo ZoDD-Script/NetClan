@@ -23,7 +23,7 @@ const Offers = () => {
   ];
 
   return (
-    <div className="max-w-full mx-auto px-20 pb-25">
+    <div className="max-w-full mx-auto md:px-20 pb-25 px-4">
       <div className="grid md:grid-cols-2 gap-18 items-start max-w-[1600px] mx-auto">
         {/* What We Offer */}
         <div className="py-18 text-[#39364F]">

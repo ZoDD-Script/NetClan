@@ -250,7 +250,9 @@ export default function ContactForm() {
               onChange={handleChange}
               className="w-full px-4 py-3 bg-[#F0EFEF] rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-600 cursor-pointer"
             >
-              <option value="">Select an option</option>
+              <option value="" disabled hidden>
+                Select an option
+              </option>
               <option value="organizational-training">
                 Organizational Training
               </option>

@@ -29,7 +29,7 @@ const Offers = () => {
   ];
 
   return (
-    <div className="max-w-full mx-auto px-20 pb-25">
+    <div className="max-w-full mx-auto px-4 md:px-20 pb-25">
       <p className="text-center text-[#39364F] mb-12 max-w-3xl mx-auto">
         We specialize in curating customized training programs for organizations
         looking to enhance their teams' technical skills. Our professional

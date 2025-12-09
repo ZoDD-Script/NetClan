@@ -235,11 +235,12 @@ const ApplicationForm = () => {
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
               >
-                <option value="">Select</option>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-                <option value="expert">Expert</option>
+                <option value="Complete Beginner">Complete Beginner</option>
+                <option value="Some Networking Knowledge">
+                  Some Networking Knowledge
+                </option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
               </select>
             </div>
 
@@ -267,12 +268,11 @@ const ApplicationForm = () => {
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
               >
-                <option value="">Choose…</option>
-                <option value="technology">Technology</option>
-                <option value="business">Business</option>
-                <option value="design">Design</option>
-                <option value="marketing">Marketing</option>
-                <option value="other">Other</option>
+                <option value="Routing & Switching">Routing & Switching</option>
+                <option value="Network Security">Network Security</option>
+                <option value="Cloud Network">Cloud Network</option>
+                <option value=">Network Automation">Network Automation</option>
+                <option value="Wireless Networking">Wireless Networking</option>
               </select>
             </div>
           </div>
