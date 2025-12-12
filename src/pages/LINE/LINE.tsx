@@ -5,7 +5,8 @@ import Offers from "@/components/line/Offers";
 import ProgramOverview from "@/components/line/ProgramOverview";
 import Testimonials from "@/components/home/Testimonials";
 import StatsSection from "@/components/line/Stats";
-import LiNErSpotlight from "@/components/line/LiNErSpotlight";
+import CommunityCard from "@/components/contact/CommunityCard";
+// import LiNErSpotlight from "@/components/line/LiNErSpotlight";
 
 const LINE = () => {
   return (
@@ -45,7 +46,8 @@ const LINE = () => {
       <ProgramOverview />
       <StatsSection />
       <Testimonials />
-      <LiNErSpotlight />
+      <CommunityCard />
+      {/* <LiNErSpotlight /> */}
     </div>
   );
 };

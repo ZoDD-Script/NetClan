@@ -11,6 +11,9 @@ import car9 from "../../assets/images/carousel9.jpg";
 import car10 from "../../assets/images/carousel10.jpg";
 import car11 from "../../assets/images/carousel11.jpg";
 import car12 from "../../assets/images/carousel12.jpg";
+import car13 from "../../assets/images/carousel13.png";
+import car14 from "../../assets/images/carousel14.png";
+import car15 from "../../assets/images/carousel15.png";
 
 const Carousel = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -22,12 +25,18 @@ const Carousel = () => {
     car4,
     car5,
     car6,
+    car13,
+    car14,
+    car15,
     car7,
     car8,
     car9,
     car10,
     car11,
     car12,
+    car13,
+    car14,
+    car15,
   ];
 
   // Triple the images: [...images, ...images, ...images]

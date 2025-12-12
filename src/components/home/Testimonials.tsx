@@ -118,38 +118,38 @@ const Testimonials = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerView = 4;
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const cardsPerView = 4;
   const scrollContainerRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
 
-    const container = scrollContainerRef.current as HTMLDivElement;
-    const scrollPosition = container.scrollLeft;
-    const cardWidth = container.scrollWidth / testimonials.length;
-    const newIndex = Math.round(scrollPosition / cardWidth);
+    // const container = scrollContainerRef.current as HTMLDivElement;
+    // const scrollPosition = container.scrollLeft;
+    // const cardWidth = container.scrollWidth / testimonials.length;
+    // const newIndex = Math.round(scrollPosition / cardWidth);
 
-    setCurrentIndex(newIndex);
+    // setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current as HTMLDivElement;
-      const cardWidth = container.scrollWidth / testimonials.length;
-      container.scrollTo({
-        left: cardWidth * index,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const goToSlide = (index: number) => {
+  //   setCurrentIndex(index);
+  //   if (scrollContainerRef.current) {
+  //     const container = scrollContainerRef.current as HTMLDivElement;
+  //     const cardWidth = container.scrollWidth / testimonials.length;
+  //     container.scrollTo({
+  //       left: cardWidth * index,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   // Calculate number of dots needed
-  const totalDots = Math.max(1, testimonials.length - cardsPerView + 1);
+  // const totalDots = Math.max(1, testimonials.length - cardsPerView + 1);
 
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
 
@@ -181,7 +181,7 @@ const Testimonials = () => {
         </div>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center gap-3">
+        {/* <div className="flex justify-center gap-3">
           {Array.from({ length: totalDots }).map((_, index) => (
             <button
               key={index}
@@ -192,7 +192,7 @@ const Testimonials = () => {
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style>{`
