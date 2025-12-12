@@ -3,6 +3,8 @@ import testimonial from "../../assets/images/testimonial.png";
 import testimonial1 from "../../assets/images/testimonial1.png";
 import testimonial2 from "../../assets/images/testimonial2.png";
 import testimonial3 from "../../assets/images/testimonial3.png";
+import testimonial4 from "../../assets/images/testimonial4.png";
+import testimonial5 from "../../assets/images/testimonial5.png";
 
 interface TestimonialCardProps {
   name: string;
@@ -87,7 +89,7 @@ const Testimonials = () => {
       image: testimonial,
       testimonial:
         "The LiNE program transformed my career path completely. The mentorship and hands-on experience I gained were invaluable in helping me secure my dream job in tech.",
-      border: "border-blue-500",
+      border: "border-[#E588A4]",
     },
     {
       name: "Evalyne Njoroge",
@@ -96,7 +98,7 @@ const Testimonials = () => {
       image: testimonial1,
       testimonial:
         "I joined the LiNE program with only passion, but after going through their rigorous and hands-on training, I came out as a fully certified Network Engineer. The instructors are absolutely amazing, and they make networking feel so easy to understand and enjoyable to learn. The founders are also incredibly invested in our success, always pushing us to grow and be the best version of ourselves.",
-      border: "border-blue-500",
+      border: "border-[#5880D1]",
     },
     {
       name: "Ifunanya Odoh",
@@ -114,39 +116,57 @@ const Testimonials = () => {
       image: testimonial3,
       testimonial:
         "The supportive community and expert instructors at LiNE made all the difference in my learning journey. I'm now confidently working in the field I'm passionate about.",
-      border: "border-blue-500",
+      border: "border-[#2A2376]",
+    },
+    {
+      name: "Agina Sualeze",
+      cohort: "LiNE Cohort 1",
+      location: "Lagos, Nigeria",
+      image: testimonial4,
+      testimonial:
+        "Passing the CCNA was a huge accomplishment. I was the first one in my cohort to pass, which was so exciting! And of course, landing my dream role as a system engineer in a network security team was a dream come true.",
+      border: "border-[#E588A4]",
+    },
+    {
+      name: "Ketcha Leonelta",
+      cohort: "LiNE Cohort 1",
+      location: "Douala, Cameroon",
+      image: testimonial5,
+      testimonial:
+        "The LiNE community is truly about uplifting one another. Whenever you reach out with a concern, there's always someone ready to help. The strong bond within the community creates a sense of belonging, and for me, it even brought a sister who motivates me every day. Everyone genuinely cares about each other's growth and success.",
+      border: "border-[#5880D1]",
     },
   ];
 
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  // const cardsPerView = 4;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const cardsPerView = 4;
   const scrollContainerRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
 
-    // const container = scrollContainerRef.current as HTMLDivElement;
-    // const scrollPosition = container.scrollLeft;
-    // const cardWidth = container.scrollWidth / testimonials.length;
-    // const newIndex = Math.round(scrollPosition / cardWidth);
+    const container = scrollContainerRef.current as HTMLDivElement;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.scrollWidth / testimonials.length;
+    const newIndex = Math.round(scrollPosition / cardWidth);
 
-    // setCurrentIndex(newIndex);
+    setCurrentIndex(newIndex);
   };
 
-  // const goToSlide = (index: number) => {
-  //   setCurrentIndex(index);
-  //   if (scrollContainerRef.current) {
-  //     const container = scrollContainerRef.current as HTMLDivElement;
-  //     const cardWidth = container.scrollWidth / testimonials.length;
-  //     container.scrollTo({
-  //       left: cardWidth * index,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current as HTMLDivElement;
+      const cardWidth = container.scrollWidth / testimonials.length;
+      container.scrollTo({
+        left: cardWidth * index,
+        behavior: "smooth",
+      });
+    }
+  };
 
   // Calculate number of dots needed
-  // const totalDots = Math.max(1, testimonials.length - cardsPerView + 1);
+  const totalDots = Math.max(1, testimonials.length - cardsPerView + 1);
 
   return (
     <div className="py-16 px-4">
@@ -181,7 +201,7 @@ const Testimonials = () => {
         </div>
 
         {/* Pagination Dots */}
-        {/* <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3">
           {Array.from({ length: totalDots }).map((_, index) => (
             <button
               key={index}
@@ -192,7 +212,7 @@ const Testimonials = () => {
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div> */}
+        </div>
       </div>
 
       <style>{`
