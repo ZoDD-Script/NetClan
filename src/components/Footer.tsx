@@ -150,16 +150,17 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media Icons - Mobile Only */}
-        <div className="flex gap-3 mb-8 md:hidden justify-start">
+        <div className="flex gap-3 mb-8 justify-start">
           {/* <a
-            href="#"
+            href=""
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" />
           </a> */}
           <a
-            href="#"
+            href="https://x.com/thenetclan"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Twitter/X"
           >
@@ -168,21 +169,24 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href=" https://www.linkedin.com/company/thenetclan"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            href="instagram.com/thenetclan"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            href="https://www.youtube.com/@thenetclanorg"
+            target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="YouTube"
           >
