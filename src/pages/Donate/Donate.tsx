@@ -102,9 +102,9 @@ const Donate = () => {
                   </li>
                 </ul>
 
-                <p className="opacity-90">
+                <p className="opacity-90 text-[#2A2376]">
                   Please reach out to us on{" "}
-                  <span className="font-semibold">info@thenetslan.org</span> to
+                  <span className="font-semibold">info@thenetclan.org</span> to
                   donate items in kind
                 </p>
               </div>

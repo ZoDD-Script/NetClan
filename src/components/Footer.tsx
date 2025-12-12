@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <img
         src={footervector}
         alt=""
-        className="absolute right-0 bottom-0 hidden md:block"
+        className="absolute right-0 bottom-0 hidden md:block z-0"
       />
       <div className="max-w-7xl mx-6 md:mx-20 py-12 md:py-24">
         {/* Main Footer Content */}
@@ -41,24 +41,24 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 md:space-y-3">
               <li>
                 <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  href="/about"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   About Us
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-white/80 hover:text-white transition-colors text-sm"
                 >
                   Programs
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   Community
                 </a>
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   Events
                 </a>
@@ -75,48 +75,48 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Resources */}
-          <div>
+          <div className="z-100">
             <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6">
-              Resources
+              Programs
             </h3>
             <ul className="space-y-2 md:space-y-3">
               <li>
                 <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  href="/programmes/elevate"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
-                  Getting Started
+                  NetClan Elevate
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  href="/programmes/institute"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
-                  Learning Paths
+                  NetClan Institute
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  href="/programmes/line"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
-                  Mentorship
+                  Ladies in Network Engineering (LiNE)
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-white/80 hover:text-white transition-colors text-sm"
                 >
                   Career Support
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Contact Us */}
-          <div>
+          <div className="z-10">
             <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6">
               Contact Us
             </h3>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
                 <a
                   href="mailto:info@netempowerment.org"
-                  className="text-white/80 hover:text-white transition-colors text-sm break-all"
+                  className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   info@thenetclan.org
                 </a>
