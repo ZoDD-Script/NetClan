@@ -1,13 +1,12 @@
 import React from "react";
 import {
-  // Facebook,
-  Linkedin,
-  Instagram,
-  Youtube,
-  Mail,
-  // Phone,
-  // MapPin,
-} from "lucide-react";
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube,
+  FaTiktok,
+  FaEnvelope,
+} from "react-icons/fa";
 import logo from "../assets/logo/netclan.svg";
 import footervector from "../assets/images/footervector.png";
 
@@ -47,14 +46,6 @@ const Footer: React.FC = () => {
                   About Us
                 </a>
               </li>
-              {/* <li>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
-                >
-                  Programs
-                </a>
-              </li> */}
               <li>
                 <a
                   href="#"
@@ -74,7 +65,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Programs */}
           <div className="z-100">
             <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6">
               Programs
@@ -104,14 +95,6 @@ const Footer: React.FC = () => {
                   Ladies in Network Engineering (LiNE)
                 </a>
               </li>
-              {/* <li>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
-                >
-                  Career Support
-                </a>
-              </li> */}
             </ul>
           </div>
 
@@ -122,67 +105,43 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3 md:space-y-4">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
+                <FaEnvelope className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
                 <a
-                  href="mailto:info@netempowerment.org"
+                  href="mailto:info@thenetclan.org"
                   className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   info@thenetclan.org
                 </a>
               </li>
-              {/* <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
-                <a
-                  href="tel:+15551234567"
-                  className="text-white/80 hover:text-white transition-colors text-sm"
-                >
-                  +1 (555) 123-4567
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-white/80" />
-                <span className="text-white/80 text-sm">
-                  123 Tech Avenue, Innovation District
-                </span>
-              </li> */}
             </ul>
           </div>
         </div>
 
-        {/* Social Media Icons - Mobile Only */}
+        {/* Social Media Icons */}
         <div className="flex gap-3 mb-8 justify-start">
-          {/* <a
-            href=""
-            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-5 h-5" />
-          </a> */}
           <a
             href="https://x.com/thenetclan"
             target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Twitter/X"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
+            <FaTwitter className="w-5 h-5" />
           </a>
           <a
-            href=" https://www.linkedin.com/company/thenetclan"
+            href="https://www.linkedin.com/company/thenetclan"
             target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin className="w-5 h-5" />
+            <FaLinkedinIn className="w-5 h-5" />
           </a>
           <a
-            href="instagram.com/thenetclan"
+            href="https://www.instagram.com/thenetclan"
             target="_blank"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="Instagram"
           >
-            <Instagram className="w-5 h-5" />
+            <FaInstagram className="w-5 h-5" />
           </a>
           <a
             href="https://www.youtube.com/@thenetclanorg"
@@ -190,16 +149,24 @@ const Footer: React.FC = () => {
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             aria-label="YouTube"
           >
-            <Youtube className="w-5 h-5" />
+            <FaYoutube className="w-5 h-5" />
+          </a>
+          <a
+            href="http://tiktok.com/@thenetclan"
+            target="_blank"
+            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            aria-label="TikTok"
+          >
+            <FaTiktok className="w-5 h-5" />
           </a>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 md:pt-8  flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex md:flex-row gap-4 md:gap-6 order-2 md:order-1 md:mb-0 mb-10">
             <a
               href="#"
-              className="text-white/60 hover:text-white transition-colors text-sm mr-6 md:mr-0"
+              className="text-white/60 hover:text-white transition-colors text-sm"
             >
               Privacy Policy
             </a>
