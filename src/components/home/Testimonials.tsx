@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import testimonial from "../../assets/images/testimonial.png";
 import testimonial1 from "../../assets/images/testimonial1.png";
 import testimonial2 from "../../assets/images/testimonial2.png";
@@ -26,24 +26,23 @@ const TestimonialCard = ({
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center select-none">
       <div
-        className="relative w-80 h-96 perspective-1000 mb-4"
+        className="relative w-80 h-96 perspective-1000 mb-4 touch-manipulation"
         onMouseEnter={() => setIsFlipped(true)}
         onMouseLeave={() => setIsFlipped(false)}
+        onClick={() => setIsFlipped((prev) => !prev)}
       >
         <div
-          className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
-            isFlipped ? "rotate-y-180" : ""
-          }`}
+          className="relative w-full h-full transition-transform duration-700"
           style={{
             transformStyle: "preserve-3d",
             transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
           }}
         >
-          {/* Front Side */}
+          {/* FRONT */}
           <div
-            className="absolute w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg"
+            className="absolute w-full h-full rounded-2xl overflow-hidden shadow-lg"
             style={{ backfaceVisibility: "hidden" }}
           >
             <img
@@ -53,24 +52,22 @@ const TestimonialCard = ({
             />
           </div>
 
-          {/* Back Side */}
+          {/* BACK */}
           <div
-            className={`absolute w-full h-full backface-hidden rounded-2xl bg-white border-2 ${border} shadow-lg flex items-center justify-center p-8`}
+            className={`absolute w-full h-full rounded-2xl bg-white border-2 ${border} shadow-lg flex items-center justify-center p-8`}
             style={{
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
             }}
           >
-            <div className="text-center">
-              <p className="text-gray-700 text-base leading-relaxed">
-                {testimonial}
-              </p>
-            </div>
+            <p className="text-gray-700 text-base leading-relaxed text-center">
+              {testimonial}
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Name and details below the card */}
+      {/* DETAILS */}
       <div className="text-center">
         <h3 className="text-gray-900 text-xl font-semibold mb-1">{name}</h3>
         <p className="text-gray-600 text-sm">{cohort}</p>
@@ -140,101 +137,72 @@ const Testimonials = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardsPerView = 4;
-  const scrollContainerRef = React.useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
 
-    const container = scrollContainerRef.current as HTMLDivElement;
+    const container = scrollContainerRef.current;
     const scrollPosition = container.scrollLeft;
     const cardWidth = container.scrollWidth / testimonials.length;
-    const newIndex = Math.round(scrollPosition / cardWidth);
-
-    setCurrentIndex(newIndex);
+    setCurrentIndex(Math.round(scrollPosition / cardWidth));
   };
 
   const goToSlide = (index: number) => {
+    if (!scrollContainerRef.current) return;
+
+    const container = scrollContainerRef.current;
+    const cardWidth = container.scrollWidth / testimonials.length;
+
+    container.scrollTo({
+      left: cardWidth * index,
+      behavior: "smooth",
+    });
+
     setCurrentIndex(index);
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current as HTMLDivElement;
-      const cardWidth = container.scrollWidth / testimonials.length;
-      container.scrollTo({
-        left: cardWidth * index,
-        behavior: "smooth",
-      });
-    }
   };
 
-  // Calculate number of dots needed
   const totalDots = Math.max(1, testimonials.length - cardsPerView + 1);
 
   return (
     <div className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-
-        {/* Carousel Container */}
+        {/* CAROUSEL */}
         <div className="relative mb-12">
-          {/* Testimonial Cards */}
           <div
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing"
-            style={{
-              scrollSnapType: "x mandatory",
-              WebkitOverflowScrolling: "touch",
-            }}
+            className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+            style={{ scrollSnapType: "x mandatory" }}
           >
-            <div
-              className="flex gap-6 px-4"
-              style={{
-                width: "fit-content",
-              }}
-            >
-              {testimonials.map((testimonial, index) => (
+            <div className="flex gap-6 px-4 w-fit">
+              {testimonials.map((item, index) => (
                 <div key={index} style={{ scrollSnapAlign: "start" }}>
-                  <TestimonialCard {...testimonial} />
+                  <TestimonialCard {...item} />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Pagination Dots */}
+        {/* DOTS */}
         <div className="flex justify-center gap-3">
           {Array.from({ length: totalDots }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                currentIndex === index ? "bg-blue-500 w-8" : "bg-gray-400"
+              className={`h-3 rounded-full transition-all ${
+                currentIndex === index ? "bg-blue-500 w-8" : "bg-gray-400 w-3"
               }`}
-              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </div>
 
       <style>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
+        .perspective-1000 { perspective: 1000px; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { scrollbar-width: none; }
       `}</style>
     </div>
   );
