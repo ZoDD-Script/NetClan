@@ -22,7 +22,7 @@ const CommunityButtonFill = ({
             className={`px-8 py-6 border-none rounded-sm text-lg ${
               bg ?? "bg-[#E6DADA]"
             } ${
-              bg ? "hover:bg-[#DFBBFF]/90" : "hover:bg-[#E6DADA]"
+              bg ? "hover:bg-[#DFBBFF]/80" : "hover:bg-[#E6DADA]"
             } cursor-pointer`}
           >
             <span
