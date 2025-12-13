@@ -2,6 +2,7 @@ import pinkShape from "../../assets/images/vector1.png";
 import purpleSquares from "../../assets/images/purpleSquares.png";
 import nShape from "../../assets/images/vector2.png";
 import missionLargeShape from "../../assets/images/vector3.png";
+import vector9 from "../../assets/images/vector9.png";
 import arrow from "../../assets/images/arrow.png";
 import thumbsUp from "../../assets/images/thumbs.png";
 
@@ -17,7 +18,7 @@ export default function VisionMissionSection() {
       {/* ================= TOP GRID ================= */}
       <div className="grid md:grid-cols-3 gap-6">
         {/* ================= VISION (Left, 2 columns) ================= */}
-        <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 h-[544px] md:min-h-[423px]">
+        <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 h-[544px] md:max-h-[423px]">
           {/* Text */}
           <h2 className="text-5xl font-medium mb-4 pt-12">Our Vision</h2>
           <p className="max-w-md text-lg leading-relaxed font-extralight">
@@ -42,48 +43,49 @@ export default function VisionMissionSection() {
         </div>
 
         {/* ================= RIGHT BLOCK ================= */}
-        <div className="relative bg-[#2A2376] rounded-xl p-8 text-white overflow-hidden flex flex-col justify-between min-h-[423px]">
-          {/* Top-left branding */}
-          <div className="text-xl font-bold mb-4 flex items-center gap-1">
-            <img src={logo} alt="logo" className="pt-5" />
-          </div>
+        <div className="relative bg-[#2A2376] rounded-xl p-8 text-white overflow-hidden min-h-[423px]">
+          {/* 🔒 LOGO + N SHAPE (OVERLAY, NOT FLEX ITEM) */}
+          <div className="absolute top-0 left-0 pointer-events-none">
+            <div className="relative top-8 left-6">
+              <img src={logo} alt="logo" className="w-20" />
+            </div>
 
-          {/* N-shaped block */}
-          <img
-            src={nShape}
-            alt=""
-            className="absolute right-23 top-15 w-[312px] opacity-95"
-          />
+            <img
+              src={nShape}
+              alt=""
+              className="relative left-8 -top-8 w-[312px] opacity-95"
+            />
+          </div>
 
           {/* Purple transparent squares */}
           <img
             src={purpleSquares}
             alt=""
-            className="absolute right-55 bottom-15 opacity-40 w-28 pointer-events-none bg-[#D9D9D914]"
+            className="absolute right-55 bottom-15 opacity-40 w-28 pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
-            className="absolute right-89 bottom-79 opacity-40 w-[71px] pointer-events-none bg-[#D9D9D914]"
+            className="absolute right-89 bottom-79 opacity-40 w-[71px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
-            className="absolute right-36 bottom-86 opacity-40 w-[52px] pointer-events-none bg-[#D9D9D914]"
+            className="absolute right-36 bottom-86 opacity-40 w-[52px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
-            className="absolute right-20 bottom-58 opacity-40 w-[77px]  pointer-events-none bg-[#D9D9D914]"
+            className="absolute right-20 bottom-58 opacity-40 w-[77px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
-            className="absolute right-15 bottom-23 opacity-40 w-[62px] pointer-events-none bg-[#D9D9D914]"
+            className="absolute right-15 bottom-23 opacity-40 w-[62px] pointer-events-none"
           />
 
-          {/* Learn / Connect / Grow */}
-          <div className="relative text-4xl text-[#DFBBFF] font-extralight leading-tight space-y-0 mt-12">
+          {/* ✅ BOTTOM-LEFT TEXT (EXPLICITLY ANCHORED) */}
+          <div className="absolute bottom-8 left-8 text-4xl text-[#DFBBFF] font-extralight leading-tight">
             <p>Learn</p>
             <p>Connect</p>
             <p>Grow</p>
@@ -92,43 +94,86 @@ export default function VisionMissionSection() {
       </div>
 
       {/* ================= MISSION SECTION ================= */}
-      <div className="relative bg-[#2A2376] rounded-xl p-10 text-white overflow-hidden min-h-[407px] flex flex-col items-start justify-center h-full">
-        {/* Long description */}
-        <p className="max-w-[573px] text-lg leading-relaxed font-extralight align-middle">
-          Our mission extends beyond simply providing technical instruction.{" "}
-          <br /> We foster a supportive network of peers and mentors,
-          cultivating the next generation of technical leaders.
-        </p>
+      <div className="relative bg-[#2A2376] rounded-xl p-10 text-white overflow-hidden min-h-[478px] md:min-h-[407px] flex flex-col items-start">
+        {/* 🔒 TEXT BLOCK */}
+        <div
+          className="
+      max-w-[573px]
+      flex flex-col
 
-        {/* Title */}
-        <h2 className="text-5xl font-medium mb-4 pt-7">Our Mission</h2>
+      /* Mobile → bottom */
+      mt-auto
 
-        {/* Tags */}
-        <div className="flex gap-3 mb-6">
-          <span className="absolute right-40 top-13">
-            <img src={woman} className="w-[134px]" alt="woman" />
-          </span>
+      /* Desktop → center vertically */
+      md:my-auto
+    "
+        >
+          {/* TITLE */}
+          <h2
+            className="
+        text-5xl font-medium mb-4
 
-          <span className="absolute right-100 bottom-13">
-            <img src={growth} className="w-[126px]" alt="growth" />
-          </span>
+        /* Mobile first */
+        order-1
 
-          <span className="absolute right-10 bottom-23">
-            <img src={community} className="w-[150.84px]" alt="community" />
-          </span>
+        /* Desktop after paragraph */
+        md:order-2
+      "
+          >
+            Our Mission
+          </h2>
+
+          {/* PARAGRAPH */}
+          <p
+            className="
+        text-lg leading-relaxed font-extralight
+
+        /* Mobile second */
+        order-2
+
+        /* Desktop first */
+        md:order-1
+      "
+          >
+            Our mission extends beyond simply providing technical instruction.
+            <br />
+            We foster a supportive network of peers and mentors, cultivating the
+            next generation of technical leaders.
+          </p>
         </div>
 
-        {/* Big diagonal purple shape */}
+        {/* TAG IMAGES */}
+        <img
+          src={woman}
+          className="absolute -right-4 top-45 w-[120px] md:right-40 md:top-13 md:w-[134px]"
+        />
+        <img
+          src={growth}
+          className="absolute right-10 w-[120px] md:right-100 md:bottom-13 md:w-[126px]"
+        />
+        <img
+          src={community}
+          className="absolute top-35 w-[120px] md:right-10 md:bottom-23 md:w-[150.84px]"
+        />
+
+        {/* BACKGROUND SHAPE */}
         <img
           src={missionLargeShape}
           alt=""
-          className="absolute bottom-0 right-5 w-[866.22px]  pointer-events-none"
+          className="absolute md:block hidden bottom-0 right-5 w-[866.22px] pointer-events-none"
+        />
+        <img
+          src={vector9}
+          alt=""
+          className="absolute md:hidden block left-0 top-15 md:bottom-0 md:right-5 pointer-events-none"
         />
 
-        {/* Pink arrow */}
-        <img src={arrow} alt="" className="absolute right-117 top-23 w-12" />
-
-        {/* Thumbs up sticker */}
+        {/* DECORATIONS */}
+        <img
+          src={arrow}
+          alt=""
+          className="absolute md:right-117 md:top-23 md:w-12 w-10"
+        />
         <img
           src={thumbsUp}
           alt=""
