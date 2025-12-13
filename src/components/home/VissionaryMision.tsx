@@ -94,47 +94,16 @@ export default function VisionMissionSection() {
       </div>
 
       {/* ================= MISSION SECTION ================= */}
-      <div className="relative bg-[#2A2376] rounded-xl p-10 text-white overflow-hidden min-h-[478px] md:min-h-[407px] flex flex-col items-start">
+      <div className="relative bg-[#2A2376] rounded-xl py-10 px-4 md:p-10 text-white overflow-hidden min-h-[478px] md:min-h-[407px] flex flex-col items-start">
         {/* 🔒 TEXT BLOCK */}
-        <div
-          className="
-      max-w-[573px]
-      flex flex-col
-
-      /* Mobile → bottom */
-      mt-auto
-
-      /* Desktop → center vertically */
-      md:my-auto
-    "
-        >
+        <div className="max-w-[573px] flex flex-col /* Mobile → bottom */ mt-auto /* Desktop → center vertically */ md:my-auto">
           {/* TITLE */}
-          <h2
-            className="
-        text-5xl font-medium mb-4
-
-        /* Mobile first */
-        order-1
-
-        /* Desktop after paragraph */
-        md:order-2
-      "
-          >
+          <h2 className="text-5xl font-medium mb-4 /* Mobile first */ order-1 /* Desktop after paragraph */ md:order-2">
             Our Mission
           </h2>
 
           {/* PARAGRAPH */}
-          <p
-            className="
-        text-lg leading-relaxed font-extralight
-
-        /* Mobile second */
-        order-2
-
-        /* Desktop first */
-        md:order-1
-      "
-          >
+          <p className="text-lg leading-relaxed font-extralight /* Mobile second */ order-2 /* Desktop first */ md:order-1">
             Our mission extends beyond simply providing technical instruction.
             <br />
             We foster a supportive network of peers and mentors, cultivating the
