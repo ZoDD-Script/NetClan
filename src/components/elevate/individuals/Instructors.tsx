@@ -8,15 +8,15 @@ export default function InstructorsSection() {
       name: "Cisco Nerd",
       image: instructor1,
       bgColor: "bg-blue-400",
-      linkedin: "#",
-      twitter: "#",
+      linkedin: "https://www.linkedin.com/in/chukwuditheodore/",
+      twitter: "https://x.com/onijec?s=21",
     },
     {
       name: "Olúmáyọ̀wá.dev",
       image: instructor2,
       bgColor: "bg-pink-400",
-      linkedin: "#",
-      twitter: "#",
+      linkedin: "https://www.linkedin.com/in/olumayowaa/",
+      twitter: "https://x.com/akintunero?s=21",
     },
   ];
 
@@ -53,6 +53,7 @@ export default function InstructorsSection() {
               <div className="flex gap-3">
                 <a
                   href={instructor.linkedin}
+                  target="_blank"
                   className="w-10 h-10 rounded-full bg-[#2A2376] flex items-center justify-center"
                   aria-label="LinkedIn"
                 >
@@ -60,6 +61,7 @@ export default function InstructorsSection() {
                 </a>
                 <a
                   href={instructor.twitter}
+                  target="_blank"
                   className="w-10 h-10 rounded-full bg-[#2A2376] flex items-center justify-center"
                   aria-label="Twitter/X"
                 >
