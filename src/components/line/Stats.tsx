@@ -24,9 +24,9 @@ export default function StatsSection() {
     {
       number: "5",
       label: "Alumnae Employed",
-      color: "text-[#039855]",
-      borderColor: "border-[#039855]",
-      hoverColor: "hover:bg-[#039855]/30",
+      color: "text-[#BA6DFF]",
+      borderColor: "border-[#BA6DFF]",
+      hoverColor: "hover:bg-[#BA6DFF]/30",
     },
   ];
 
@@ -56,7 +56,9 @@ export default function StatsSection() {
                 <div className={`text-7xl font-light ${stat.color} mb-2`}>
                   {stat.number}
                 </div>
-                <div className="text-gray-700 text-lg font-medium whitespace-nowrap">
+                <div
+                  className={`${stat.color} text-lg font-medium whitespace-nowrap`}
+                >
                   {stat.label}
                 </div>
               </div>
