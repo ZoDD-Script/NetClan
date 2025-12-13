@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: your-app-name
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+```
+
+# Or add a `_redirects` file in your `public` folder (this will be copied to your build folder):
+# ```
+# /*    /index.html   200
