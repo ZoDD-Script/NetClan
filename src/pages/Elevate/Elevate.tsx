@@ -28,7 +28,12 @@ const Elevate = () => {
           {/* Image with Torn Paper Effect */}
           <div className="order-1 md:order-2 flex justify-center md:justify-end">
             <div className="relative w-full">
-              <img src={elevate} alt="Team members" className="w-full h-auto" />
+              <img
+                src={elevate}
+                alt="Team members"
+                loading="lazy"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>

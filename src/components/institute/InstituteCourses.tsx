@@ -159,10 +159,11 @@ export default function InstituteCourses() {
                     <img
                       src={course.image}
                       alt={course.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md">
-                      <img src={icon} alt={course.title} />
+                      <img src={icon} alt={course.title} loading="lazy" />
                       {/* <div className="w-6 h-6 rounded-md border-2 border-purple-600 flex items-center justify-center">
                         <div className="w-3 h-3 bg-purple-600 rounded-sm"></div>
                       </div> */}

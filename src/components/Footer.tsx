@@ -16,6 +16,7 @@ const Footer: React.FC = () => {
       <img
         src={footervector}
         alt=""
+        loading="lazy"
         className="absolute right-0 bottom-0 hidden md:block z-0"
       />
       <div className="max-w-7xl mx-6 md:mx-20 py-12 md:py-24">
@@ -24,7 +25,12 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <div className="space-y-4 md:space-y-6">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="logo" className="w-20 md:w-[104px]" />
+              <img
+                src={logo}
+                alt="logo"
+                loading="lazy"
+                className="w-20 md:w-[104px]"
+              />
             </div>
             <p className="text-[#E6DADA] leading-relaxed text-sm">
               A community based learning initiative for infrastructure

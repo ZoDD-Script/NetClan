@@ -53,7 +53,11 @@ export default function Navbar() {
       >
         {/* Logo */}
         <RouterLink to="/">
-          <img src={isScrolled ? logocolored : logo} alt="logo" />
+          <img
+            src={isScrolled ? logocolored : logo}
+            alt="logo"
+            loading="lazy"
+          />
         </RouterLink>
 
         {/* DESKTOP MENU */}
@@ -99,6 +103,7 @@ export default function Navbar() {
               <img
                 src={collapse}
                 alt="collapse icon"
+                loading="lazy"
                 className={`w-5 h-5 inline-block transition-all duration-300 ${
                   dropdownOpen ? "-rotate-180" : "rotate-0"
                 } ${isScrolled ? "filter invert" : ""}`}
@@ -182,7 +187,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="p-6 border-b border-gray-300">
               <RouterLink to="/">
-                <img src={logocolored} alt="logo" />
+                <img src={logocolored} alt="logo" loading="lazy" />
               </RouterLink>
             </div>
 

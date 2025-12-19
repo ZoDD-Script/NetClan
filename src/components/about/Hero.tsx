@@ -1,4 +1,4 @@
-import aboutbg from "../../assets/images/abouthero.jpg";
+import aboutbg from "../../assets/images/aboutbg.jpg";
 
 const Hero = () => {
   return (

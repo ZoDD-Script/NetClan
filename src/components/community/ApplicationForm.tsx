@@ -128,7 +128,7 @@ const ApplicationForm = () => {
                   mb-4
                 `}
               >
-                <img src={card.icon} className="w-7 h-7" />
+                <img src={card.icon} loading="lazy" className="w-7 h-7" />
               </div>
 
               <h3 className="font-semibold text-gray-900 text-center text-base mb-2">

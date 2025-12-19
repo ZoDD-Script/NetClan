@@ -39,6 +39,7 @@ export default function InstructorsSection() {
                   <img
                     src={instructor.image}
                     alt={instructor.name}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

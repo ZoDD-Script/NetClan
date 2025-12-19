@@ -52,6 +52,7 @@ export default function ProgramOverview() {
                   <img
                     src={highlight.image}
                     alt={highlight.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

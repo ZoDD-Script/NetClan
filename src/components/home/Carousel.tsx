@@ -124,6 +124,7 @@ const Carousel = () => {
               <img
                 src={image}
                 alt={`Slide ${(index % images.length) + 1}`}
+                loading="lazy"
                 className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
               />

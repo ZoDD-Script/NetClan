@@ -86,7 +86,11 @@ const ValuesComponent = () => {
               <div
                 className={`${value.iconbgColor} ${value.border} bg-opacity-30 rounded-full w-16 h-16 flex items-center justify-center mb-6`}
               >
-                <img src={value.icon as string} alt={value.title} />
+                <img
+                  src={value.icon as string}
+                  alt={value.title}
+                  loading="lazy"
+                />
               </div>
 
               {/* Title */}

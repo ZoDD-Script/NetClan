@@ -9,8 +9,18 @@ import vector8 from "../../assets/images/vector8.png";
 const ContactUs = () => {
   return (
     <div className="relative">
-      <img src={arrow} alt="" className="absolute z-5 right-15 top-305 w-50" />
-      <img src={vector8} alt="" className="absolute z-5 right-0 top-205" />
+      <img
+        src={arrow}
+        alt=""
+        className="absolute z-5 right-15 top-305 w-50"
+        loading="lazy"
+      />
+      <img
+        src={vector8}
+        alt=""
+        className="absolute z-5 right-0 top-205"
+        loading="lazy"
+      />
       <Hero />
       <Details />
       <ContactFAQ />

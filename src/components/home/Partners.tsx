@@ -10,21 +10,29 @@ const PartnersSection: React.FC = () => {
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Partners Card */}
         <div className="relative bg-[#FFFFFFE5] rounded-3xl shadow-lg p-12 md:p-16 max-w-[1269px] w-full mx-auto">
-          <img src={vector4} alt="" className="absolute left-0 bottom-5" />
+          <img
+            src={vector4}
+            alt=""
+            loading="lazy"
+            className="absolute left-0 bottom-5"
+          />
 
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-57 top-6 rounded-md opacity-10 w-28 pointer-events-none bg-[#5880D1]"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-15 bottom-47 rounded-md opacity-10 w-[71px] pointer-events-none bg-[#5880D1]"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-56 bottom-13 rounded-md opacity-10 w-[52px] pointer-events-none bg-[#5880D1]"
           />
 
@@ -45,6 +53,7 @@ const PartnersSection: React.FC = () => {
               <img
                 src={partners}
                 alt="partners_logo"
+                loading="lazy"
                 className="max-w-[247px]"
               />
             </div>

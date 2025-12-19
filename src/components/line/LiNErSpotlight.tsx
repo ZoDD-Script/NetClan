@@ -12,7 +12,7 @@ export default function LiNErSpotlight() {
           <div className="bg-[#E588A4] rounded-3xl p-12 flex flex-col items-center">
             {/* Logo */}
             <div className="mb-8">
-              <img src={logo} alt="LiNE Logo" className="w-15" />
+              <img src={logo} alt="LiNE Logo" loading="lazy" className="w-15" />
             </div>
 
             {/* Title */}
@@ -32,7 +32,7 @@ export default function LiNErSpotlight() {
             <div className="relative">
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden">
-                <img src={liner} alt="Agina Sualeze" />
+                <img src={liner} alt="Agina Sualeze" loading="lazy" />
               </div>
             </div>
           </div>

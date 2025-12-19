@@ -49,7 +49,7 @@ const Donate = () => {
               </div>
               <div className="flex justify-center px-4">
                 <div className="relative">
-                  <img src={donate} alt="Network engineers" />
+                  <img src={donate} alt="Network engineers" loading="lazy" />
                 </div>
               </div>
             </div>

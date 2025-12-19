@@ -133,7 +133,7 @@ export default function GetInvolved() {
                 <div key={idx} className="flex gap-4">
                   <div className="shrink-0">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                      <img src={item.icon} alt="Icon" />
+                      <img src={item.icon} alt="Icon" loading="lazy" />
                     </div>
                   </div>
                   <div>
@@ -148,7 +148,7 @@ export default function GetInvolved() {
 
             {/* RIGHT COLUMN IMAGE */}
             <div className="flex items-center justify-center">
-              <img src={contribute} alt="Contribute" />
+              <img src={contribute} alt="Contribute" loading="lazy" />
             </div>
           </div>
 

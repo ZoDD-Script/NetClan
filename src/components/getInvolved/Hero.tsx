@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[#2A2376]/50"></div>
       <div className="absolute inset-0 bg-black/50"></div>
       {/* Content */}
-      <div className="relative z-10 px-6 py-6">
+      <div className="relative z-10 px-6 py-6 md:text-center text-left w-full md:w-auto">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Join the Revolution
         </h1>

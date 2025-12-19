@@ -31,6 +31,7 @@ export default function VisionMissionSection() {
           <img
             src={pinkShape}
             alt=""
+            loading="lazy"
             className="absolute bottom-0 right-0 w-[494.69px] opacity-90 pointer-events-none"
           />
 
@@ -38,6 +39,7 @@ export default function VisionMissionSection() {
           <img
             src={image1}
             alt="woman"
+            loading="lazy"
             className="absolute bottom-0 right-6 w-[600px] md:w-[600px] pointer-events-none"
           />
         </div>
@@ -47,12 +49,13 @@ export default function VisionMissionSection() {
           {/* 🔒 LOGO + N SHAPE (OVERLAY, NOT FLEX ITEM) */}
           <div className="absolute top-0 left-0 pointer-events-none">
             <div className="relative top-8 left-6">
-              <img src={logo} alt="logo" className="w-20" />
+              <img src={logo} alt="logo" loading="lazy" className="w-20" />
             </div>
 
             <img
               src={nShape}
               alt=""
+              loading="lazy"
               className="relative left-8 -top-8 w-[312px] opacity-95"
             />
           </div>
@@ -61,26 +64,31 @@ export default function VisionMissionSection() {
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-55 bottom-15 opacity-40 w-28 pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-89 bottom-79 opacity-40 w-[71px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-36 bottom-86 opacity-40 w-[52px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-20 bottom-58 opacity-40 w-[77px] pointer-events-none"
           />
           <img
             src={purpleSquares}
             alt=""
+            loading="lazy"
             className="absolute right-15 bottom-23 opacity-40 w-[62px] pointer-events-none"
           />
 
@@ -114,14 +122,17 @@ export default function VisionMissionSection() {
         {/* TAG IMAGES */}
         <img
           src={woman}
+          loading="lazy"
           className="absolute -right-4 top-45 w-[120px] md:right-40 md:top-13 md:w-[134px]"
         />
         <img
           src={growth}
+          loading="lazy"
           className="absolute right-10 w-[120px] md:right-100 md:bottom-13 md:w-[126px]"
         />
         <img
           src={community}
+          loading="lazy"
           className="absolute top-35 w-[120px] md:right-10 md:bottom-23 md:w-[150.84px]"
         />
 
@@ -129,11 +140,13 @@ export default function VisionMissionSection() {
         <img
           src={missionLargeShape}
           alt=""
+          loading="lazy"
           className="absolute md:block hidden bottom-0 right-5 w-[866.22px] pointer-events-none"
         />
         <img
           src={vector9}
           alt=""
+          loading="lazy"
           className="absolute md:hidden block left-0 top-15 md:bottom-0 md:right-5 pointer-events-none"
         />
 
@@ -141,11 +154,13 @@ export default function VisionMissionSection() {
         <img
           src={arrow}
           alt=""
+          loading="lazy"
           className="absolute md:right-117 md:top-23 md:w-12 w-10"
         />
         <img
           src={thumbsUp}
           alt=""
+          loading="lazy"
           className="absolute right-70 bottom-43 w-[71px] hidden md:block"
         />
       </div>

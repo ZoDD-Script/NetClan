@@ -6,21 +6,29 @@ const CommunityCard = () => {
   return (
     <div className="pt-15 md:pb-25 px-4">
       <div className="relative bg-[#2A2376] hover:bg-[#DFBBFF] transition-colors duration-500 rounded-3xl shadow-lg p-12 md:p-16 max-w-[1269px] w-full mx-auto text-center overflow-hidden group">
-        <img src={vector} alt="" className="absolute left-0 bottom-0" />
+        <img
+          src={vector}
+          alt=""
+          loading="lazy"
+          className="absolute left-0 bottom-0"
+        />
 
         <img
           src={purpleSquares}
           alt=""
+          loading="lazy"
           className="absolute right-57 top-6 rounded-md opacity-10 w-28 pointer-events-none bg-[#5880D1]"
         />
         <img
           src={purpleSquares}
           alt=""
+          loading="lazy"
           className="absolute right-15 bottom-47 rounded-md opacity-10 w-[71px] pointer-events-none bg-[#5880D1]"
         />
         <img
           src={purpleSquares}
           alt=""
+          loading="lazy"
           className="absolute right-56 bottom-13 rounded-md opacity-10 w-[52px] pointer-events-none bg-[#5880D1]"
         />
 

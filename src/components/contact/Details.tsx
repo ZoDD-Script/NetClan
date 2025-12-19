@@ -1,7 +1,7 @@
 import trend from "../../assets/icons/trend.svg";
 import hat from "../../assets/icons/hat.svg";
 import people from "../../assets/icons/people.svg";
-import fill from "../../assets/icons/fill.svg";
+// import fill from "../../assets/icons/fill.svg";
 
 export default function ContactCards() {
   const contacts = [
@@ -29,19 +29,19 @@ export default function ContactCards() {
       content: "Mon-Fri: 9:00 AM - 6:00 PM EST",
       textColor: "text-white",
     },
-    {
-      icon: fill,
-      iconBg: "bg-[#5880D1]",
-      cardBg: "bg-[#DFBBFF]",
-      title: "Address",
-      content: "123 Tech Avenue,\nInnovation District, Tech\nCity, TC 12345",
-    },
+    // {
+    //   icon: fill,
+    //   iconBg: "bg-[#5880D1]",
+    //   cardBg: "bg-[#DFBBFF]",
+    //   title: "Address",
+    //   content: "123 Tech Avenue,\nInnovation District, Tech\nCity, TC 12345",
+    // },
   ];
 
   return (
     <div className="py-16 px-8">
       <div className="max-w-[1200px]  mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {contacts.map((contact, index) => {
             return (
               <div
@@ -52,7 +52,11 @@ export default function ContactCards() {
                 <div
                   className={`${contact.iconBg} rounded-full w-16 h-16 flex items-center justify-center mb-6`}
                 >
-                  <img src={contact.icon} className="w-5 h-5 text-white" />
+                  <img
+                    src={contact.icon}
+                    loading="lazy"
+                    className="w-5 h-5 text-white"
+                  />
                 </div>
 
                 {/* Title */}

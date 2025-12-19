@@ -37,7 +37,7 @@ const Offers = () => {
                 {/* Icon */}
                 <div className="shrink-0">
                   <div className="w-7 h-7 flex items-center justify-center">
-                    <img src={item.icon} alt="Icon" />
+                    <img src={item.icon} alt="Icon" loading="lazy" />
                   </div>
                 </div>
 
@@ -57,6 +57,7 @@ const Offers = () => {
             <img
               src={lineOffers}
               alt="Organizations"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>

@@ -3,7 +3,7 @@ import institutebg from "../../assets/images/institute.jpg";
 const Hero = () => {
   return (
     <section
-      className="relative h-screen max-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      className="relative h-screen min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
       style={{ backgroundImage: `url(${institutebg})` }}
     >
       {/* Dark + gradient overlay */}
@@ -12,8 +12,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 max-w-[967px] flex flex-col items-center justify-center">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+      <div className="relative z-10 px-6 py-6 md:text-center text-left w-full md:w-auto">
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
           Ladies in Network Engineering (LiNE) Development Initiative
         </h1>
 

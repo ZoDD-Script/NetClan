@@ -70,6 +70,7 @@ const Teams = () => {
                   <img
                     src={member.image}
                     alt={member.name}
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-lg max-w-[422px]"
                   />
                 </div>
@@ -94,6 +95,7 @@ const Teams = () => {
                   <img
                     src={member.image}
                     alt={member.name}
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>

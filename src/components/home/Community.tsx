@@ -80,6 +80,7 @@ const CommunitySection: React.FC = () => {
               <img
                 src={community}
                 alt="Community meeting"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

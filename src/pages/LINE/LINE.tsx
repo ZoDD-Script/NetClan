@@ -16,7 +16,12 @@ const LINE = () => {
           {/* Image with Torn Paper Effect */}
           <div className="order-2 md:order-1 flex justify-center md:justify-start">
             <div className="relative w-full">
-              <img src={line} alt="Team members" className="w-full h-auto" />
+              <img
+                src={line}
+                alt="Team members"
+                loading="lazy"
+                className="w-full h-auto"
+              />
             </div>
           </div>
 

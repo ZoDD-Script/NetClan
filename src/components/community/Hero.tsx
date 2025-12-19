@@ -1,10 +1,10 @@
-import communitybg from "../../assets/images/community.jpg";
+import communitybg from "../../assets/images/communitybg.jpg";
 import CommunityButton from "../buttons/CommunityButton";
 
 const Hero = () => {
   return (
     <section
-      className="relative h-screen bg-cover bg-center flex flex-col items-center justify-center text-center text-white max-h-[560px]"
+      className="relative h-screen min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
       style={{ backgroundImage: `url(${communitybg})` }}
     >
       {/* Dark + gradient overlay */}
@@ -17,9 +17,10 @@ const Hero = () => {
           Join our Community
         </h1>
         <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
-          An exclusive, self-paced learning platform available only to members,
-          designed to help network engineering enthusiasts build foundational
-          knowledge, master core skills, and explore emerging technologies.
+          Become a part of our exclusive community! Our community initiatives
+          are tailored for members who are passionate about network engineering.
+          Here, you can build essential knowledge, hone your skills, and dive
+          into the latest technologies.
         </p>
         <CommunityButton text="md:hidden">Join Our Community</CommunityButton>
       </div>

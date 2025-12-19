@@ -27,6 +27,7 @@ const MissionVision = () => {
               <img
                 src={mission}
                 alt="Team members"
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -43,6 +44,7 @@ const MissionVision = () => {
               <img
                 src={vision}
                 alt="Team group"
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
             </div>
