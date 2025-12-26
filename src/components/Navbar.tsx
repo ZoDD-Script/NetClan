@@ -4,8 +4,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown } from "lucide-react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
-import logo from "../assets/logo/netclan.svg";
-import logocolored from "../assets/logo/netclancolored.svg";
+import logo from "../assets/logo/logoWhite.png";
+import logocolored from "../assets/logo/logoBlue.png";
+// import logo from "../assets/logo/netclan.svg";
+// import logocolored from "../assets/logo/netclancolored.svg";
 import collapse from "../assets/icons/collaspe.png";
 
 export default function Navbar() {
@@ -57,6 +59,8 @@ export default function Navbar() {
             src={isScrolled ? logocolored : logo}
             alt="logo"
             loading="lazy"
+            width={90}
+            className="p-4"
           />
         </RouterLink>
 
@@ -187,7 +191,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="p-6 border-b border-gray-300">
               <RouterLink to="/">
-                <img src={logocolored} alt="logo" loading="lazy" />
+                <img src={logocolored} alt="logo" loading="lazy" width={90} />
               </RouterLink>
             </div>
 
