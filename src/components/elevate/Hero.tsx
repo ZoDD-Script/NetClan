@@ -20,7 +20,7 @@ const Hero = () => {
         <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
           Practical, expert-led network engineering training customized to help
           businesses upskill their teams and individuals advance their careers,
-          ensuring they stay competitive in today’s fast-evolving technology
+          ensuring they stay competitive in today's fast-evolving technology
           landscape.
         </p>
       </div>

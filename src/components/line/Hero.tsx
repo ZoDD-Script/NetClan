@@ -17,7 +17,7 @@ const Hero = () => {
           Ladies in Network Engineering (LiNE) Development Initiative
         </h1>
 
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
+        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight mx-auto text-left md:text-center">
           LiNE is a supportive community and learning platform designed to
           empower women network engineers through skill development and career
           advancement in network technologies.
