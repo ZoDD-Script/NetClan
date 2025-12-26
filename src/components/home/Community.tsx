@@ -16,7 +16,7 @@ const CommunitySection: React.FC = () => {
             gain knowledge, sharpen skills, and explore the latest technologies.
           </p>
           <a
-            href="#"
+            href="/communityApplication"
             className="pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             BE PART OF THE CONVERSATION
