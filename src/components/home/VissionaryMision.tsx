@@ -10,7 +10,8 @@ import community from "../../assets/images/community.png";
 import growth from "../../assets/images/growth.png";
 import image1 from "../../assets/images/image1.png";
 import woman from "../../assets/images/woman.png";
-import logo from "../../assets/logo/netclan.svg";
+// import logo from "../../assets/logo/netclan.svg";
+import logo from "../../assets/logo/logoWhite.png";
 
 export default function VisionMissionSection() {
   return (
@@ -49,7 +50,13 @@ export default function VisionMissionSection() {
           {/* 🔒 LOGO + N SHAPE (OVERLAY, NOT FLEX ITEM) */}
           <div className="absolute top-0 left-0 pointer-events-none">
             <div className="relative top-8 left-6">
-              <img src={logo} alt="logo" loading="lazy" className="w-20" />
+              <img
+                src={logo}
+                alt="logo"
+                loading="lazy"
+                width={90}
+                className="p-4"
+              />
             </div>
 
             <img

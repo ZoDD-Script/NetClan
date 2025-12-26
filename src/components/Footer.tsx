@@ -7,7 +7,8 @@ import {
   FaTiktok,
   FaEnvelope,
 } from "react-icons/fa";
-import logo from "../assets/logo/netclan.svg";
+import logo from "../assets/logo/logoWhite.png";
+// import logo from "../assets/logo/netclan.svg";
 import footervector from "../assets/images/footervector.png";
 
 const Footer: React.FC = () => {
@@ -28,8 +29,9 @@ const Footer: React.FC = () => {
               <img
                 src={logo}
                 alt="logo"
+                width={90}
                 loading="lazy"
-                className="w-20 md:w-[104px]"
+                className="p-3"
               />
             </div>
             <p className="text-[#E6DADA] leading-relaxed text-sm">
