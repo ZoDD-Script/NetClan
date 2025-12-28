@@ -2,6 +2,7 @@ import { useState } from "react";
 import { X, Check } from "lucide-react";
 import CommunityButton from "../buttons/CommunityButton";
 import CommunityButtonFill from "../buttons/CommunityButtonFill";
+import { submitForm } from "@/utils/submitForm";
 
 interface FormData {
   partnerType: string;
@@ -16,11 +17,13 @@ interface FormData {
 interface PartnerModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (formData: FormData) => void;
+  onSubmit?: (formData: FormData) => void;
 }
 
 const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     partnerType: "",
     fullName: "",
@@ -33,6 +36,8 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
 
   const handleClose = () => {
     setStep(1);
+    setIsSubmitting(false);
+    setSubmitError(null);
     setFormData({
       partnerType: "",
       fullName: "",
@@ -53,12 +58,46 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
 
   const handleGoBack = () => {
     setStep(1);
+    setSubmitError(null);
   };
 
-  const handleSubmit = () => {
-    setStep(3);
-    if (onSubmit) {
-      onSubmit(formData);
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Prepare data for submission
+      const submissionData = {
+        subject: "New Partnership Request",
+        partnerType: formData.partnerType,
+        fullName: formData.fullName,
+        organizationName: formData.organizationName || "N/A",
+        email: formData.email,
+        phone: formData.phone || "N/A",
+        interests: formData.interests.join(", ") || "None selected",
+        otherInterest: formData.otherInterest || "N/A",
+        formName: "NetClan Partner Form",
+      };
+
+      const result = await submitForm(submissionData);
+
+      if (result.success) {
+        setStep(3);
+        if (onSubmit) {
+          onSubmit(formData);
+        }
+      } else {
+        setSubmitError(
+          result.message || "Failed to submit form. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError(
+        "An error occurred while submitting the form. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -93,7 +132,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
               </div>
               <button
                 onClick={handleClose}
-                className="text-[#F0EFEF]0 hover:text-gray-700 shrink-0"
+                className="text-gray-500 hover:text-gray-700 shrink-0"
               >
                 <X size={24} />
               </button>
@@ -105,7 +144,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handlePartnerTypeChange("NGO / Non-profit")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "NGO / Non-profit"
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -131,7 +170,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Company / Organization"
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -157,7 +196,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Educational Institution"
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -183,7 +222,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Individual / Community Lead"
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -289,7 +328,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
               </h2>
               <button
                 onClick={handleClose}
-                className="text-[#F0EFEF]0 hover:text-gray-700 shrink-0"
+                className="text-gray-500 hover:text-gray-700 shrink-0"
               >
                 <X size={24} />
               </button>
@@ -308,7 +347,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Sponsorship")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Sponsorship")
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -332,7 +371,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Training collaboration")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Training collaboration")
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -356,7 +395,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Mentorship support")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Mentorship support")
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -380,7 +419,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Hiring & talent pipeline")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Hiring & talent pipeline")
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -404,7 +443,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Community events")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all sm:col-span-2 ${
                   formData.interests.includes("Community events")
-                    ? "border-[#6750A4] [#6750A4]/10"
+                    ? "border-[#6750A4] bg-[#6750A4]/10"
                     : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
@@ -440,6 +479,12 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
               />
             </div>
 
+            {submitError && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+                {submitError}
+              </div>
+            )}
+
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <CommunityButtonFill
                 bg="bg-white font-small"
@@ -453,8 +498,11 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 <CommunityButton
                   onClick={handleSubmit}
                   text="text-white w-full"
+                  disabled={isSubmitting}
                 >
-                  Submit Partnership Request
+                  {isSubmitting
+                    ? "Submitting..."
+                    : "Submit Partnership Request"}
                 </CommunityButton>
               </div>
             </div>
@@ -467,7 +515,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
             <div className="flex justify-end mb-6 sm:mb-8">
               <button
                 onClick={handleClose}
-                className="text-[#F0EFEF]0 hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700"
               >
                 <X size={24} />
               </button>

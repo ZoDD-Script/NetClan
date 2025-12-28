@@ -1,5 +1,5 @@
 export async function submitForm(data: Record<string, unknown>) {
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY_TEST;
 
   if (!accessKey) {
     console.error("❌ Web3Forms Access Key is missing!");
