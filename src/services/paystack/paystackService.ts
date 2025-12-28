@@ -147,12 +147,12 @@ class PaystackService {
    * Verify a payment transaction (requires backend implementation)
    * This is a placeholder - actual verification should happen on your backend
    */
-  async verifyPayment(reference: string): Promise<boolean> {
-    console.warn("Payment verification should be implemented on your backend");
-    // In production, you would call your backend API here
-    // Example: const response = await fetch(`/api/verify-payment/${reference}`);
-    return true;
-  }
+  // async verifyPayment(reference: string): Promise<boolean> {
+  //   console.warn("Payment verification should be implemented on your backend");
+  //   // In production, you would call your backend API here
+  //   // Example: const response = await fetch(`/api/verify-payment/${reference}`);
+  //   return true;
+  // }
 }
 
 // Export a singleton instance

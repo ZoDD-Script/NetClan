@@ -425,7 +425,7 @@ const DonationModal = ({
 
             <div className="mb-8 flex justify-center">
               <div className="w-[104px] h-[104px] rounded-full border-2 border-[#E6DADA] bg-[#F9F9F9] flex items-center justify-center">
-                <Check size={48} className="text-green-500" />
+                <Check size={48} className="text-[#009951]" />
               </div>
             </div>
 

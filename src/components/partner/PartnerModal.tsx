@@ -76,7 +76,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4 sm:p-6">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 sm:p-6">
       <div className="bg-white rounded-2xl max-w-[818px] w-full max-h-[90vh] sm:max-h-[698px] overflow-y-auto">
         {/* Step 1: Contact Information */}
         {step === 1 && (
@@ -93,7 +93,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
               </div>
               <button
                 onClick={handleClose}
-                className="text-gray-500 hover:text-gray-700 shrink-0"
+                className="text-[#F0EFEF]0 hover:text-gray-700 shrink-0"
               >
                 <X size={24} />
               </button>
@@ -105,19 +105,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handlePartnerTypeChange("NGO / Non-profit")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "NGO / Non-profit"
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.partnerType === "NGO / Non-profit"
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.partnerType === "NGO / Non-profit" && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -131,19 +131,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Company / Organization"
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.partnerType === "Company / Organization"
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.partnerType === "Company / Organization" && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -157,19 +157,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Educational Institution"
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.partnerType === "Educational Institution"
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.partnerType === "Educational Institution" && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -183,19 +183,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 }
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.partnerType === "Individual / Community Lead"
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.partnerType === "Individual / Community Lead"
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.partnerType === "Individual / Community Lead" && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -205,12 +205,12 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
             </div>
 
             {/* Contact Information */}
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+            <h3 className="text-base sm:text-lg font-medium mb-3 sm:mb-4">
               Contact information
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div>
-                <label className="block text-xs sm:text-sm font-medium mb-2">
+                <label className="block text-xs sm:text-sm font-normal mb-2">
                   Full Name
                 </label>
                 <input
@@ -220,11 +220,11 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                   onChange={(e) =>
                     setFormData({ ...formData, fullName: e.target.value })
                   }
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-10 p-2.5 sm:p-3 text-sm sm:text-base border border-[#E6DADA] rounded-lg bg-[#F0EFEF] focus:outline-none focus:ring-2 focus:ring-[#6750A4]"
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium mb-2">
+                <label className="block text-xs sm:text-sm font-normal mb-2">
                   Organization Name{" "}
                   <span className="text-gray-400">(Optional)</span>
                 </label>
@@ -238,14 +238,14 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                       organizationName: e.target.value,
                     })
                   }
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-10 p-2.5 sm:p-3 text-sm sm:text-base border border-[#E6DADA] rounded-lg bg-[#F0EFEF] focus:outline-none focus:ring-2 focus:ring-[#6750A4]"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               <div>
-                <label className="block text-xs sm:text-sm font-medium mb-2">
+                <label className="block text-xs sm:text-sm font-normal mb-2">
                   Email Address
                 </label>
                 <input
@@ -255,11 +255,11 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-10 p-2.5 sm:p-3 text-sm sm:text-base border border-[#E6DADA] rounded-lg bg-[#F0EFEF] focus:outline-none focus:ring-2 focus:ring-[#6750A4]"
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium mb-2">
+                <label className="block text-xs sm:text-sm font-normal mb-2">
                   Phone Number <span className="text-gray-400">(Optional)</span>
                 </label>
                 <input
@@ -269,7 +269,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-10 p-2.5 sm:p-3 text-sm sm:text-base border border-[#E6DADA] rounded-lg bg-[#F0EFEF] focus:outline-none focus:ring-2 focus:ring-[#6750A4]"
                 />
               </div>
             </div>
@@ -289,7 +289,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
               </h2>
               <button
                 onClick={handleClose}
-                className="text-gray-500 hover:text-gray-700 shrink-0"
+                className="text-[#F0EFEF]0 hover:text-gray-700 shrink-0"
               >
                 <X size={24} />
               </button>
@@ -308,19 +308,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Sponsorship")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Sponsorship")
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.interests.includes("Sponsorship")
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.interests.includes("Sponsorship") && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -332,19 +332,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Training collaboration")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Training collaboration")
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.interests.includes("Training collaboration")
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.interests.includes("Training collaboration") && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -356,19 +356,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Mentorship support")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Mentorship support")
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.interests.includes("Mentorship support")
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.interests.includes("Mentorship support") && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -380,19 +380,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Hiring & talent pipeline")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all ${
                   formData.interests.includes("Hiring & talent pipeline")
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.interests.includes("Hiring & talent pipeline")
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.interests.includes("Hiring & talent pipeline") && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -404,19 +404,19 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                 onClick={() => handleInterestToggle("Community events")}
                 className={`p-3 sm:p-4 border rounded-xl text-left flex items-center gap-3 transition-all sm:col-span-2 ${
                   formData.interests.includes("Community events")
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-[#6750A4] [#6750A4]/10"
+                    : "border-[#E6DADA] hover:border-[#49454F]"
                 }`}
               >
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                     formData.interests.includes("Community events")
-                      ? "border-blue-500"
-                      : "border-gray-300"
+                      ? "border-[#6750A4]"
+                      : "border-[#49454F]"
                   }`}
                 >
                   {formData.interests.includes("Community events") && (
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6750A4]"></div>
                   )}
                 </div>
                 <span className="text-sm sm:text-base text-gray-700">
@@ -436,7 +436,7 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
                   setFormData({ ...formData, otherInterest: e.target.value })
                 }
                 rows={4}
-                className="w-full p-2.5 sm:p-3 text-sm sm:text-base border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                className="w-full h-[83px] p-2.5 sm:p-3 text-sm sm:text-base border border-[#E6DADA] rounded-lg bg-[#F0EFEF] focus:outline-none focus:ring-2 focus:ring-[#6750A4] resize-none"
               />
             </div>
 
@@ -467,22 +467,22 @@ const PartnerModal = ({ isOpen, onClose, onSubmit }: PartnerModalProps) => {
             <div className="flex justify-end mb-6 sm:mb-8">
               <button
                 onClick={handleClose}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-[#F0EFEF]0 hover:text-gray-700"
               >
                 <X size={24} />
               </button>
             </div>
 
             <div className="mb-6 sm:mb-8 flex justify-center">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-green-500 flex items-center justify-center">
-                <Check size={40} className="sm:w-12 sm:h-12 text-green-500" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#E6DADA] bg-[#F9F9F9] flex items-center justify-center">
+                <Check size={40} className="sm:w-12 sm:h-12 text-[#009951]" />
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-10">
               Thank you for reaching out
             </h2>
-            <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 px-4">
+            <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-10 px-4">
               Our team will review your request and contact you within 2–3
               working days.
             </p>

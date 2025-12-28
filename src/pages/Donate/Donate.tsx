@@ -59,7 +59,11 @@ const Donate = () => {
                   Help us build a stronger, more connected future, one engineer
                   at a time.
                 </p>
-                <CommunityButton link="/donate" text="text-white">
+                <CommunityButton
+                  link="/donate"
+                  onClick={() => setIsModalOpen(true)}
+                  text="text-white"
+                >
                   Start Making Impact
                 </CommunityButton>
               </div>
