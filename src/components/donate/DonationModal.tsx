@@ -389,7 +389,7 @@ const DonationModal = ({
             </div>
 
             {/* Payment Info */}
-            <div className="flex items-center justify-center gap-6 mb-8 text-sm text-gray-600">
+            <div className="sm:flex block items-center justify-center gap-6 mb-8 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <CheckCircle size={16} className="text-green-600" />
                 <span>Secure payment</span>
