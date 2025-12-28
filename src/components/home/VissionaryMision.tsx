@@ -21,8 +21,10 @@ export default function VisionMissionSection() {
         {/* ================= VISION (Left, 2 columns) ================= */}
         <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 h-[544px] md:max-h-[423px]">
           {/* Text */}
-          <h2 className="text-5xl font-medium mb-4 pt-12">Our Vision</h2>
-          <p className="max-w-md text-lg leading-relaxed font-light">
+          <h2 className="text-5xl font-medium mb-4 pt-12 font-grotesk">
+            Our Vision
+          </h2>
+          <p className="max-w-md text-lg leading-relaxed font-light font-sans">
             We are a community-driven training and development organization
             dedicated to empowering aspiring <br /> network & infrastructure
             engineers.

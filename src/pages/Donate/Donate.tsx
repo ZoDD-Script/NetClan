@@ -2,8 +2,24 @@ import CommunityCard from "@/components/contact/CommunityCard";
 import Hero from "@/components/donate/donate";
 import donate from "../../assets/images/donate.png";
 import CommunityButton from "@/components/buttons/CommunityButton";
+import { useState } from "react";
+import DonationModal from "@/components/donate/DonationModal";
 
 const Donate = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDonationSuccess = (reference: string, amount: number) => {
+    console.log("Donation successful!");
+    console.log("Reference:", reference);
+    console.log("Amount:", amount);
+
+    // You can send this to your backend for verification
+    // await fetch('/api/verify-donation', {
+    //   method: 'POST',
+    //   body: JSON.stringify({ reference, amount })
+    // });
+  };
+
   const headerLines = [
     { pink: "JOIN", gray: " Us" },
     { pink: "EMPOWER", gray: " Talents" },
@@ -120,10 +136,19 @@ const Donate = () => {
                   in network engineering.
                 </p>
 
-                <CommunityButton link="/donate">
+                <CommunityButton
+                  link="/donate"
+                  onClick={() => setIsModalOpen(true)}
+                >
                   Donate to Our Cause
                 </CommunityButton>
               </div>
+              <DonationModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                paystackPublicKey="pk_test_a5da60db68f5a05a0a45c12d80e56e9581a127aa"
+                onSuccess={handleDonationSuccess}
+              />
             </div>
           </div>
 

@@ -17,7 +17,7 @@ const Hero = () => {
           Support the Future of Network Engineering
         </h1>
 
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
+        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight mx-auto text-left md:text-center">
           Join us in shaping a diverse and skilled workforce that will drive
           innovation and connectivity across Africa and beyond. Every donation
           makes a meaningful impact in building a stronger, more inclusive

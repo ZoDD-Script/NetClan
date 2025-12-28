@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
+        grotesk: ["Familjen Grotesk", "ui-sans-serif", "system-ui"],
       },
     },
   },

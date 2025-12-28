@@ -2,6 +2,7 @@
 // import "@fontsource/inter/500.css";
 // import "@fontsource/inter/600.css";
 // import "@fontsource/inter";
+// import "@fontsource/familjen-grotesk";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

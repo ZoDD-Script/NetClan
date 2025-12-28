@@ -8,8 +8,11 @@ import Hero from "@/components/getInvolved/Hero";
 import CommunityCard from "@/components/contact/CommunityCard";
 import CommunityButtonFill from "@/components/buttons/CommunityButtonFill";
 import CommunityButton from "@/components/buttons/CommunityButton";
+import { useState } from "react";
+import PartnerModal from "@/components/partner/PartnerModal";
 
 export default function GetInvolved() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // ========= HEADER TITLES =========
   const headerLines = [
     { pink: "EMPOWER", gray: " Futures" },
@@ -103,7 +106,12 @@ export default function GetInvolved() {
                 {/* BUTTON USING YOUR CUSTOM COMPONENTS */}
                 <div className="mt-auto self-start">
                   {card.type === "partner" ? (
-                    <CommunityButtonFill link="/partner" bg="bg-[#DFBBFF]">
+                    <CommunityButtonFill
+                      isModal
+                      onClick={() => setIsModalOpen(true)}
+                      // link=" /partner"
+                      bg="bg-[#DFBBFF]"
+                    >
                       {card.button}
                     </CommunityButtonFill>
                   ) : (
@@ -111,6 +119,11 @@ export default function GetInvolved() {
                       {card.button}
                     </CommunityButton>
                   )}
+                  <PartnerModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    onSubmit={(data) => console.log(data)}
+                  />
                 </div>
               </div>
             ))}
