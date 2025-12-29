@@ -23,17 +23,17 @@ const Teams = () => {
     },
     {
       name: "Emmanuel Sam",
-      role: "Lead Instructor",
+      role: "Learning & Development",
       image: team2,
     },
     {
       name: "Olumayowa Akinkuehinmi",
-      role: "Operations Manager",
+      role: "Strategy & Operations",
       image: team3,
     },
     {
       name: "Gbolahan Oguntula",
-      role: "Operations Manager",
+      role: "Strategy & Operations",
       image: team4,
     },
   ];

@@ -10,9 +10,23 @@ import CommunityButtonFill from "@/components/buttons/CommunityButtonFill";
 import CommunityButton from "@/components/buttons/CommunityButton";
 import { useState } from "react";
 import PartnerModal from "@/components/partner/PartnerModal";
+import DonationModal from "@/components/donate/DonationModal";
 
 export default function GetInvolved() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
+
+  const handleDonationSuccess = (reference: string, amount: number) => {
+    console.log("Donation successful!");
+    console.log("Reference:", reference);
+    console.log("Amount:", amount);
+
+    // You can send this to your backend for verification
+    // await fetch('/api/verify-donation', {
+    //   method: 'POST',
+    //   body: JSON.stringify({ reference, amount })
+    // });
+  };
   // ========= HEADER TITLES =========
   const headerLines = [
     { pink: "EMPOWER", gray: " Futures" },
@@ -115,7 +129,12 @@ export default function GetInvolved() {
                       {card.button}
                     </CommunityButtonFill>
                   ) : (
-                    <CommunityButton link="/donate" text="text-white">
+                    <CommunityButton
+                      isModal
+                      onClick={() => setIsDonateModalOpen(true)}
+                      link="/donate"
+                      text="text-white"
+                    >
                       {card.button}
                     </CommunityButton>
                   )}
@@ -123,6 +142,12 @@ export default function GetInvolved() {
                     isOpen={isModalOpen}
                     onClose={() => setIsModalOpen(false)}
                     onSubmit={(data) => console.log(data)}
+                  />
+                  <DonationModal
+                    isOpen={isDonateModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    paystackPublicKey="pk_test_a5da60db68f5a05a0a45c12d80e56e9581a127aa"
+                    onSuccess={handleDonationSuccess}
                   />
                 </div>
               </div>

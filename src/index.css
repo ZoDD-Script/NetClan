@@ -1,3 +1,6 @@
+@import "@fontsource/inter";
+@import "@fontsource/familjen-grotesk";
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -121,4 +124,9 @@ body {
   body {
     @apply bg-background text-foreground font-sans;
   }
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-grotesk: "Familjen Grotesk", ui-sans-serif, system-ui;
 }

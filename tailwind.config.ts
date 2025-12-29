@@ -5,12 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-        grotesk: ["Familjen Grotesk", "ui-sans-serif", "system-ui"],
+        sans: ["var(--font-sans)"], // Inter (default)
+        grotesk: ["var(--font-grotesk)"], // Familjen Grotesk
       },
     },
   },
-  plugins: [],
 };
 
 export default config;
