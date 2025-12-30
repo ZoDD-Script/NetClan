@@ -105,10 +105,10 @@ export default function ContactFAQ(): JSX.Element {
   return (
     <div className="flex flex-col justify-center p-4 md:mb-20 mb-40">
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[587px]">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="font-grotesk text-4xl font-normal text-gray-900 mb-2">
               Send us a Message
             </h2>
             <p className="text-gray-600 mb-8">
@@ -231,12 +231,12 @@ export default function ContactFAQ(): JSX.Element {
           <div className="grid grid-rows-[auto_auto] gap-6 content-start max-w-[587px] max-h-[535px]">
             {/* Main FAQ Card */}
             <div className="bg-white rounded-2xl p-6 shadow-sm z-10">
-              <h2 className="text-3xl font-bold text-[#060429] mb-6">
+              <h2 className="font-grotesk text-4xl font-normal text-[#060429] mb-6">
                 Frequently Asked Questions
               </h2>
               <div className="space-y-3 text-[#39374F]">
                 <div>
-                  <h3 className="text-base font-semibold mb-1">
+                  <h3 className="font-grotesk text-lg font-semibold mb-1">
                     How do I join the community?
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -245,7 +245,7 @@ export default function ContactFAQ(): JSX.Element {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold mb-1">
+                  <h3 className="font-grotesk text-lg font-semibold mb-1">
                     Are the programs really free?
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -254,7 +254,7 @@ export default function ContactFAQ(): JSX.Element {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold mb-1">
+                  <h3 className="font-grotesk text-lg font-semibold mb-1">
                     Can I volunteer as a mentor?
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -263,7 +263,7 @@ export default function ContactFAQ(): JSX.Element {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold mb-1">
+                  <h3 className="font-grotesk text-lg font-semibold mb-1">
                     How do I connect with other participants?
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -278,7 +278,7 @@ export default function ContactFAQ(): JSX.Element {
 
             {/* Immediate Help Card */}
             <div className="rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[170px] bg-[#EFF6FF] border border-[#BEDBFF]">
-              <h3 className="text-2xl font-bold mb-3 text-[#101828]">
+              <h3 className="font-grotesk text-2xl font-bold mb-3 text-[#101828]">
                 Need Immediate Help?
               </h3>
               <p className="text-sm mb-4 leading-relaxed text-[#364153]">

@@ -35,10 +35,10 @@ export default function StatsSection() {
       <div className="w-full">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-[#39364F] mb-6">
+          <h1 className="font-grotesk text-5xl font-normal text-[#39364F] mb-6">
             Our <span className="text-[#5880D1]">Stats</span>
           </h1>
-          <p className="text-gray-700 text-lg max-w-[867px] mx-auto leading-relaxed">
+          <p className="text-[#39374F] text-lg max-w-[867px] mx-auto leading-relaxed">
             Our stats speak volumes about our dedication to the network
             engineering community. We've made significant strides in bridging
             the digital divide and empowering aspiring tech leaders.
@@ -53,7 +53,9 @@ export default function StatsSection() {
               className={`flex flex-col items-start ${stat.hoverColor} transition-colors duration-300`}
             >
               <div className={`border-l-4 ${stat.borderColor} pl-6 py-4`}>
-                <div className={`text-7xl font-light ${stat.color} mb-2`}>
+                <div
+                  className={`font-grotesk text-7xl font-light ${stat.color} mb-2`}
+                >
                   {stat.number}
                 </div>
                 <div

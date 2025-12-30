@@ -43,10 +43,10 @@ const Teams = () => {
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-normal text-gray-800 mb-6">
             Our Team
           </h1>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-[#39374F] text-lg max-w-[788px] mx-auto">
             Meet the{" "}
             <span className="font-semibold text-gray-800">
               dedicated individuals leading our mission
@@ -75,10 +75,12 @@ const Teams = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">
+              <h3 className="font-grotesk text-xl font-semibold text-[#39364F] mb-1">
                 {member.name}
               </h3>
-              <p className="text-gray-500 text-sm">{member.role}</p>
+              <p className="font-grotesk text-[#666666] text-sm">
+                {member.role}
+              </p>
             </div>
           ))}
         </div>
@@ -100,10 +102,10 @@ const Teams = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-1">
+              <h3 className="text-lg font-semibold text-[#39364F] mb-1">
                 {member.name}
               </h3>
-              <p className="text-gray-500 text-sm">{member.role}</p>
+              <p className="text-[#666666] text-sm">{member.role}</p>
             </div>
           ))}
         </div>

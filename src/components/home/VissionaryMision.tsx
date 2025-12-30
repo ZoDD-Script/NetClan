@@ -21,7 +21,7 @@ export default function VisionMissionSection() {
         {/* ================= VISION (Left, 2 columns) ================= */}
         <div className="relative bg-[#5880D1] rounded-xl p-8 text-white overflow-hidden md:col-span-2 h-[544px] md:max-h-[423px]">
           {/* Text */}
-          <h2 className="text-5xl font-medium mb-4 pt-12 font-grotesk">
+          <h2 className="text-5xl font-normal mb-4 pt-12 font-grotesk">
             Our Vision
           </h2>
           <p className="max-w-md text-lg leading-relaxed font-light font-sans">
@@ -102,7 +102,7 @@ export default function VisionMissionSection() {
           />
 
           {/* ✅ BOTTOM-LEFT TEXT (EXPLICITLY ANCHORED) */}
-          <div className="absolute bottom-8 left-8 text-4xl text-[#DFBBFF] font-extralight leading-tight">
+          <div className="absolute bottom-8 left-8 text-4xl text-[#DFBBFF] font-extralight leading-tight font-grotesk">
             <p>Learn</p>
             <p>Connect</p>
             <p>Grow</p>
@@ -115,7 +115,7 @@ export default function VisionMissionSection() {
         {/* 🔒 TEXT BLOCK */}
         <div className="max-w-[573px] flex flex-col /* Mobile → bottom */ mt-auto /* Desktop → center vertically */ md:my-auto">
           {/* TITLE */}
-          <h2 className="text-5xl font-medium mb-4 /* Mobile first */ order-1 /* Desktop after paragraph */ md:order-2">
+          <h2 className="font-grotesk text-5xl font-normal mb-4 /* Mobile first */ order-1 /* Desktop after paragraph */ md:order-2">
             Our Mission
           </h2>
 

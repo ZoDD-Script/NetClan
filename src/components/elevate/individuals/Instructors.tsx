@@ -24,7 +24,7 @@ export default function InstructorsSection() {
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <h1 className="text-5xl font-bold text-gray-900 text-center mb-16">
+        <h1 className="font-grotesk text-5xl font-normal text-[#39364F] text-center mb-16">
           Meet Your Instructors
         </h1>
 
@@ -46,7 +46,7 @@ export default function InstructorsSection() {
               </div>
 
               {/* Name */}
-              <h3 className="text-2xl font-normal text-gray-900 mb-4">
+              <h3 className="font-grotesk text-2xl font-normal text-[#39364F] mb-4">
                 {instructor.name}
               </h3>
 

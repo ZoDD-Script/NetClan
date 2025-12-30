@@ -65,7 +65,7 @@ export default function Navbar() {
         </RouterLink>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex space-x-10 font-medium relative">
+        <ul className="font-grotesk hidden md:flex space-x-10 font-normal relative">
           <RouterLink to="/about">
             <li
               className={`cursor-pointer transition-colors ${
@@ -158,7 +158,7 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-4">
           <RouterLink to="/contact">
             <Button
-              className={`px-8 py-5 rounded-sm transition-all cursor-pointer ${
+              className={`font-grotesk px-8 py-5 rounded-sm transition-all cursor-pointer ${
                 isScrolled
                   ? "border border-[#39364F] text-[#39364F] bg-transparent hover:bg-gray-100"
                   : "border-white text-white bg-[#FFFFFF33] hover:bg-[#FFFFFF33]"
@@ -169,7 +169,7 @@ export default function Navbar() {
           </RouterLink>
 
           <RouterLink to="/donate">
-            <Button className="bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
+            <Button className="font-grotesk bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
               Make A Donation
             </Button>
           </RouterLink>
@@ -259,13 +259,13 @@ export default function Navbar() {
             {/* BUTTONS */}
             <div className="px-6 py-4 space-y-3">
               <RouterLink to="/donate">
-                <Button className="w-full bg-linear-to-r from-[#4C6FD8] to-[#C679A0] hover:opacity-90 text-white py-6 rounded-lg text-base mb-4 font-medium">
+                <Button className="font-grotesk w-full bg-linear-to-r from-[#4C6FD8] to-[#C679A0] hover:opacity-90 text-white py-6 rounded-lg text-base mb-4 font-medium">
                   Make A Donation
                 </Button>
               </RouterLink>
 
               <RouterLink to="/communityApplication">
-                <Button className="w-full bg-transparent border-2 border-[#6B5E9E] text-[#6B5E9E] hover:bg-[#6B5E9E]/10 py-6 rounded-lg text-base font-medium">
+                <Button className="font-grotesk w-full bg-transparent border-2 border-[#6B5E9E] text-[#6B5E9E] hover:bg-[#6B5E9E]/10 py-6 rounded-lg text-base font-medium">
                   Join Our Community
                 </Button>
               </RouterLink>

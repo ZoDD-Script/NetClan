@@ -61,7 +61,7 @@ export default function ContactCards() {
 
                 {/* Title */}
                 <h3
-                  className={`text-xl font-semibold mb-3 ${
+                  className={`font-grotesk text-xl font-semibold mb-3 ${
                     contact.textColor || "text-gray-800"
                   }`}
                 >

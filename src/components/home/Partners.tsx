@@ -37,7 +37,7 @@ const PartnersSection: React.FC = () => {
           />
 
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-light pb-9">
+            <h2 className="font-grotesk text-4xl md:text-5xl font-normal pb-9">
               <span className="text-[#39364F]">Our</span>{" "}
               <span className="text-[#5880D1]"> Partners</span>
             </h2>
@@ -62,7 +62,7 @@ const PartnersSection: React.FC = () => {
 
         {/* Call to Action Section */}
         <div className="text-center space-y-4">
-          <h2 className="text-4xl font-medium text-[#2A2376]">
+          <h2 className="font-grotesk text-4xl font-medium text-[#2A2376]">
             Lets Get Your Career Boosted
           </h2>
 

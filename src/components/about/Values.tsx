@@ -65,10 +65,10 @@ const ValuesComponent = () => {
       <div className="mx-auto mb-24 max-w-[1296px] flex flex-col items-center">
         {/* Header */}
         <div className="text-center mb-12 space-y-9">
-          <h1 className="text-xl md:text-3xl lg:text-5xl font-extralight text-[#39364F] mb-6">
+          <h1 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-normal text-[#39364F] mb-6">
             Our Values
           </h1>
-          <p className="text-gray-700 text-lg">
+          <p className="text-[#39364F] text-lg">
             These core values guide{" "}
             <span className="font-semibold">everything we do</span> and shape
             our community culture.
@@ -95,7 +95,7 @@ const ValuesComponent = () => {
 
               {/* Title */}
               <h3
-                className={`text-3xl font-extralight mb-4 pt-12 ${
+                className={`font-grotesk text-3xl font-extralight mb-4 pt-12 ${
                   value.titleColor ?? "text-white"
                 }`}
               >
@@ -104,7 +104,7 @@ const ValuesComponent = () => {
 
               {/* Description */}
               <p
-                className={`text-lg leading-relaxed font-extralight opacity-90 ${value.textColor}`}
+                className={`font-grotesk text-lg leading-relaxed font-extralight opacity-90 ${value.textColor}`}
               >
                 {value.description}
               </p>
@@ -115,10 +115,10 @@ const ValuesComponent = () => {
 
       {/* CTA Section */}
       <div className="max-w-4xl mx-auto text-center pt-14">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extralight text-[#2A2376] mb-6">
+        <h2 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-extralight text-[#2A2376] mb-6">
           Ready to Get Started?
         </h2>
-        <p className="text-gray-700 text-md mb-8">
+        <p className="text-[#39374F] text-md mb-8">
           Join our community and begin your journey to becoming a skilled
           network engineer
         </p>

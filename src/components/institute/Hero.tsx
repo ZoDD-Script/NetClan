@@ -3,7 +3,7 @@ import institutebg from "../../assets/images/institute.jpg";
 const Hero = () => {
   return (
     <section
-      className="relative h-screen min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      className="relative min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
       style={{ backgroundImage: `url(${institutebg})` }}
     >
       {/* Dark + gradient overlay */}
@@ -13,11 +13,11 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 px-6 py-6 md:text-center text-left w-full md:w-auto">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+        <h1 className="font-grotesk text-4xl md:text-6xl font-normal leading-tight mb-6">
           NetClan Institute
         </h1>
 
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
+        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-light">
           An exclusive, self-paced learning platform available only to members,
           designed to help network engineering enthusiasts build foundational
           knowledge, master core skills, and explore emerging technologies.

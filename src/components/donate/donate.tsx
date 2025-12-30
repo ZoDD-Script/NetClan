@@ -12,12 +12,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-6 md:text-center text-left w-full md:w-auto">
-        <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-6">
+      <div className="relative z-10 px-6 py-6 md:text-center text-left max-w-[967px] md:w-auto">
+        <h1 className="font-grotesk text-3xl md:text-6xl font-normal leading-tight mb-6">
           Support the Future of Network Engineering
         </h1>
 
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight mx-auto text-left md:text-center">
+        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-light mx-auto text-left md:text-center">
           Join us in shaping a diverse and skilled workforce that will drive
           innovation and connectivity across Africa and beyond. Every donation
           makes a meaningful impact in building a stronger, more inclusive

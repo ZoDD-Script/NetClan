@@ -131,11 +131,11 @@ const ApplicationForm = () => {
                 <img src={card.icon} loading="lazy" className="w-7 h-7" />
               </div>
 
-              <h3 className="font-semibold text-gray-900 text-center text-base mb-2">
+              <h3 className="font-grotesk font-semibold text-gray-900 text-center text-base mb-2">
                 {card.title}
               </h3>
 
-              <p className="text-sm text-gray-600 leading-relaxed text-center">
+              <p className="text-lg text-gray-600 leading-relaxed text-center">
                 {card.description}
               </p>
             </div>
@@ -147,16 +147,17 @@ const ApplicationForm = () => {
           onSubmit={handleSubmit}
           className="bg-white rounded-xl shadow p-6 md:p-10"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="font-grotesk text-2xl md:text-4xl font-normal text-gray-900 mb-4">
             Application Form
           </h2>
-          <p className="text-sm text-gray-600 mb-8">
-            Fill out the form below to join our community.
+          <p className="text-lg text-gray-600 mb-8">
+            Fill out the form below to join our community. All fields are
+            required unless marked optional
           </p>
 
           {/* PERSONAL INFO */}
           <div className="mb-10">
-            <h3 className="font-semibold text-gray-900 text-sm mb-4">
+            <h3 className="font-grotesk font-normal text-gray-900 text-lg mb-4">
               Personal Information
             </h3>
 
@@ -171,7 +172,7 @@ const ApplicationForm = () => {
                   placeholder="John"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                  className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
                 />
               </div>
 
@@ -185,7 +186,7 @@ const ApplicationForm = () => {
                   placeholder="Doe"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                  className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
                 />
               </div>
 
@@ -199,7 +200,7 @@ const ApplicationForm = () => {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                  className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
                 />
               </div>
 
@@ -213,7 +214,7 @@ const ApplicationForm = () => {
                   placeholder="+234 810 000 0000"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                  className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
                 />
               </div>
             </div>
@@ -233,7 +234,7 @@ const ApplicationForm = () => {
                 name="experienceLevel"
                 value={formData.experienceLevel}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
               >
                 <option value="Complete Beginner">Complete Beginner</option>
                 <option value="Some Networking Knowledge">
@@ -254,7 +255,7 @@ const ApplicationForm = () => {
                 placeholder="Tell us what you hope to achieve..."
                 value={formData.learningGoals}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none resize-none"
+                className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none resize-none"
               />
             </div>
 
@@ -266,7 +267,7 @@ const ApplicationForm = () => {
                 name="areaOfInterest"
                 value={formData.areaOfInterest}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 bg-gray-100 rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
+                className="w-full px-4 py-2 bg-[#F0EFEF] rounded-md text-sm focus:ring-2 focus:ring-indigo-400 outline-none"
               >
                 <option value="Routing & Switching">Routing & Switching</option>
                 <option value="Network Security">Network Security</option>

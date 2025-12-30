@@ -136,7 +136,7 @@ export default function ContactForm() {
       <div className="max-w-3xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="font-grotesk text-5xl font-normal text-gray-900 mb-4">
             Ready to Elevate with NetClan?
           </h1>
           <p className="text-gray-700 text-lg">

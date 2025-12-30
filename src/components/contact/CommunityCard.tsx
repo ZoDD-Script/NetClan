@@ -33,7 +33,7 @@ const CommunityCard = () => {
         />
 
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-light pb-9 text-white transition-colors duration-500 group-hover:text-[#2A2376]">
+          <h2 className="font-grotesk text-4xl md:text-5xl font-normal pb-9 text-white transition-colors duration-500 group-hover:text-[#2A2376]">
             From Africa To the World
           </h2>
 

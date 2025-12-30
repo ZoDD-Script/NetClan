@@ -27,7 +27,7 @@ const CommunityButtonFill = ({
     >
       <Button
         variant="outline"
-        className={`px-8 py-6 border-none rounded-sm text-sm ${
+        className={`font-grotesk px-8 py-6 border-none rounded-sm text-sm ${
           bg ?? "bg-[#E6DADA]"
         } ${
           bg ? "hover:bg-[#DFBBFF]/80" : "hover:bg-[#E6DADA]"

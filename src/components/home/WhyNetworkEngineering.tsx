@@ -3,14 +3,14 @@ import CommunityButtonFill from "../buttons/CommunityButtonFill";
 const WhyNetworkEngineering = () => {
   return (
     <section className="flex flex-col items-center justify-center py-24 px-4 text-center">
-      <div className="max-w-3xl">
+      <div className="max-w-[867px]">
         {/* Heading */}
-        <h2 className="text-4xl font-semibold text-[#2A254B] mb-6">
+        <h2 className="font-grotesk text-4xl md:text-5xl font-normal text-[#2A254B] mb-6">
           Why <span className="text-[#D36E93]">Network Engineering</span>?
         </h2>
 
         {/* Paragraph */}
-        <p className="text-lg leading-relaxed text-[#2A254B] mb-10">
+        <p className="text-lg leading-relaxed text-[#38364F] mb-10">
           Network engineering is the{" "}
           <strong>backbone of our interconnected world</strong>. From ensuring
           seamless communication to securing global systems, network engineers
@@ -20,7 +20,7 @@ const WhyNetworkEngineering = () => {
         </p>
 
         {/* Gradient Button */}
-        <CommunityButtonFill link="/donate">
+        <CommunityButtonFill link="/donate" text="font-grotesk">
           Donate to Our Cause
         </CommunityButtonFill>
       </div>

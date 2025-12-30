@@ -29,7 +29,9 @@ export default function ProgramOverview() {
       <div className="w-full flex flex-col items-center justify-center">
         {/* Overview Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-light text-[#060429] mb-6">Overview</h1>
+          <h1 className="font-grotesk text-5xl font-light text-[#060429] mb-6">
+            Overview
+          </h1>
           <p className="text-[#39364F] text-lg max-w-4xl mx-auto leading-relaxed">
             This is a free and intensive program, designed to equip women with
             the technical knowledge and soft skills needed to succeed in network
@@ -40,7 +42,7 @@ export default function ProgramOverview() {
 
         {/* Key Highlights */}
         <div className="mb-16 max-w-[1296px]">
-          <h2 className="text-4xl font-light text-[#01060B] mb-8">
+          <h2 className="font-grotesk text-4xl font-normal text-[#01060B] mb-8">
             Key Highlights
           </h2>
 
@@ -59,7 +61,7 @@ export default function ProgramOverview() {
 
                 {/* Text Content */}
                 <div>
-                  <h3 className="text-2xl font-light text-[#01060B] mb-3 -tracking-tightest [word-spacing:-2px]">
+                  <h3 className="font-grotesk text-2xl font-normal text-[#01060B] mb-3 -tracking-tightest [word-spacing:-2px]">
                     {highlight.title}
                   </h3>
                   <p className="text-[#01060B] leading-relaxed text-lg">
@@ -73,10 +75,10 @@ export default function ProgramOverview() {
 
         {/* Duration Section */}
         <div className="text-center">
-          <h2 className="text-3xl font-light text-[#060429] mb-3">
+          <h2 className="font-grotesk text-3xl font-normal text-[#060429] mb-3">
             Duration | 7 Months
           </h2>
-          <p className="text-gray-800 font-medium mb-6">
+          <p className="text-[#01060B] font-medium mb-6">
             Registrations are now CLOSED
           </p>
 

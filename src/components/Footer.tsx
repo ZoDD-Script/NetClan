@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="text-[#E6DADA]">
-            <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6 text-[#E6DADA]">
+            <h3 className="font-grotesk text-base md:text-lg font-semibold mb-4 md:mb-6 text-[#E6DADA]">
               Quick Links
             </h3>
             <ul className="space-y-2 md:space-y-3">
@@ -56,26 +56,26 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/communityApplication"
                   className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   Community
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-white/80 hover:text-white transition-colors text-sm cursor-pointer"
                 >
                   Events
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Programs */}
           <div className="z-100">
-            <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6">
+            <h3 className="font-grotesk text-base md:text-lg font-semibold mb-4 md:mb-6">
               Programs
             </h3>
             <ul className="space-y-2 md:space-y-3">
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Us */}
           <div className="z-10">
-            <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6">
+            <h3 className="font-grotesk text-base md:text-lg font-semibold mb-4 md:mb-6">
               Contact Us
             </h3>
             <ul className="space-y-3 md:space-y-4">

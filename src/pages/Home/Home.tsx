@@ -18,7 +18,7 @@ export default function Home() {
       <Carousel />
       <Initiatives />
       <div className="text-center mt-16">
-        <h1 className="text-5xl font-semibold text-gray-800 mb-6">
+        <h1 className="font-grotesk text-5xl font-normal text-gray-800 mb-6">
           <span className="text-[#39364F]">Success</span>
           <span className="text-[#E588A4]"> Stories</span>
         </h1>

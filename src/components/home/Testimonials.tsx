@@ -70,7 +70,9 @@ const TestimonialCard = ({
 
       {/* DETAILS */}
       <div className="text-center">
-        <h3 className="text-gray-900 text-xl font-semibold mb-1">{name}</h3>
+        <h3 className="text-gray-900 text-xl font-semibold mb-1 font-grotesk">
+          {name}
+        </h3>
         <p className="text-gray-600 text-sm">{cohort}</p>
         <p className="text-gray-500 text-sm">{location}</p>
       </div>

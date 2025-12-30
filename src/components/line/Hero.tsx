@@ -3,7 +3,7 @@ import institutebg from "../../assets/images/institute.jpg";
 const Hero = () => {
   return (
     <section
-      className="relative h-screen min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      className="relative min-h-[560px] bg-cover bg-center flex items-center justify-center text-center text-white"
       style={{ backgroundImage: `url(${institutebg})` }}
     >
       {/* Dark + gradient overlay */}
@@ -13,11 +13,11 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 px-6 py-6 md:text-center text-left w-full md:w-auto">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+        <h1 className="font-grotesk text-3xl md:text-6xl font-normal leading-tight mb-6 max-w-[967px]">
           Ladies in Network Engineering (LiNE) Development Initiative
         </h1>
 
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight mx-auto text-left md:text-center">
+        <p className="text-[#F2F2F2] text-xl mb-8 max-w-[767px] font-light mx-auto text-left md:text-center">
           LiNE is a supportive community and learning platform designed to
           empower women network engineers through skill development and career
           advancement in network technologies.

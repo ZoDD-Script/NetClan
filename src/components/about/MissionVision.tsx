@@ -9,10 +9,10 @@ const MissionVision = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="order-1 md:order-1 md:pl-18">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
+            <h2 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-normal text-[#39374F] mb-8">
               Our Mission
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-[450px]">
+            <p className="text-[#39374F] text-lg leading-relaxed max-w-[450px]">
               To empower future technical leaders with core skills to{" "}
               <span className="font-semibold text-gray-800">
                 build the foundation for innovation
@@ -52,10 +52,10 @@ const MissionVision = () => {
 
           {/* Text Content */}
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8">
+            <h2 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-normal text-[#39374F] mb-8">
               Our Vision
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-[450px]">
+            <p className="text-[#39374F] text-lg leading-relaxed max-w-[450px]">
               To create a safer, more connected world by{" "}
               <span className="font-semibold text-gray-800">
                 empowering individuals with the foundational skills to build and

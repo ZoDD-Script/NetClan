@@ -27,7 +27,7 @@ const Offers = () => {
       <div className="grid md:grid-cols-2 gap-18 items-start max-w-[1600px] mx-auto">
         {/* What We Offer */}
         <div className="py-18 text-[#39364F]">
-          <h2 className="text-3xl md:text-5xl text-[#060429] font-light mb-10">
+          <h2 className="font-grotesk text-3xl md:text-5xl text-[#060429] font-normal mb-10">
             What We Offer
           </h2>
 
@@ -43,7 +43,9 @@ const Offers = () => {
 
                 {/* Text */}
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
+                  <h4 className="font-grotesk text-2xl font-normal mb-2">
+                    {item.title}
+                  </h4>
                   <p className="leading-relaxed">{item.text}</p>
                 </div>
               </div>

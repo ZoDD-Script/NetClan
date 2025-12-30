@@ -10,10 +10,10 @@ const Elevate = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center py-23">
           {/* Text Content */}
           <div className="order-2 md:order-1">
-            <h2 className="text-4xl md:text-4xl lg:text-5xl font-light text-[#39364F] mb-8">
+            <h2 className="font-grotesk text-4xl md:text-4xl lg:text-5xl font-light text-[#39364F] mb-8">
               Unlocking Potential, Driving Innovation
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-[#39364F] text-lg leading-relaxed">
               We are dedicated to empowering organizations and individuals with
               cutting-edge, hands-on training in the field of network
               engineering. Whether you're a business looking to upskill your

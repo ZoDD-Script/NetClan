@@ -87,11 +87,11 @@ export default function GetInvolved() {
       <div className="min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
           {/* ========= HEADER SECTION ========= */}
-          <div className="mb-16 space-y-12 py-29">
+          <div className="font-grotesk mb-16 space-y-12 py-29">
             {headerLines.map((line, idx) => (
               <h1
                 key={idx}
-                className="text-3xl md:text-6xl font-light text-center"
+                className="text-3xl md:text-6xl font-normal text-center"
               >
                 <span className="text-[#D87095]">{line.pink}</span>
                 <span className="text-[#2A2376]">{line.gray}</span>
@@ -100,7 +100,7 @@ export default function GetInvolved() {
           </div>
 
           {/* ========= WAYS TO GET INVOLVED ========= */}
-          <h2 className="text-3xl md:text-5xl font-light text-center mb-12 text-[#060429]">
+          <h2 className="font-grotesk text-3xl md:text-5xl font-normal text-center mb-12 text-[#060429]">
             Ways to <span className="text-[#E588A4]">get involved</span>
           </h2>
 
@@ -110,7 +110,9 @@ export default function GetInvolved() {
                 key={idx}
                 className={`${card.bg} p-8 rounded-lg max-w-[644px] flex flex-col`}
               >
-                <h3 className={`text-3xl font-light ${card.textColor} mb-4`}>
+                <h3
+                  className={`font-grotesk text-4xl font-normal ${card.textColor} mb-4`}
+                >
                   {card.title}
                 </h3>
                 <p className={`${card.pColor} mb-10 leading-relaxed`}>
@@ -155,10 +157,10 @@ export default function GetInvolved() {
           </div>
 
           {/* ========= HOW TO CONTRIBUTE ========= */}
-          <h2 className="text-3xl md:text-5xl font-light text-center mb-4 text-[#060429]">
+          <h2 className="font-grotesk text-3xl md:text-5xl font-normal text-center mb-4 text-[#060429]">
             How To <span className="text-[#E588A4]">Contribute</span>
           </h2>
-          <p className="text-center text-[#38364F] mb-12 max-w-3xl mx-auto pb-8">
+          <p className="text-center text-lg text-[#38364F] mb-12 max-w-[867px] mx-auto pb-8">
             Your support helps us keep making a difference. Whether through
             volunteering your time, sharing your expertise, or making a
             financial donation, every contribution counts.
@@ -175,10 +177,10 @@ export default function GetInvolved() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-light text-gray-900 mb-4">
+                    <h4 className="font-grotesk text-2xl font-normal text-gray-900 mb-4">
                       {item.title}
                     </h4>
-                    <p className="text-[#39364F]">{item.text}</p>
+                    <p className="text-[#39364F] text-lg">{item.text}</p>
                   </div>
                 </div>
               ))}

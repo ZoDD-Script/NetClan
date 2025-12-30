@@ -17,7 +17,7 @@ const CommunitySection: React.FC = () => {
           </p>
           <a
             href="/communityApplication"
-            className="pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
+            className="font-grotesk pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             BE PART OF THE CONVERSATION
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -36,7 +36,7 @@ const CommunitySection: React.FC = () => {
           </p>
           <a
             href="#"
-            className="pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
+            className="font-grotesk pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             BECOME AN OFFICIAL PARTNER
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -55,7 +55,7 @@ const CommunitySection: React.FC = () => {
           </p>
           <a
             href="#"
-            className="pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
+            className="font-grotesk pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             HELP US DO MORE GOOD
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -88,7 +88,7 @@ const CommunitySection: React.FC = () => {
 
           {/* BOTTOM ON MOBILE — RIGHT ON DESKTOP */}
           <div className="flex flex-col justify-center space-y-2 order-2 md:order-0">
-            <h2 className="text-3xl md:text-5xl font-normal text-white mb-4">
+            <h2 className="font-grotesk text-3xl md:text-5xl font-normal text-white mb-4">
               How to get involved
             </h2>
 
@@ -98,7 +98,7 @@ const CommunitySection: React.FC = () => {
                 className="border-b border-white/20 pb-4 pt-8 cursor-pointer"
               >
                 <h3
-                  className="text-xl md:text-2xl font-normal text-white flex justify-between items-center"
+                  className="font-grotesk text-xl md:text-2xl font-normal text-white flex justify-between items-center"
                   onClick={() => toggleAccordion(index)}
                 >
                   {item.title}

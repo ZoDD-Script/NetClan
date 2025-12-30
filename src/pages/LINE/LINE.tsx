@@ -27,7 +27,7 @@ const LINE = () => {
 
           {/* Text Content */}
           <div className="order-1 md:order-2">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-light text-[#39364F] mb-8">
+            <h2 className="font-grotesk text-2xl md:text-3xl lg:text-5xl font-normal text-[#39364F] mb-8">
               Nurturing Future Women in Network Engineering
             </h2>
             <p className="text-[#38364F] text-lg leading-relaxed">

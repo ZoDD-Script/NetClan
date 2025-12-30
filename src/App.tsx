@@ -23,11 +23,11 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/programmes/:type" element={<ProgrammePage />} />
-          <Route path="/contact" element={<ContactUs />}></Route>
-          <Route path="/communityApplication" element={<Community />}></Route>
-          <Route path="/donate" element={<Donate />}></Route>
-          <Route path="/joined" element={<JoinedCommunity />}></Route>
           <Route path="/get-involved" element={<GetInvolved />}></Route>
+          <Route path="/contact" element={<ContactUs />}></Route>
+          <Route path="/donate" element={<Donate />}></Route>
+          <Route path="/communityApplication" element={<Community />}></Route>
+          <Route path="/joined" element={<JoinedCommunity />}></Route>
           <Route path="/institute" element={<Institute />}></Route>
         </Routes>
       </main>

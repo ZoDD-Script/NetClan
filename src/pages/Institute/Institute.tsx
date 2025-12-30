@@ -8,10 +8,10 @@ const Institute = () => {
       <Hero />
       <InstituteCourses />
       <div className="max-w-4xl mx-auto text-center pt-14 pb-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extralight text-[#2A2376] mb-6">
+        <h2 className="font-grotesk text-3xl md:text-4xl lg:text-5xl font-extralight text-[#2A2376] mb-6">
           Ready to Get Started?
         </h2>
-        <p className="text-gray-700 text-md mb-8">
+        <p className="text-[#39364F] text-md mb-8">
           Join our community and begin your journey to becoming a skilled
           network engineer
         </p>

@@ -37,7 +37,7 @@ const Initiatives = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-semibold text-gray-800 mb-6">
+          <h2 className="font-grotesk text-5xl font-normal text-gray-800 mb-6">
             <span className="text-[#E588A4]">Our</span>
             <span className="text-[#39364F]"> Initiatives</span>
           </h2>
@@ -54,7 +54,7 @@ const Initiatives = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 font-grotesk">
           {initiatives.map((initiative, index) => (
             <RouterLink to={initiative.link}>
               <div
@@ -70,7 +70,7 @@ const Initiatives = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h2 className="text-3xl font-light leading-tight mb-4">
+                  <h2 className="text-3xl font-normal leading-tight mb-4">
                     {initiative.title}
                   </h2>
                 </div>
@@ -78,7 +78,7 @@ const Initiatives = () => {
                 <div className="relative z-10 flex items-end justify-between">
                   <div>
                     <h3
-                      className={`text-3xl max-w-[214px] font-light leading-tight ${initiative.programColor}`}
+                      className={`font-normal text-4xl max-w-[214px] leading-tight ${initiative.programColor}`}
                     >
                       {initiative.program}
                     </h3>

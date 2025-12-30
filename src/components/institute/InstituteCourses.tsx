@@ -105,7 +105,7 @@ export default function InstituteCourses() {
     <div className="min-h-screen px-4 py-8 md:px-8 md:py-16">
       <div className="max-w-7xl mx-auto">
         {/* Header Tags */}
-        <div className="flex flex-wrap justify-center items-center gap-10 mb-8 text-base">
+        <div className="font-grotesk flex flex-wrap justify-center items-center gap-10 mb-8 text-xl font-normal">
           <div className="flex items-center gap-2 text-[#2A2376]">
             <svg
               className="w-6 h-6"
@@ -118,21 +118,21 @@ export default function InstituteCourses() {
               <line x1="2" y1="12" x2="22" y2="12" />
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
-            <span className="font-medium">Online</span>
+            <span>Online</span>
           </div>
 
           <div className="text-gray-400">|</div>
 
           <div className="flex items-center gap-2 text-[#2A2376]">
             <DollarSign className="w-6 h-6" strokeWidth="2" />
-            <span className="font-medium">Free</span>
+            <span>Free</span>
           </div>
 
           <div className="text-gray-400">|</div>
 
           <div className="flex items-center gap-2 text-[#2A2376]">
             <Users className="w-6 h-6" strokeWidth="2" />
-            <span className="font-medium">Audience: Members</span>
+            <span>Audience: Members</span>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export default function InstituteCourses() {
             className={`${sectionIndex > 0 ? "mt-26" : ""} pt-12`}
           >
             {/* Section Title */}
-            <h1 className="text-3xl md:text-5xl font-light text-gray-900 mb-6 md:mb-8">
+            <h1 className="font-grotesk text-3xl md:text-5xl font-light text-gray-900 mb-6 md:mb-8">
               {section.title}
             </h1>
 
@@ -172,16 +172,16 @@ export default function InstituteCourses() {
 
                   {/* Course Content */}
                   <div className="p-8 flex flex-col h-full">
-                    <h2 className="text-xl md:text-3xl font-light text-[#060429] mb-3">
+                    <h2 className="font-grotesk text-xl md:text-3xl font-normal text-[#060429] mb-3">
                       {course.title}
                     </h2>
 
                     <div className="">
-                      <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                      <p className="text-[#39364F] text-sm md:text-base leading-relaxed">
                         {course.description}
                       </p>
                       {course.detail && (
-                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                        <p className="text-[#39364F] text-sm md:text-base leading-relaxed">
                           {course.detail}
                         </p>
                       )}
@@ -191,8 +191,8 @@ export default function InstituteCourses() {
                     <div className="mt-auto">
                       <div className="flex items-center gap-2 text-[#476CC8] mb-6">
                         <Clock className="w-4 h-4" />
-                        <span className="text-sm font-light">
-                          {course.hours}
+                        <span className="text-lg font-normal font-grotesk">
+                          {course.hours.toLocaleUpperCase()}
                         </span>
                       </div>
 

@@ -46,7 +46,7 @@ export default function WhyChooseAccordion() {
       <div className="">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-8">
+          <h1 className="font-grotesk text-5xl font-normal text-gray-900 mb-8">
             Why Choose NetClan Elevate?
           </h1>
           <p className="text-gray-700 text-lg">
@@ -63,7 +63,7 @@ export default function WhyChooseAccordion() {
                 onClick={() => toggleAccordion(index)}
                 className="w-full py-6 flex items-center justify-between text-left hover:bg-white/30 transition-colors px-0"
               >
-                <h3 className="text-2xl font-normal text-gray-900">
+                <h3 className="font-grotesk text-2xl font-normal text-[#000000]">
                   {item.title}
                 </h3>
                 <ChevronDown
@@ -82,7 +82,7 @@ export default function WhyChooseAccordion() {
                 }`}
               >
                 <div className="pb-6 px-0">
-                  <p className="text-gray-800 text-lg leading-relaxed max-w-3xl">
+                  <p className="text-[#000000] text-lg leading-relaxed max-w-3xl">
                     {item.content}
                   </p>
                 </div>

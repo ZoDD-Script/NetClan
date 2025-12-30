@@ -15,7 +15,7 @@ const Hero = () => {
         <h1 className="font-grotesk text-4xl md:text-6xl font-bold leading-tight mb-6">
           Join the Revolution
         </h1>
-        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-extralight">
+        <p className="text-gray-200 text-xl mb-8 max-w-[767px] font-light">
           Become part of the innovators and professionals who are actively
           contributing to the evolution of Network Engineering in Africa. Your
           involvement can help pave the way for groundbreaking advancements and

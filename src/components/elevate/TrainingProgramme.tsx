@@ -13,7 +13,7 @@ export default function TrainingPrograms() {
           <div className="bg-white rounded-lg p-1 inline-flex shadow-sm">
             <button
               onClick={() => setActiveTab("organizations")}
-              className={`px-8 py-3 rounded-md font-medium transition-all ${
+              className={`font-grotesk px-8 py-3 rounded-md font-normal text-lg transition-all ${
                 activeTab === "organizations"
                   ? "bg-[#DFBBFF] text-gray-900"
                   : "bg-white text-gray-700 hover:bg-gray-50"
@@ -23,7 +23,7 @@ export default function TrainingPrograms() {
             </button>
             <button
               onClick={() => setActiveTab("individuals")}
-              className={`px-8 py-3 rounded-md font-medium transition-all ${
+              className={`font-grotesk px-8 py-3 rounded-md font-normal text-lg transition-all ${
                 activeTab === "individuals"
                   ? "bg-[#DFBBFF] text-gray-900"
                   : "bg-white text-gray-700 hover:bg-gray-50"

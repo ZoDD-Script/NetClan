@@ -33,7 +33,7 @@ const Donate = () => {
       <div className="min-h-screen flex flex-col items-center">
         <div className="w-full ">
           {/* ========= HEADER SECTION ========= */}
-          <div className="md:mb-16 space-y-12 py-29">
+          <div className="font-grotesk md:mb-16 space-y-12 py-29">
             {headerLines.map((line, idx) => (
               <h1
                 key={idx}
@@ -47,8 +47,8 @@ const Donate = () => {
 
           <div className="mx-auto mb-20 flex items-center justify-center min-h-[400px]">
             <div className="grid md:grid-cols-2 gap-8 items-center max-w-[1246px]">
-              <div className="px-4">
-                <h1 className="text-3xl md:text-5xl font-light text-[#39364F] mb-6 leading-tight">
+              <div className="px-4 md:px-0">
+                <h1 className="font-grotesk text-3xl md:text-5xl font-normal text-[#39364F] mb-6 leading-tight">
                   Become A Part Of Those Fueling The Future
                 </h1>
                 <p className="text-[#38364F] leading-relaxed">
@@ -77,14 +77,16 @@ const Donate = () => {
 
           {/* Ways to Donate Section */}
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-light text-center text-[#39364F] mb-12">
+            <h2 className="font-grotesk text-3xl md:text-5xl font-normal text-center text-[#39364F] mb-12">
               Ways to donate
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6 items-start">
               {/* In-Kind Donations Card */}
               <div className="bg-[#E588A4] rounded-2xl p-8 text-[#FFFFFF] shadow-xl">
-                <h3 className="text-3xl font-light mb-4">In-Kind Donations</h3>
+                <h3 className="font-grotesk text-4xl font-normal mb-4">
+                  In-Kind Donations
+                </h3>
                 <p className="mb-6 opacity-90">
                   We welcome in-kind contributions that directly support our
                   mission. <br /> Here's how you can help:
@@ -131,7 +133,9 @@ const Donate = () => {
 
               {/* Cash Donations Card (shorter) */}
               <div className="bg-[#5880D1] rounded-2xl p-8 text-white shadow-xl self-start">
-                <h3 className="text-3xl font-light mb-4">Cash Donations</h3>
+                <h3 className="font-grotesk text-4xl font-normal mb-4">
+                  Cash Donations
+                </h3>
                 <p className="mb-10 leading-relaxed">
                   Are you an NGO or organization seeking skilled networking
                   talent? Partner with us to connect with emerging professionals

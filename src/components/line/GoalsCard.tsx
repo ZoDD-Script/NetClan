@@ -15,10 +15,12 @@ export default function GoalsCard() {
         <div className="absolute -bottom-6 right-24 w-16 h-16 bg-white/15 rounded-md"></div>
 
         {/* Title */}
-        <h2 className="text-white text-4xl font-semibold mb-4">Our Goal</h2>
+        <h2 className="font-grotesk text-[#FFFFFF] text-5xl font-normal mb-6">
+          Our Goal
+        </h2>
 
         {/* Description */}
-        <p className="text-white/95 text-lg leading-relaxed max-w-5xl mx-auto">
+        <p className="text-[#FFFFFF] text-lg leading-relaxed max-w-5xl mx-auto font-light">
           To empower women in network engineering to become leaders, innovators,
           and change-makers, shaping a future where diversity drives progress
           and security strengthens global connectivity.
