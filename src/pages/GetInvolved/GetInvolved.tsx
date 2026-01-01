@@ -147,7 +147,7 @@ export default function GetInvolved() {
                   />
                   <DonationModal
                     isOpen={isDonateModalOpen}
-                    onClose={() => setIsModalOpen(false)}
+                    onClose={() => setIsDonateModalOpen(false)}
                     paystackPublicKey="pk_test_a5da60db68f5a05a0a45c12d80e56e9581a127aa"
                     onSuccess={handleDonationSuccess}
                   />
