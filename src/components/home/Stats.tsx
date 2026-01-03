@@ -4,14 +4,14 @@ const Stats = () => {
       number: "7",
       label: "African Countries",
       color: "text-[#E588A4]",
-      background: "hover:bg-[#D35E82]",
+      background: "hover:bg-[#D35E82]/30",
       borderColor: "border-pink-400",
     },
     {
       number: "50+",
       label: "Women Trained",
       color: "text-[#5880D1]",
-      background: "hover:bg-[#4B74C7]",
+      background: "hover:bg-[#4B74C7]/30",
       borderColor: "border-blue-500",
     },
     {

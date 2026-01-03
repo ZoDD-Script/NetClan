@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <p className="text-white/60 text-sm order-2">
-            © 2024 The Net Clan. All rights reserved.
+            © 2026 The Net Clan. All rights reserved.
           </p>
         </div>
       </div>

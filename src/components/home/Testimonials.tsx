@@ -83,13 +83,13 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Martha Alao",
-      cohort: "LiNE Cohort 2",
-      location: "Lagos, Nigeria",
-      image: testimonial,
+      name: "Ketcha Leonelta",
+      cohort: "LiNE Cohort 1",
+      location: "Douala, Cameroon",
+      image: testimonial5,
       testimonial:
-        "The LiNE program transformed my career path completely. The mentorship and hands-on experience I gained were invaluable in helping me secure my dream job in tech.",
-      border: "border-[#E588A4]",
+        "The LiNE community is truly about uplifting one another. Whenever you reach out with a concern, there's always someone ready to help. The strong bond within the community creates a sense of belonging, and for me, it even brought a sister who motivates me every day. Everyone genuinely cares about each other's growth and success.",
+      border: "border-[#5880D1]",
     },
     {
       name: "Evalyne Njoroge",
@@ -99,6 +99,15 @@ const Testimonials = () => {
       testimonial:
         "I joined the LiNE program with only passion, but after going through their rigorous and hands-on training, I came out as a fully certified Network Engineer. The instructors are absolutely amazing, and they make networking feel so easy to understand and enjoyable to learn. The founders are also incredibly invested in our success, always pushing us to grow and be the best version of ourselves.",
       border: "border-[#5880D1]",
+    },
+    {
+      name: "Martha Alao",
+      cohort: "LiNE Cohort 2",
+      location: "Lagos, Nigeria",
+      image: testimonial,
+      testimonial:
+        "The LiNE program transformed my career path completely. The mentorship and hands-on experience I gained were invaluable in helping me secure my dream job in tech.",
+      border: "border-[#E588A4]",
     },
     {
       name: "Ifunanya Odoh",
@@ -126,15 +135,6 @@ const Testimonials = () => {
       testimonial:
         "Passing the CCNA was a huge accomplishment. I was the first one in my cohort to pass, which was so exciting! And of course, landing my dream role as a system engineer in a network security team was a dream come true.",
       border: "border-[#E588A4]",
-    },
-    {
-      name: "Ketcha Leonelta",
-      cohort: "LiNE Cohort 1",
-      location: "Douala, Cameroon",
-      image: testimonial5,
-      testimonial:
-        "The LiNE community is truly about uplifting one another. Whenever you reach out with a concern, there's always someone ready to help. The strong bond within the community creates a sense of belonging, and for me, it even brought a sister who motivates me every day. Everyone genuinely cares about each other's growth and success.",
-      border: "border-[#5880D1]",
     },
   ];
 
