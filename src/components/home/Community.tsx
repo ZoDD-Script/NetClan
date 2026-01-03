@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import community from "../../assets/images/community1.png";
 import CommunityButton from "../buttons/CommunityButton";
+import PartnerModal from "../partner/PartnerModal";
 
 const CommunitySection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState(0); // default first open
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const accordionItems = [
     {
@@ -35,7 +37,7 @@ const CommunitySection: React.FC = () => {
             advancements and new opportunities in this vital field.
           </p>
           <a
-            href="#"
+            onClick={() => setIsModalOpen(true)}
             className="font-grotesk pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             BECOME AN OFFICIAL PARTNER
@@ -54,7 +56,7 @@ const CommunitySection: React.FC = () => {
             careers in network engineering.
           </p>
           <a
-            href="#"
+            href="/donate"
             className="font-grotesk pb-4 inline-flex items-center gap-2 text-[#DFBBFF] hover:text-white transition-colors text-sm uppercase tracking-wider font-medium group"
           >
             HELP US DO MORE GOOD
@@ -112,6 +114,12 @@ const CommunitySection: React.FC = () => {
                 {openIndex === index && (
                   <div className="mt-4 space-y-4">{item.content}</div>
                 )}
+
+                <PartnerModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  onSubmit={(data) => console.log(data)}
+                />
               </div>
             ))}
 
