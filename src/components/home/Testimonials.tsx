@@ -5,6 +5,7 @@ import testimonial2 from "../../assets/images/testimonial2.png";
 import testimonial3 from "../../assets/images/testimonial3.png";
 import testimonial4 from "../../assets/images/testimonial4.png";
 import testimonial5 from "../../assets/images/testimonial5.png";
+import testimonial6 from "../../assets/images/testimonial6.png";
 
 interface TestimonialCardProps {
   name: string;
@@ -61,7 +62,7 @@ const TestimonialCard = ({
               transform: "rotateY(180deg)",
             }}
           >
-            <p className="text-gray-700 text-base leading-relaxed text-center">
+            <p className="text-[#2A2376] text-sm leading-relaxed text-center">
               {testimonial}
             </p>
           </div>
@@ -92,13 +93,22 @@ const Testimonials = () => {
       border: "border-[#5880D1]",
     },
     {
+      name: "Cindy Ntombela",
+      cohort: "LiNE Cohort 2",
+      location: "Durban, South Africa",
+      image: testimonial6,
+      testimonial:
+        "Being accepted by The NetClan for their LiNE programme has been exhilarating. Through this journey I have met and been mentored by amazing people who have furthered my knowledge in networking and helped me grow as a network engineer by broadening my horizons. Through this programme I have obtained my CCNA and found a community with like-minded people I hope to flourish with. I will forever be grateful to NetClan as this wouldn't be possible without them.",
+      border: "border-[#E588A4]",
+    },
+    {
       name: "Evalyne Njoroge",
       cohort: "LiNE Cohort 2",
       location: "Nairobi, Kenya",
       image: testimonial1,
       testimonial:
         "I joined the LiNE program with only passion, but after going through their rigorous and hands-on training, I came out as a fully certified Network Engineer. The instructors are absolutely amazing, and they make networking feel so easy to understand and enjoyable to learn. The founders are also incredibly invested in our success, always pushing us to grow and be the best version of ourselves.",
-      border: "border-[#5880D1]",
+      border: "border-[#DFBBFF4D]",
     },
     {
       name: "Martha Alao",
