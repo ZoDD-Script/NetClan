@@ -103,7 +103,7 @@ export default function ContactFAQ(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col justify-center p-4 md:mb-20 mb-70 z-10">
+    <div className="flex flex-col justify-center p-4 md:mb-20 mb-60 z-10">
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
           {/* Contact Form */}
@@ -277,7 +277,7 @@ export default function ContactFAQ(): JSX.Element {
             </div>
 
             {/* Immediate Help Card */}
-            <div className="rounded-2xl p-6 shadow-sm max-w-[587px] max-h-[170px] bg-[#EFF6FF] border border-[#BEDBFF]">
+            <div className="rounded-2xl p-6 shadow-sm max-w-[587px] bg-[#EFF6FF] border border-[#BEDBFF] text-start">
               <h3 className="font-grotesk text-2xl font-bold mb-3 text-[#101828]">
                 Need Immediate Help?
               </h3>
@@ -290,7 +290,7 @@ export default function ContactFAQ(): JSX.Element {
                   Support Email:
                 </span>{" "}
                 <a
-                  href="mailto:support@netempowerment.org"
+                  href="mailto:info@thenetclan.org"
                   className="text-[#155DFC] hover:underline"
                 >
                   info@thenetclan.org

@@ -135,7 +135,7 @@ const ApplicationForm = () => {
                 {card.title}
               </h3>
 
-              <p className="text-lg text-gray-600 leading-relaxed text-center">
+              <p className="text-sm text-gray-600 leading-relaxed text-center">
                 {card.description}
               </p>
             </div>
@@ -321,7 +321,8 @@ const ApplicationForm = () => {
           {/* SUBMIT BUTTON */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white text-sm font-medium rounded-lg shadow hover:opacity-90 transition"
+            disabled
+            className="w-full py-3.5 bg-linear-to-r from-[#1D439E] to-[#D36E93] text-white text-sm font-medium rounded-lg shadow hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Submit Application
           </button>

@@ -84,24 +84,6 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Ketcha Leonelta",
-      cohort: "LiNE Cohort 1",
-      location: "Douala, Cameroon",
-      image: testimonial5,
-      testimonial:
-        "The LiNE community is truly about uplifting one another. Whenever you reach out with a concern, there's always someone ready to help. The strong bond within the community creates a sense of belonging, and for me, it even brought a sister who motivates me every day. Everyone genuinely cares about each other's growth and success.",
-      border: "border-[#5880D1]",
-    },
-    {
-      name: "Cindy Ntombela",
-      cohort: "LiNE Cohort 2",
-      location: "Durban, South Africa",
-      image: testimonial6,
-      testimonial:
-        "Being accepted by The NetClan for their LiNE programme has been exhilarating. Through this journey I have met and been mentored by amazing people who have furthered my knowledge in networking and helped me grow as a network engineer by broadening my horizons. Through this programme I have obtained my CCNA and found a community with like-minded people I hope to flourish with. I will forever be grateful to NetClan as this wouldn't be possible without them.",
-      border: "border-[#E588A4]",
-    },
-    {
       name: "Evalyne Njoroge",
       cohort: "LiNE Cohort 2",
       location: "Nairobi, Kenya",
@@ -120,13 +102,13 @@ const Testimonials = () => {
       border: "border-[#E588A4]",
     },
     {
-      name: "Ifunanya Odoh",
-      cohort: "LiNE Cohort 2",
-      location: "Lagos, Nigeria",
-      image: testimonial2,
+      name: "Ketcha Leonelta",
+      cohort: "LiNE Cohort 1",
+      location: "Douala, Cameroon",
+      image: testimonial5,
       testimonial:
-        "Being part of LiNE has been a life-changing experience. The program not only equipped me with technical skills but also built my confidence to pursue opportunities I never thought possible.",
-      border: "border-[#DFBBFF4D]",
+        "The LiNE community is truly about uplifting one another. Whenever you reach out with a concern, there's always someone ready to help. The strong bond within the community creates a sense of belonging, and for me, it even brought a sister who motivates me every day. Everyone genuinely cares about each other's growth and success.",
+      border: "border-[#5880D1]",
     },
     {
       name: "Moyinoluwa Adegbolu",
@@ -136,6 +118,24 @@ const Testimonials = () => {
       testimonial:
         "The supportive community and expert instructors at LiNE made all the difference in my learning journey. I'm now confidently working in the field I'm passionate about.",
       border: "border-[#2A2376]",
+    },
+    {
+      name: "Cindy Ntombela",
+      cohort: "LiNE Cohort 2",
+      location: "Durban, South Africa",
+      image: testimonial6,
+      testimonial:
+        "Being accepted by The NetClan for their LiNE programme has been exhilarating. Through this journey I have met and been mentored by amazing people who have furthered my knowledge in networking and helped me grow as a network engineer by broadening my horizons. Through this programme I have obtained my CCNA and found a community with like-minded people I hope to flourish with. I will forever be grateful to NetClan as this wouldn't be possible without them.",
+      border: "border-[#E588A4]",
+    },
+    {
+      name: "Ifunanya Odoh",
+      cohort: "LiNE Cohort 2",
+      location: "Lagos, Nigeria",
+      image: testimonial2,
+      testimonial:
+        "Being part of LiNE has been a life-changing experience. The program not only equipped me with technical skills but also built my confidence to pursue opportunities I never thought possible.",
+      border: "border-[#DFBBFF4D]",
     },
     {
       name: "Agina Sualeze",
