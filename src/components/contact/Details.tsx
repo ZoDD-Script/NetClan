@@ -10,7 +10,7 @@ export default function ContactCards() {
       iconBg: "bg-[#5880D1]",
       cardBg: "bg-[#E588A4]",
       title: "Email",
-      content: "info@netempowerment.org",
+      content: "info@thenetclan.org",
       textColor: "text-white",
     },
     // {
@@ -26,7 +26,7 @@ export default function ContactCards() {
       iconBg: "bg-[#2A2376]",
       cardBg: "bg-[#5880D1]",
       title: "Office hours",
-      content: "Mon-Fri: 9:00 AM - 6:00 PM EST",
+      content: "Mon-Fri: 9:00AM - 5:00PM GMT+1",
       textColor: "text-white",
     },
     // {
