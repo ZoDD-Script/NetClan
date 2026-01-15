@@ -3,18 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown } from "lucide-react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-
 import logo from "../assets/logo/logoWhite.png";
 import logocolored from "../assets/logo/logoBlue.png";
-// import logo from "../assets/logo/netclan.svg";
-// import logocolored from "../assets/logo/netclancolored.svg";
 import collapse from "../assets/icons/collaspe.png";
 
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLLIElement>(null);
 
@@ -35,10 +32,20 @@ export default function Navbar() {
         setDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(false);
+  }, [location.pathname]);
+
+  const handleMobileNavClick = () => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(false);
+  };
 
   return (
     <nav
@@ -113,7 +120,6 @@ export default function Navbar() {
                 } ${isScrolled ? "filter invert" : ""}`}
               />
             </span>
-
             {dropdownOpen && (
               <div className="absolute bg-white text-black py-3 mt-2 rounded-lg w-[278px] space-y-2 shadow-lg">
                 <RouterLink to="/programmes/institute">
@@ -121,13 +127,11 @@ export default function Navbar() {
                     Netclan Institute
                   </div>
                 </RouterLink>
-
                 <RouterLink to="/programmes/elevate">
                   <div className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer">
                     Netclan Elevate
                   </div>
                 </RouterLink>
-
                 <RouterLink to="/programmes/line">
                   <div className="px-4 py-2 hover:bg-[#FAF6F6] hover:text-[#E588A4] cursor-pointer">
                     Ladies in Network Engineering (LiNE)
@@ -167,7 +171,6 @@ export default function Navbar() {
               Contact Us
             </Button>
           </RouterLink>
-
           <RouterLink to="/donate">
             <Button className="font-grotesk bg-[#DFBBFF] hover:bg-[#DFBBFF] cursor-pointer text-black px-8 py-5 rounded-sm">
               Make A Donation
@@ -176,28 +179,28 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE MENU */}
-        <Sheet>
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger className="md:hidden">
             <Menu
               size={28}
               className={isScrolled ? "text-[#39364F]" : "text-white"}
             />
           </SheetTrigger>
-
           <SheetContent
             side="left"
             className="bg-[#E6DADA] text-[#39364F] w-[85%] sm:w-[400px] p-0"
+            // showClose={false}
           >
             {/* Logo */}
             <div className="p-6 border-b border-gray-300">
-              <RouterLink to="/">
+              <RouterLink to="/" onClick={handleMobileNavClick}>
                 <img src={logocolored} alt="logo" loading="lazy" width={90} />
               </RouterLink>
             </div>
 
             {/* NORMAL ITEMS */}
             <div className="px-6 py-3 space-y-1">
-              <RouterLink to="/about">
+              <RouterLink to="/about" onClick={handleMobileNavClick}>
                 <div className="text-[#39364F] hover:text-[#E588A4] text-base">
                   About Us
                 </div>
@@ -217,22 +220,28 @@ export default function Navbar() {
                   }`}
                 />
               </div>
-
               {mobileDropdownOpen && (
                 <div className="w-full bg-[#FFFFFFB2]">
-                  <RouterLink to="/programmes/institute">
+                  <RouterLink
+                    to="/programmes/institute"
+                    onClick={handleMobileNavClick}
+                  >
                     <div className="w-full px-6 py-3 text-[#E588A4] text-base">
                       NetClan Institute
                     </div>
                   </RouterLink>
-
-                  <RouterLink to="/programmes/elevate">
+                  <RouterLink
+                    to="/programmes/elevate"
+                    onClick={handleMobileNavClick}
+                  >
                     <div className="w-full px-6 py-3 text-[#E588A4] text-base">
                       NetClan Elevate
                     </div>
                   </RouterLink>
-
-                  <RouterLink to="/programmes/line">
+                  <RouterLink
+                    to="/programmes/line"
+                    onClick={handleMobileNavClick}
+                  >
                     <div className="w-full px-6 py-3 text-[#E588A4] text-base">
                       Ladies in Network Engineering (LiNE)
                     </div>
@@ -243,13 +252,12 @@ export default function Navbar() {
 
             {/* More items */}
             <div className="px-6 space-y-1">
-              <RouterLink to="/get-involved">
+              <RouterLink to="/get-involved" onClick={handleMobileNavClick}>
                 <div className="py-3 text-[#39364F] hover:text-[#E588A4] text-base">
                   Get Involved
                 </div>
               </RouterLink>
-
-              <RouterLink to="/contact">
+              <RouterLink to="/contact" onClick={handleMobileNavClick}>
                 <div className="py-3 text-[#39364F] hover:text-[#E588A4] text-base">
                   Contact Us
                 </div>
@@ -258,13 +266,15 @@ export default function Navbar() {
 
             {/* BUTTONS */}
             <div className="px-6 py-4 space-y-3">
-              <RouterLink to="/donate">
+              <RouterLink to="/donate" onClick={handleMobileNavClick}>
                 <Button className="font-grotesk w-full bg-linear-to-r from-[#4C6FD8] to-[#C679A0] hover:opacity-90 text-white py-6 rounded-lg text-base mb-4 font-medium">
                   Make A Donation
                 </Button>
               </RouterLink>
-
-              <RouterLink to="/communityApplication">
+              <RouterLink
+                to="/communityApplication"
+                onClick={handleMobileNavClick}
+              >
                 <Button className="font-grotesk w-full bg-transparent border-2 border-[#6B5E9E] text-[#6B5E9E] hover:bg-[#6B5E9E]/10 py-6 rounded-lg text-base font-medium">
                   Join Our Community
                 </Button>
