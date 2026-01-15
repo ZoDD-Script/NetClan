@@ -12,13 +12,13 @@ const ContactUs = () => {
       <img
         src={arrow}
         alt=""
-        className="absolute z-5 right-15 top-305 w-50"
+        className="absolute z-1 right-15 top-305 w-50 hidden md:block"
         loading="lazy"
       />
       <img
         src={vector8}
         alt=""
-        className="absolute z-5 right-0 top-205"
+        className="absolute right-0 top-205 hidden md:block"
         loading="lazy"
       />
       <Hero />

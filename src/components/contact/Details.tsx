@@ -1,6 +1,6 @@
 import trend from "../../assets/icons/trend.svg";
 import hat from "../../assets/icons/hat.svg";
-import people from "../../assets/icons/people.svg";
+// import people from "../../assets/icons/people.svg";
 // import fill from "../../assets/icons/fill.svg";
 
 export default function ContactCards() {
@@ -13,14 +13,14 @@ export default function ContactCards() {
       content: "info@netempowerment.org",
       textColor: "text-white",
     },
-    {
-      icon: people,
-      iconBg: "bg-[#E588A4]",
-      cardBg: "bg-[#2A2376]",
-      title: "Phone",
-      content: "+1 (555) 123-4567",
-      textColor: "text-white",
-    },
+    // {
+    //   icon: people,
+    //   iconBg: "bg-[#E588A4]",
+    //   cardBg: "bg-[#2A2376]",
+    //   title: "Phone",
+    //   content: "+1 (555) 123-4567",
+    //   textColor: "text-white",
+    // },
     {
       icon: trend,
       iconBg: "bg-[#2A2376]",
@@ -39,9 +39,9 @@ export default function ContactCards() {
   ];
 
   return (
-    <div className="py-16 px-8">
+    <div className="py-16 px-8 z-10">
       <div className="max-w-[1200px]  mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {contacts.map((contact, index) => {
             return (
               <div
