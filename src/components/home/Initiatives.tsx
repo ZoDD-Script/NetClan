@@ -56,9 +56,8 @@ const Initiatives = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 font-grotesk">
           {initiatives.map((initiative, index) => (
-            <RouterLink to={initiative.link}>
+            <RouterLink to={initiative.link} key={index}>
               <div
-                key={index}
                 className={`${initiative.bgColor} ${initiative.textColor} rounded-xl p-10 min-h-[450px] flex flex-col justify-between relative overflow-hidden transition-all duration-300 cursor-pointer group`}
               >
                 {/* Background decorative elements */}
@@ -83,7 +82,7 @@ const Initiatives = () => {
                       {initiative.program}
                     </h3>
                   </div>
-                  <div className="flex items-center justify-center translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                  <div className="flex items-center justify-center opacity-100 md:translate-x-8 md:opacity-0 md:group-hover:translate-x-0 md:group-hover:opacity-100 md:transition-all md:duration-500 md:ease-out">
                     <ArrowRight className="w-10 h-10" strokeWidth={2} />
                   </div>
                 </div>
